@@ -1,0 +1,36 @@
+.reviewDialogwrapper{ width: 500px; position: relative;}
+ul,li{margin: 0; padding: 0;}
+.remarks_star{width:100%; float: left;}
+.remarks_star ul {list-style: none;}
+.remarks_star ul li {display: inline-block;
+    color: darkgoldenrod;
+    margin-right: 10px;
+    font-size: 14px;}
+.rating_specfication{
+    color: #000;
+}
+.review_heading{ width:100%;}
+.review_heading h6{ text-align: center;}
+.orderformclosebutton{
+    position: absolute;
+right: 12px;
+top: -14px;
+background: transparent;
+border: none;
+outline: 0;
+cursor: pointer;
+}
+.reviewDialogwrapper .mat-form-field {
+    display: block;
+    position: relative;
+    text-align: left;
+}
+.submit_review{
+    background: red;
+    color: #fff;
+    padding: 6px;
+    font-size: 12px; cursor: pointer;
+}
+ngb-rating{
+    font-size: 30px; color: #f70;outline: 0;margin-right: 10px;
+}

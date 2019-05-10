@@ -1,0 +1,14 @@
+
+
+.terms{ width:100%; float: left;}
+.terms-heading{ width:100%; text-align: center; }
+.margin_top{
+    margin-top:100px;
+  }
+.terms-heading h2{ width:100%; text-align: center; 
+color: #000; font-size: 20px; letter-spacing: 1px;}
+.termsuse h4{ width:100%; float: left; color: #444;
+letter-spacing: 1px;}
+.termsuse p {width:100%; float: left; color: #666;
+    text-align: justify; font-size: 13px; line-height: 20px;
+    margin-top: -5px;}

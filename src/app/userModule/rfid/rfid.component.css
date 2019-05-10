@@ -1,0 +1,32 @@
+
+.margin_toprfid{
+    margin-top: 92px;
+}
+
+
+.orderForm-control{
+    width:100%; float: left; display:block; 
+}
+.submit{
+    width: 80%; float: left;
+}
+.editsubmitbutton{
+    width:30%; float: left; 
+}
+.form_heading{
+    width:100%; float: left;
+}
+.form_heading h4{
+    color: #666;
+}
+.mat-form-field {
+     display: block;
+    position: relative;
+    text-align: left;
+}
+.profileeditform{
+    width:100%; float: left;
+}
+.authDealer{
+    width:100%; float: left; margin-top: 20px; text-align: center; margin-bottom: 30px;
+}

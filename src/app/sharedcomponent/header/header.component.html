@@ -1,0 +1,526 @@
+
+
+
+<div class="progressbar" *ngIf="spinnerFlag">
+  <p-progressBar mode="indeterminate" ></p-progressBar>
+  </div>
+  <div class="col-md-12 fixed_header">
+     <div class="ui-grid ui-grid-responsive ui-fluid">
+        <div class="ui-grid-row">
+          <div class="  ui-md-4 ui-sm-4 logo-width
+          ui-lg-6">
+             
+            <div class="logo">
+          <a [routerLink]="routerLinkhome"> <img src="assets/logo.png" /></a> 
+          </div>
+      </div>
+   <!--   <div class=" ui-md-4">
+        <div class="right-menu">
+            <ul>
+                <li><a href="">File</a></li>
+                <li><a href="">Edit</a></li>
+               
+                <li><a href="">Help</a></li>
+                <li><a href="">Actions</a></li>
+                  
+              </ul>
+        </div>
+        <div class="sidebarmenu">
+            <p-sidebar [(visible)]="sidebarmenuflag">
+                <ul>
+                    <li><a href="https://www.primefaces.org/primeng/#/sidebar">File</a></li>
+                    <li><a href="">Edit</a></li>
+                   
+                    <li><a href="">Help</a></li>
+                    <li><a href="">Actions</a></li>
+                    <li class="downloadApp" (click)="showDialog()"><i class="fa fa-mobile"></i>
+                      Download App</li>
+                    <li class="live_bussiness">Live Bussiness</li>
+                   
+                    <li (click)="showsigunupbox()" class="showsigunupbox">Log In/signup</li>
+                   <!-- <li><a href="">Sign Up</a></li> 
+                    <li><a href=""><i class="fa fa-bell fabell"></i></a></li>
+                      
+                  </ul>
+            </p-sidebar>
+            
+            <button type="text" (click)="sidebarmenuflag = true" pButton icon="pi pi-plus" label="Show"></button>
+            
+        </div>
+      </div>  -->
+      <div class=" ui-md-8">
+         <div class="rightmostmenu">
+           <ul>
+              <!-- <li><a [routerLink]="routerLinkserach"
+                title="Serach location">Serach location</a></li> -->
+           <li class="downloadApp" (click)="downloadappDialogBox()"
+           title="Download App"><i class="fa fa-mobile" style="font-size:15px"></i>
+             Download App</li>
+           <li class="live_bussiness"> <a [routerLink]="routerLinkVariable"
+            title="List Bussiness">
+             List Bussiness</a></li>
+          
+           <li  class="showsigunupbox"
+           (click)="openloginsignupDialogbox()"
+           title="Log In/signup"
+           *ngIf="loginbuttonFlag">Log In/signup</li>
+          <!-- <li><a href="">Sign Up</a></li>  -->
+           <li><a [routerLink]="routerLinknotification"
+            title="Notification"><i class="fa fa-bell fabell" style="color:rgb(244,81,30);"></i></a></li>
+            <!-- <li> <i class="fa fa-bars fabars" [matMenuTriggerFor]="appMenu"></i></li>  -->
+         <li> <p [matMenuTriggerFor]="menu" ><i class="fa fa-bars fabars"></i></p>
+              </li> 
+           
+         </ul>
+    
+        
+        
+       
+         </div>
+         <div class="panel-menu">
+          <mat-menu #menu="matMenu">
+            <div class="menu-toggle">
+              <ul *ngIf="role == 2">
+                 
+                  <li><a [routerLink]="routerLinkprofile"><i class="fa fa-user-circle-o"
+                    style="color: green; font-size: 25px; margin-right: 20px;"></i>
+                    Profile</a></li>
+                    <li><a [routerLink]="routerLinkmyBooking"><i class="fa fa-address-book-o"
+                      style="color: red; font-size: 25px; margin-right: 20px;"></i>
+                      MyBooking</a></li>
+                     
+                        <li ><a [routerLink]="routerLinkVariable"><i class="fa fa-list-alt "
+                          style="color: green; font-size: 25px; margin-right: 20px;"></i>
+                           
+                          Manage Listing</a></li>
+                          
+                          <!-- <li><a [routerLink]="routerLinkinvoice"><i class="fa fa-question-circle"
+                            style="color: red; font-size: 25px; margin-right: 20px;"></i>
+                            Invoices</a></li> -->
+                     
+                         
+                  <li><a [routerLink]="routerLinkfavour"><i class="fa fa-heart"
+                    style="color: orangered; font-size: 25px; margin-right: 20px;"></i>Favorate
+                  </a></li>
+                  <li><a [routerLink]="routerLinkReview"><i class="fa fa-star-half-o "
+                    style="color: green; font-size: 25px; margin-right: 20px;"></i>
+                    Review</a></li>
+                 
+                      <li><a [routerLink]="routerLinkfaq"><i class="fa fa-question-circle"
+                        style="color: red; font-size: 25px; margin-right: 20px;"></i>
+                        FAQ</a></li>
+                       
+                       
+                      <li
+                      (click)="logOut()"><i class="fa fa-power-off"
+                          style="color: green; font-size: 25px; margin-right: 20px;"></i>
+                          Logout</li>
+              </ul>
+              <ul *ngIf="role ==3">
+                  <li><a [routerLink]="routerLinkmylisting"><i class="fa fa-file-o"
+                    style="color: red; font-size: 25px; margin-right: 20px;"></i>
+                    MyListing</a></li>
+                  <li><a [routerLink]="routerLinkownerprofile"><i class="fa fa-star-half-o "
+                    style="color: green; font-size: 25px; margin-right: 20px;"></i>
+                    Profile</a></li>
+                   
+                     
+                    <li><a [routerLink]="routerLinkownermybooking"><i class="fa fa-address-book-o"
+                      style="color: red; font-size: 25px; margin-right: 20px;"></i>
+                      MyBooking</a></li>
+                     
+                        <li><a [routerLink]="routerLinkVariable"><i class="fa fa-building "
+                          style="color: green; font-size: 25px; margin-right: 20px;"></i>
+                           
+                         Add Listing</a></li>
+                          
+                     
+                         
+                 
+                
+                      <li><a [routerLink]="routerLinkfaq"><i class="fa fa-question-circle"
+                        style="color: red; font-size: 25px; margin-right: 20px;"></i>
+                        FAQ</a></li>
+                        
+                        
+                           
+                       
+                        <li
+                        (click)="logOut()"><i class="fa fa-power-off"
+                          style="color: green; font-size: 25px; margin-right: 20px;"></i>
+                          Logout</li>
+              </ul>
+              <ul *ngIf="role ==4">
+                   
+                <li><a [routerLink]="routerLinkmangerprofile"><i class="fa fa-question-circle"
+                  style="color: red; font-size: 25px; margin-right: 20px;"></i>
+                  Profile</a></li>
+                  <li><a [routerLink]="routerLinkmangermybooking"><i class="fa fa-address-book-o"
+                    style="color: green; font-size: 25px; margin-right: 20px;"></i>
+                   My Booking</a></li>
+                   <li><a [routerLink]="routerLinkowneroperater"><i class="fa fa-list-alt"
+                    style="color:red;font-size: 25px; margin-right: 20px;"></i>
+                    Add Operater</a></li>
+                      <li><a 
+                        [routerLink]="routerLinkmangermystation"><i class="fa fa-building "
+                        style="color: green; font-size: 25px; margin-right: 20px;"></i>
+                         
+                       My Station</a></li>
+                       <li><a [routerLink]="routerLinkfaq"><i class="fa fa-star-half-o"
+                        style="color: red; font-size: 25px; margin-right: 20px;"></i>
+                        FAQ</a></li>
+                       
+                      <li
+                      (click)="logOut()"><i class="fa fa-power-off"
+                        style="color: green;font-size: 25px; margin-right: 20px;"></i>
+                        Logout</li>
+              </ul>
+              <ul *ngIf="role ==5">
+                  
+                  <li><a [routerLink]="routerLinkoperaterprofile"><i class="fa fa-question-circle"
+                    style="color: red; font-size: 25px; margin-right: 20px;"></i>
+                    Profile</a></li>
+                  
+                    <li><a [routerLink]="routerLinkoperatermybooking"><i class="fa fa-address-book-o"
+                      style="color: green; font-size: 25px; margin-right: 20px;"></i>
+                      Booking</a></li>
+                      <li
+                      (click)="logOut()"><i class="fa fa-power-off"
+                        style="color: red; font-size: 25px; margin-right: 20px;"></i>
+                        Logout</li>
+                     
+                        
+                          
+                     
+                         
+                 
+                  
+                          
+                           
+                       
+                        
+              </ul>
+  
+            </div>
+          </mat-menu>
+      </div>
+         <div class="sidebarmenu">
+          <p-sidebar [(visible)]="sidebarmenuflag">
+              <div class="menu-toggle">
+                <ul>
+
+                  <li class="downloadApp" (click)="downloadappDialogBox()"
+           title="Download App"><i class="fa fa-mobile" style="font-size:15px"></i>
+             Download App</li>
+       <li class="live_bussiness"> <a [routerLink]="routerLinkVariable"
+            title="List Bussiness"><i class="fa fa-question-circle"
+            style="color: green; font-size: 25px; margin-right: 20px;"></i>
+             List Bussiness</a></li> 
+                    <li  class="showsigunupbox"
+            (click)="openloginsignupDialogbox()"
+            title="Log In/signup"
+            *ngIf="loginbuttonFlag">
+            <i class=" fa fa-sign-in"
+            style="color: red; font-size: 25px; margin-right: 20px;"></i>
+            Log In/signup</li>
+            <li><a [routerLink]="routerLinkfaq">
+              <i class=" fa fa-bookmark"
+              style="color: green; font-size: 25px; margin-right: 20px;"></i>
+              FAQ</a></li>
+              <li><a [routerLink]="routerLinknotification"
+                title="Notification"><i class="fa fa-bell fabell" style="color:rgb(244,81,30);"></i>&nbsp;&nbsp;
+                Notification
+              </a></li>
+            </ul>
+                  <ul *ngIf="role == 2">
+                     
+                      <li><a [routerLink]="routerLinkprofile"><i class="fa fa-user-circle-o"
+                        style="color: green; font-size: 25px; margin-right: 20px;"></i>
+                        Profile</a></li>
+                        <li><a [routerLink]="routerLinkmyBooking"><i class="fa fa-address-book-o"
+                          style="color: red; font-size: 25px; margin-right: 20px;"></i>
+                          MyBooking</a></li>
+                         
+                            <li ><a [routerLink]="routerLinkVariable"><i class="fa fa-list-alt "
+                              style="color: green; font-size: 25px; margin-right: 20px;"></i>
+                               
+                              Manage Listing</a></li>
+                              
+                              <!-- <li><a [routerLink]="routerLinkinvoice"><i class="fa fa-question-circle"
+                                style="color: red; font-size: 25px; margin-right: 20px;"></i>
+                                Invoices</a></li> -->
+                         
+                             
+                      <li><a [routerLink]="routerLinkfavour"><i class="fa fa-heart"
+                        style="color: orangered; font-size: 25px; margin-right: 20px;"></i>Favorate
+                      </a></li>
+                      <li><a [routerLink]="routerLinkReview"><i class="fa fa-star-half-o "
+                        style="color: green; font-size: 25px; margin-right: 20px;"></i>
+                        Review</a></li>
+                     
+                         
+                           
+                           
+                          <li
+                          (click)="logOut()"><i class="fa fa-power-off"
+                              style="color: green; font-size: 25px; margin-right: 20px;"></i>
+                              Logout</li>
+                  </ul>
+                  <ul *ngIf="role ==3">
+                      
+                      <li><a [routerLink]="routerLinkmylisting"><i class="fa fa-file-o"
+                        style="color: red; font-size: 25px; margin-right: 20px;"></i>
+                        MyListing</a></li>
+                      <li><a [routerLink]="routerLinkownerprofile"><i class="fa fa-star-half-o "
+                        style="color: green; font-size: 25px; margin-right: 20px;"></i>
+                        Profile</a></li>
+                       
+                         
+                        <li><a [routerLink]="routerLinkownermybooking"><i class="fa fa-address-book-o"
+                          style="color: red; font-size: 25px; margin-right: 20px;"></i>
+                          MyBooking</a></li>
+                         
+                            <li><a [routerLink]="routerLinkVariable"><i class="fa fa-building "
+                              style="color: green; font-size: 25px; margin-right: 20px;"></i>
+                               
+                             Add Listing</a></li>
+                              
+                                        
+                           
+                           
+                  </ul>
+                  <ul *ngIf="role ==4">
+                    
+                    <li><a [routerLink]="routerLinkmangerprofile"><i class="fa fa-question-circle"
+                      style="color: red; font-size: 25px; margin-right: 20px;"></i>
+                      Profile</a></li>
+                      <li><a [routerLink]="routerLinkmangermybooking"><i class="fa fa-address-book-o"
+                        style="color: green; font-size: 25px; margin-right: 20px;"></i>
+                       My Booking</a></li>
+                       <li><a [routerLink]="routerLinkowneroperater"><i class="fa fa-list-alt"
+                        style="color:red;font-size: 25px; margin-right: 20px;"></i>
+                        Add Operater</a></li>
+                          <li><a 
+                            [routerLink]="routerLinkmangermystation"><i class="fa fa-building "
+                            style="color: green; font-size: 25px; margin-right: 20px;"></i>
+                             
+                           My Station</a></li>
+                         
+                           
+                          <li
+                          (click)="logOut()"><i class="fa fa-power-off"
+                            style="color: green;font-size: 25px; margin-right: 20px;"></i>
+                            Logout</li>
+                  </ul>
+                  <ul *ngIf="role ==5">
+                     
+                      <li><a [routerLink]="routerLinkoperaterprofile"><i class="fa fa-question-circle"
+                        style="color: red; font-size: 25px; margin-right: 20px;"></i>
+                        Profile</a></li>
+                      
+                        <li><a [routerLink]="routerLinkoperatermybooking"><i class="fa fa-address-book-o"
+                          style="color: green; font-size: 25px; margin-right: 20px;"></i>
+                          Booking</a></li>
+                          <li
+                          (click)="logOut()"><i class="fa fa-power-off"
+                            style="color: red; font-size: 25px; margin-right: 20px;"></i>
+                            Logout</li>
+                         
+                            
+                              
+                         
+                             
+                     
+                      
+                              
+                               
+                           
+                            
+                  </ul>
+      
+                </div>
+              <!-- <ul>
+                 
+                  <li class="downloadApp" (click)="downloadappDialogBox()"><i class="fa fa-mobile"></i>
+                    Download App</li>
+                  <li class="live_bussiness"><a [routerLink]="routerLinkVariable">Live Bussiness</a></li>
+                 
+                  <li  class="showsigunupbox"
+                  (click)="openloginsignupDialogbox()">Log In/signup</li>
+                  <li><a [routerLink]="routerLinkserach"
+                   >Serach location</a></li>
+                
+                  <li><a [routerLink]="routerLinknotification">
+                  Notification</a></li>
+                  <li><a [routerLink]="routerLinkfavour">Favorate
+                  </a></li>
+                  <li><a [routerLink]="routerLinkVariable">
+                  
+                     
+                    Manage Listing</a></li>
+                    <li><a [routerLink]="routerLinkabout">
+                    
+                      About Us</a></li>
+                      <li><a [routerLink]="routerLinkmyBooking">
+                        
+                       
+                        MyBooking</a></li>
+                        <li><a [routerLink]="routerLinkmylisting">
+                         
+                          MyListing</a></li>
+                      <li><a [routerLink]="routerLinkfaq">
+                       
+                        FAQ</a></li>
+                        <li
+                        (click)="logOut()"><a [routerLink]="routerLinknotification">
+                         
+                          Logout</a></li>
+                          
+                </ul> -->
+          </p-sidebar>
+          
+          <button type="text" (click)="sidebarmenuflag = true" pButton  label="Menu"></button>
+          
+        </div>
+        </div>
+     
+     </div>
+  </div>
+  </div>
+  <!-- <p-dialog [(visible)]="display"  [width]="600">
+      <div class="ui-grid ui-grid-responsive ui-fluid">
+          <div class="ui-grid-row">
+              <div class="ui-grid-col-4">
+                <div class="download_icon">
+                  <img src="assets/mapp.png"/>
+                </div>
+                </div>
+                <div class="ui-grid-col-8">
+                  <div class="downloadapp_header">
+                    <p-header>
+                        EVPluginCharge Mobile App
+                    </p-header>
+                  </div>
+                  <div class="downloadapp_content">
+                     <p class="best_offer">
+                        Best offers anytime, anywhere </p>
+                        <p class="download_para">Download EVPluginCharge Mobile application and search nearby ev charging options 
+                          </p>
+                  </div>
+                  <div class="app_redirectlink">
+                  <div class="ui-grid-col-6">
+                   <a href="https://play.google.com/store/apps/details?id=com.wih.evplugincharge&hl=en" target="_blank"><img src="assets/gplay.png"/>
+                   </a> 
+                    </div>
+                    <div class="ui-grid-col-6">
+                        <a href="https://itunes.apple.com/us/app/evplugincharge/id1330485925?mt=8" target="_blank">
+                          <img src="assets/itunes.png"/>
+                        </a>
+                       
+                        </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            
+      
+  </p-dialog> -->
+  
+  <p-dialog [(visible)]="signup"  styleClass="jj" [responsive]="true"
+  [contentStyle]="{'max-height':'600px'}">
+      
+  
+     <!-- <div class="tabform">
+      <p-tabView>
+          <p-tabPanel header="Log In">
+           <div class="login-form">
+             <div class="login-heading">
+               <h2>Welcome Back!</h2>
+  
+             </div>
+             <div class="form_login">
+                <form>
+                    <div class="ui-grid-row">
+                    <div class="ui-grid-col-12">
+                      
+                       <div class="email">
+                           <input type="text" 
+                           class="loginform-control" placeholder="Enter a email" />      
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ui-grid-row">
+                        <div class="ui-grid-col-12">
+                        <div class="password">
+                            <input type="password" 
+                            class="loginform-control" placeholder="Enter a password" />      
+                         </div>
+                       </div>
+                       </div>
+                       <div class="ui-grid-row">
+                          <div class="ui-grid-col-12">
+                            <div class="submit">
+                               <button type="submit" class=" submit_button">Submit</button>
+                              </div>
+                            </div>
+                            </div>
+                           
+                  </form>
+  
+             </div>
+               
+           </div>
+          </p-tabPanel>
+          <p-tabPanel header="Sign Up">
+              <div class="form_login">
+                  <div class="login-heading">
+                      <h2> Sign Up for Account!</h2>
+         
+                    </div>
+                  <form>
+                      <div class="ui-grid-row">
+                      <div class="ui-grid-col-12">
+                        
+                         <div class="name">
+                             <input type="text" 
+                             class="loginform-control" placeholder="Enter a name" />      
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ui-grid-row">
+                          <div class="ui-grid-col-12">
+                            
+                             <div class="email">
+                                 <input type="text" 
+                                 class="loginform-control" placeholder="Enter a email" />      
+                              </div>
+                            </div>
+                          </div>
+                      
+                      <div class="ui-grid-row">
+                          <div class="ui-grid-col-12">
+                          <div class="password">
+                              <input type="password" 
+                              class="loginform-control" placeholder="Enter a password" />      
+                           </div>
+                         </div>
+                         </div>
+                         <div class="ui-grid-row">
+                            <div class="ui-grid-col-12">
+                              <div class="submit">
+                                 <button type="submit" class=" submit_button">Submit</button>
+                                </div>
+                              </div>
+                              </div>
+                             
+                    </form>
+    
+               </div>
+          </p-tabPanel>
+          
+      </p-tabView>
+      
+    </div>  -->
+      
+  </p-dialog>

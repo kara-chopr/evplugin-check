@@ -1,0 +1,11 @@
+.addmanger-control{  width:100%; float: left; display:block !important;  }
+.add_manager .mat-form-field {
+    display: block ;
+    position: relative;
+    text-align: left;
+}
+.add_manager{ width:100%; float: left; margin-bottom: 40px;}
+.update_button{ width:50%; margin: 20px auto;}
+.margin_tops{
+    margin-top: 100px;
+}

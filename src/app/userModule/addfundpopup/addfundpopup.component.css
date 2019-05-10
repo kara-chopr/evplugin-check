@@ -1,0 +1,25 @@
+.addfund_wrapper{
+  width:300px; float: left; position: relative;
+}
+.orderformclosebutton{
+    position: absolute;
+    right: -7px;
+    top: -23px;
+    background: transparent;
+    border: 0;
+}
+.addform_control{
+    width:100%;float: left; padding-left: 8px;
+}
+.addfund_group{
+    width:100%; margin-top: 20px;
+}
+.add_heading{
+    text-align: center;
+}
+.submit_addsection {
+    width:30%; margin: 10px auto;
+}
+.fund_button{
+    width:auto; margin-top: 20px; float: left; background: #218838; color: #fff;
+}

@@ -1,0 +1,119 @@
+<div class="orderformwrapper">
+     <div class="container">
+     
+      <div class="showForm" *ngIf="hidevechileDetailFlag">
+        <div class="heading" style="text-align: center"><h4>GST Detail</h4></div>
+            <span style="float: right; padding-right: 12px;
+            cursor: pointer;"
+            (click)="hidevechileDetail()" *ngIf="faplusflag"><i class="fa fa-plus"></i></span>
+    <div class="row">
+        <table class="table table-striped" *ngIf="hidevechileDetailFlag">
+            <thead>
+                <tr>
+                    <th scope="col">Orgzation Name</th>
+                    <th scope="col">Gst</th>
+                    <th scope="col">location</th>
+                    <th scope="col">Pan</th>
+                   
+                    <th scope="col">Action</th>
+                  </tr>
+                  </thead>
+                  <tbody *ngIf="gstDetailRespone">
+                     <tr *ngFor="let gstDetailRespon of gstDetailRespone">
+                        <td>{{gstDetailRespon.orgName}}</td>
+                        <td>{{gstDetailRespon.gst}}</td>
+                        <td>{{gstDetailRespon.location}}</td>
+                        <td>{{gstDetailRespon.pan}} </td>
+                       
+                      
+                       
+                        <td>
+                           
+                            <i class="fa fa-bitbucket vechileDelete" (click)="vechileDelete(addVechileResponses.id)"></i>
+                       
+                          
+                          </td>
+                        </tr>
+    
+                  </tbody>
+          </table>
+    </div>    
+          </div>      
+    <div class="order_form" *ngIf="!hidevechileDetailFlag">
+
+       
+      <div class="order_formheading">
+        <h3>GST Deatils</h3>
+      </div>
+      <div class="col-md-1">
+          <button type="button" class="btn btn-default"
+          (click)="hidevechileDetail()">back</button>
+    </div>
+      <form id="gstdetailForm" [formGroup]="gstFormGroup" (ngSubmit)="onSubmitGstForm()"
+      novalidate>
+      <div class="row">
+        <div class="col-md-3">
+           <mat-form-field class="orderForm-Control">
+            <input matInput placeholder="Organization Name" class="orderForm-control"
+            formControlName="orgName"> 
+          
+            <div class="errormesage"
+            *ngIf="!gstFormGroup.controls['orgName'].valid
+            && gstFormGroup.controls['orgName'].touched">
+            <p>*Fields Required</p>
+            </div>
+           </mat-form-field> 
+          </div>
+          <div class="col-md-3">
+          <mat-form-field class="orderForm-Control">
+              <input matInput placeholder="Your GST NO." 
+              formControlName="gst">
+             
+            </mat-form-field>
+            <div class="errormesage"
+            *ngIf="!gstFormGroup.controls['gst'].valid
+            && gstFormGroup.controls['gst'].touched">
+            <p>*Fields Are Required & Not More Than 15 Digit</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <mat-form-field class="orderForm-Control">
+                <input matInput placeholder="Your PAN NO." 
+                formControlName="pan">
+               
+              </mat-form-field>
+              <div class="errormesage"
+              *ngIf="!gstFormGroup.controls['pan'].valid
+              && gstFormGroup.controls['pan'].touched">
+              <p>*Fields Are Required & Not More Than 10 Digit</p>
+              </div>
+            </div>
+             
+              <div class="col-md-3">
+          <mat-form-field>
+                <mat-select placeholder="Select Location" 
+                    formControlName="location">
+                     <mat-option *ngFor="let getStatelistResponse of getStatelistResponses" [value]="getStatelistResponse.state_name">
+                       {{getStatelistResponse.state_name}} 
+                    </mat-option> 
+                </mat-select>
+            </mat-form-field> 
+            <div class="errormesage"
+              *ngIf="!gstFormGroup.controls['location'].valid
+              && gstFormGroup.controls['location'].touched">
+              <p>*Fields Are Required </p>
+              </div>
+              </div>
+             
+              
+               <input  type="hidden" 
+                formControlName="user_id" >
+                 
+          </div>   
+             
+        <button class="orderformSubmitbutton" type="submit"  >Submit</button>
+        
+        </form>
+    </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+.delete_wrapper{
+    width:400px;
+}
+.delete_heading{
+    font-size: 16px;
+}
+.delete_heading p{
+    font-size: 16px; font-weight: 600;
+}
+.cancellation_rules{
+    font-size: 12px; text-align: justify; letter-spacing: 1px;color: #252525;
+}
+.cancelation_deductionRules{
+    font-size: 12px; text-align: justify; letter-spacing: 1px; color: #666
+}
+.yes_NoButton{  float: right;}
+.no_button{ width:40px; float: left; color: red; cursor: pointer;}
+.closebutton{
+    
+    background: transparent;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+}

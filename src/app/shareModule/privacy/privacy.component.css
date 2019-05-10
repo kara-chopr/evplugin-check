@@ -1,0 +1,11 @@
+.privacy_policy{
+    width:100%; float: left;
+}
+.privacy_heading{
+    width:100%; float: left; font-size: 14px; text-align: center;
+}
+.margin_top{
+    margin-top:100px;
+  }
+.privacy-content{ width:100%; float: left;}
+.privacy-content p {color: #666; font-size: 13px; line-height: 20px;}

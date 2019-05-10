@@ -1,0 +1,57 @@
+<div class="mybooking_wrapper mybooking_margin-top">
+    <div class="container">
+  
+      <div class="row">
+        <div class="col-md-12">
+          <div class="mybooking_heading">
+            <h6><span style="font-weight: 600; color: #dc143c; ">M</span>y Booking</h6>
+          </div>
+        </div>
+      </div>
+      <table class="table table-striped ">
+          <thead>
+              <tr>
+                  <th scope="col">Stations Name</th>
+                  <th scope="col">Stations ID</th>
+                  <th scope="col">Machine Id</th>
+                  <th scope="col">Machine Type</th>
+                  <th scope="col">Date/Time</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Action</th>
+                </tr>
+                </thead>
+                <tbody *ngIf="myBookingResponses">
+                    <ng-container >
+                  
+                        <tr *ngFor="let myBookingResponse of myBookingResponses"
+                        >
+                          <td>{{myBookingResponse.business_name}}</td>
+                          <td>{{myBookingResponse.s_id}}</td>
+                          <td>{{myBookingResponse.m_id}}</td>
+                          <!-- <td>{{myBookingResponse.id}}</td> -->
+                          <td>{{myBookingResponse.machine_type}}</td>
+                          <td>{{myBookingResponse.b_date}} <br> {{myBookingResponse.time}}
+                            {{myBookingResponse.finish_time}}
+                          </td>
+                         
+                          <!-- <td *ngIf="myBookingResponse.booking_status==1">Initiatied</td> -->
+                          <td *ngIf="myBookingResponse.booking_status==2">Confirm</td>
+                          <td *ngIf="myBookingResponse.booking_status==3">Charging</td>
+                          <td *ngIf="myBookingResponse.booking_status==4">Complete</td>
+                          <td *ngIf="myBookingResponse.booking_status==5">Cancel</td>
+                         
+                          <td><i class="fa  fa-eye faeyeicon" (click)="openstationcancellationDialogBox(myBookingResponse.id)"></i>
+                         
+                            <i class="fa  fa-print   faprinticon"
+                            (click)="redirectToinvoice(myBookingResponse.id,myBookingResponse.booking_status)"></i>
+                              <i class="fa   fa-close   facloseicon" (click)="openDeleteDialogBox(myBookingResponse.id)"></i>
+                            </td>
+                          </tr>
+      
+                      </ng-container>
+  
+                </tbody>
+        </table>
+  
+    </div>
+  </div>

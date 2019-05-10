@@ -1,0 +1,182 @@
+
+
+<div class="station_boookingwrapper">
+  <button mat-button [mat-dialog-close]="true" class="no_button closebutton">
+    <i class="fa fa-close" style="color: red;font-weight:bold; font-size: 20px;"></i>
+  </button>
+<div class="station_heading">
+  <h6>Station Booking</h6>
+</div>
+<div class="booking_listing">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="bookingid">
+        <label>Booking Id </label>
+  
+        <p>{{myBookingDetailsResponses.booking_id}}</p>
+
+      </div>
+    </div>
+    <div class="col-md-4">
+        <div class="bookingid">
+          <label>User Name </label>
+    
+          <p *ngIf=" myBookingDetailsResponses.user_name && myBookingDetailsResponses.user_name">
+            {{myBookingDetailsResponses.user_name}}
+          </p>
+
+        </div>
+      </div>
+      <div class="col-md-4">
+          <div class="bookingid">
+            <label>Station Name </label>
+      
+            <p *ngIf=" myBookingDetailsResponses.stationname && myBookingDetailsResponses.stationname">{{myBookingDetailsResponses.stationname}}</p>
+  
+          </div>
+        </div>
+  </div>
+
+    <div class="row">
+        <div class="col-md-4">
+          <div class="bookingid">
+            <label>Machine ID </label>
+      
+            <p>{{myBookingDetailsResponses.id}}</p>
+  
+          </div>
+        </div>
+      
+          <div class="col-md-4">
+              <div class="bookingid">
+                <label> Date</label>
+          
+                <p>{{myBookingDetailsResponses.b_date}}</p>
+      
+              </div>
+            </div>
+            <div class="col-md-4">
+                <div class="bookingid">
+                  <label>Time </label>
+            
+                  <p>
+                      {{myBookingDetailsResponses.time}}
+
+                  </p>
+        
+                </div>
+              </div>
+           
+      </div>
+      <div class="row">
+        
+        
+            <div class="col-md-4">
+                <div class="bookingid">
+                  <label> Booked on</label>
+            
+                  <p>
+                      {{myBookingDetailsResponses.created_on}}
+
+                  </p>
+        
+                </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="bookingid">
+                    <label>Vechicle No </label>
+              
+                    <p>
+                        {{myBookingDetailsResponses.vehicle_no}}
+
+                    </p>
+          
+                  </div>
+                </div>
+             
+                <div class="col-md-4">
+                    <div class="bookingid">
+                      <label>Status  </label>
+                
+                      <p>
+                          {{myBookingDetailsResponses.booking_status}}
+
+                      </p>
+            
+                    </div>
+                  </div>
+        </div>
+     
+        
+</div>
+<hr>
+<div class="station_heading">
+    <h6>Charges</h6>
+  </div>
+<div class="chargeswrapper">
+  
+  <div class="row">
+    <div class="col-md-4">
+      <div class="booking">
+          <label>Booking </label>
+                
+          <p>
+              {{myBookingDetailsResponses.booking_charges}}
+          </p>
+      </div>
+    </div>
+    <div class="col-md-4">
+        <div class="booking">
+            <label>Booking GST</label>
+                  
+            <p>
+                {{myBookingDetailsResponses.booking_charges_gst}}
+
+            </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+          <div class="booking">
+              <label>Infra  </label>
+                    
+              <p>
+                  {{myBookingDetailsResponses.infra_charges}}
+
+              </p>
+          </div>
+        </div>
+  </div>
+  <div class="row">
+        <div class="col-md-4">
+            <div class="booking">
+                <label>Infra GST </label>
+                      
+                <p>
+                    {{myBookingDetailsResponses.infra_charges_gst}}
+
+                </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+              <div class="booking">
+                  <label>Electricity  </label>
+                        
+                  <p>
+                      {{myBookingDetailsResponses.electricty_charges}}
+
+                  </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+                <div class="booking">
+                    <label>Total  </label>
+                          
+                    <p>
+                        {{myBookingDetailsResponses.amount}}
+
+                    </p>
+                </div>
+              </div>
+              </div>
+  </div>
+</div>

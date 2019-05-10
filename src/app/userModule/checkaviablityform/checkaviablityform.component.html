@@ -1,0 +1,130 @@
+
+<app-loader *ngIf="loader"></app-loader>
+<div class="checkavailitypage">
+  <div class="container margin_topcheck">
+    <div class="row">
+      <div class="col-md-10 col-xs-10 col-sm-10">
+  <div class="checkavaility_heading">
+    <h3>Booking Confirmation</h3>
+  </div>
+  </div>
+  <div class="col-md-2">
+    <div class="back-button"  (click)="redIrectToBooknow()">
+      <p>Back</p>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+      <div class="table-responsive">
+      <table class="table table-borderless">
+         
+          <tbody>
+            <tr>
+              <td >Station Name</td>
+               <td >{{bookingData.station_name}}</td> 
+              <td >Machine ID</td>
+              <td align="right">{{bookingData.m_id}}</td>
+            </tr>
+           
+            <tr>
+              <td >Time</td>
+              <td >{{bookingData.time}}</td>
+              <td >Machine Type</td>
+              <td align="right">{{bookingData.machine_type}}</td>
+            </tr>
+           
+              <tr>
+                  <td >Power Capacity</td>
+                  <td >{{bookingData.power_capacity}}</td>
+                  <td>Adapter Type</td>
+                  <td align="right">{{bookingData.adapter_type}}</td>
+                </tr>
+               
+                  <tr>
+                      <td >Vehicle Number</td>
+                      <td>{{bookingData.vehicle_no}}</td>
+                      <td >Charging Time</td>
+                        <td align="right">{{bookingData.charging_time}} Minutes</td>
+                    
+                    </tr>
+                  
+                      <tr>
+                          <td>Booking Charge</td>
+                          <td ><i class="fa fa-inr"></i>{{booking_charge}}</td>
+                          <td >Infra Charge ( {{infra_per_minute}}/minute)</td>
+                          <td align="right">
+                              <i class="fa fa-inr"></i>{{total_infra}}
+                          </td>
+                        </tr>
+                       
+                          <tr >
+                              <td>Electricity Charge <span>(free)</span></td>
+                              <td>
+                                  <i class="fa fa-inr"></i> {{total_electricity}} <span>(for promotional use
+                                    only)</span>
+
+                              </td>
+                              <td> Taxes<span>(GST)</span></td>
+                              <td align="right">
+                               
+                                  <i class="fa fa-inr"></i> {{total_tax}}
+                              </td>
+                            </tr>
+                           
+                             
+                               
+                                  <tr >
+                                      <td >
+                                        Total Charges
+                                      </td>
+                                      <td >
+                                          <i class="fa fa-inr"></i>
+                                         {{total_charge}}
+    
+                                      </td>
+                                      <td >
+                                          Account Balance
+                                        </td>
+                                        <td align="right" *ngIf="checkbalance">
+                                            <i class="fa fa-inr"></i>
+                                          {{checkbalance}}</td>
+                                        
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                    <div class="terms_policy">
+                                        <div class="checkboxterms">
+                                            <input type="checkbox" value="" class="terms_checkbox"
+                                            (change)="terms_conditionCheck($event.currentTarget.checked)"> 
+                                            <p class="terms_policytext">
+                                                I Accept the Terms & Conditions Privacy
+                                                Policy
+                                             </p>
+                                             <button type="button" class="btn-success addFund"
+                                             (click)="openDialogAddFund()"
+                                              > 
+                                                ADD FUND
+                                              </button>
+                                        </div>
+                                        </div>
+                                       
+                                        
+                                       
+                                         
+                                            
+                                         
+                                         
+                                      
+                                        
+        
+      
+       <div class="paySectionbutton">
+         <button class="btn-success pay_button" (click)="bookingpayment()"
+         [disabled]="!terms_conditionCheckDisableButton">Book Now</button>
+         </div>
+        </div>
+  </div>
+</div>
+</div>
+</div>

@@ -1,0 +1,232 @@
+<p-toast position="top-right"></p-toast>
+<div class="loginsignupwrapper">
+<button mat-button [mat-dialog-close]="true"
+class="orderformclosebutton"><i class=" fa fa-close"></i></button>
+<div class="loginFormparent">
+<div class="tabform">
+<p-tabView>
+
+<p-tabPanel header="Log In">
+<div class="login-form">
+<div class="login-heading">
+<h2>Welcome Back!</h2>
+
+</div>
+<app-loader *ngIf="loader"></app-loader>
+<div class="form_login">
+<form class="signinform"
+[formGroup]="signinForm" (ngSubmit)="onSubmitsigninForm()">
+<div class="ui-grid-row">
+<div class="ui-grid-col-12">
+
+<div class="email">
+
+<mat-form-field class="loginform-control">
+<input matInput type="text" placeholder="Enter a Email/Mobile"
+formControlName="email">
+<div class="errormesage"
+*ngIf="!signinForm.controls['email'].valid
+&& signinForm.controls['email'].touched">
+<p>Please Enter Full Email Address</p>
+</div> 
+
+</mat-form-field> 
+</div>
+</div>
+</div>
+<div class="ui-grid-row">
+<div class="ui-grid-col-12">
+<div class="password">
+
+<mat-form-field class="loginform-control">
+<input matInput type="password" placeholder="Enter a password"
+formControlName="password">
+
+<div class="errormesage"
+*ngIf="!signinForm.controls['password'].valid
+&& signinForm.controls['password'].touched">
+<p>*Fields Required</p>
+</div> 
+</mat-form-field> 
+</div>
+</div>
+</div>
+<div class="ui-grid-row">
+<div class="ui-grid-col-12">
+<div class="submit">
+<button type="submit" class=" submit_button"
+[disabled]="!signinForm.valid">Submit</button>
+</div>
+</div>
+</div>
+
+</form>
+
+</div>
+
+</div>
+</p-tabPanel>
+<p-tabPanel header="Sign Up">
+<div class="form_login">
+<div class="login-heading">
+<h2> Sign Up for Account!</h2>
+
+</div>
+<form [formGroup]="signupinForm" (ngSubmit)="onSubmitsignupForm()"
+class="signupform">
+<div class="row">
+<div class="col-md-12">
+
+<div class="email">
+
+<mat-form-field class="loginform-control">
+<input matInput type="text" placeholder="Enter a name" 
+formControlName="name">
+
+<div class="errormesage"
+*ngIf="!signupinForm.controls['name'].valid
+&& signupinForm.controls['name'].touched">
+<p>*Fields Required</p>
+</div> 
+
+</mat-form-field> 
+</div>
+</div>
+</div> 
+<!-- <div class="row">
+<div class="col-md-12">
+
+<div class="name">
+
+<mat-form-field class="loginform-control">
+<input matInput type="text" placeholder="Enter a name"
+formControlName="user_name">
+<div class="errormesage"
+*ngIf="!signupinForm.controls['user_name'].valid
+&& signupinForm.controls['user_name'].touched">
+<p>*Fields Required</p>
+</div> 
+
+</mat-form-field> 
+</div>
+</div>
+</div> -->
+<div class="row">
+<div class="col-md-12">
+
+<div class="email">
+
+<mat-form-field class="loginform-control">
+<input matInput type="text" placeholder="Enter a email" 
+formControlName="email">
+
+<div class="errormesage"
+*ngIf="!signupinForm.controls['email'].valid
+&& signupinForm.controls['email'].touched">
+<p>Please Enter Full Email Address</p>
+</div> 
+
+</mat-form-field> 
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-12">
+<div class="password">
+<mat-form-field class="loginform-control">
+<input matInput type="password" class="loginform-control" placeholder="Enter a password" 
+formControlName="password">
+<div class="errormesage"
+*ngIf="!signupinForm.controls['password'].valid
+&& signupinForm.controls['password'].touched">
+<p>*Fields Required</p>
+</div> 
+
+</mat-form-field> 
+
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<div class="password">
+<mat-form-field class="loginform-control">
+<input matInput type="password" class="loginform-control" placeholder="Re-enter a password" 
+formControlName="c_password"
+[errorStateMatcher]="matcher">
+<div class="errormesage"
+*ngIf="!signupinForm.controls['c_password'].valid
+&& signupinForm.controls['c_password'].touched">
+<p>*Fields Required And Email </p>
+</div> 
+<mat-error *ngIf="signupinForm.hasError('notSame')">
+Passwords do not match
+</mat-error> 
+</mat-form-field> 
+
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<div class="mobile">
+
+<mat-form-field class="loginform-control">
+<input matInput type="number" min="0" class="loginform-control" placeholder="Mobile No" 
+formControlName="mobile"
+(change)="showotppassword()" >
+<div class="errormesage"
+*ngIf="!signupinForm.controls['mobile'].valid
+&& signupinForm.controls['mobile'].touched">
+<p>*Fields Required</p>
+</div> 
+</mat-form-field> 
+</div> 
+</div>
+<div class="col-md-6" *ngIf="otppasswordFlag">
+<input type="text" class="contact_listing" placeholder="OTP Password" #otpMatced
+(change)="otpChecked(otpMatced.value)" />
+</div>
+<div class="col-md-3" *ngIf="resendOtpFlag">
+<div class="resendotp">
+<button type="button" class="resend_password"
+(click)= "showotppassword();hideresendButton()">Resend OTP</button>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<div class="password">
+<mat-checkbox>
+I have read and agree to the 
+<a [routerLink]="routerLinkterms" target="_blank"
+class="termsandservicerouting"> Terms of Services</a> 
+</mat-checkbox> 
+
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<div class="submit">
+
+<button type="submit" class=" submit_button"
+
+[disabled]="!signupinForm.valid && otppasswordFlag">Submit</button> 
+</div>
+</div>
+</div>
+
+
+
+</form>
+
+</div>
+</p-tabPanel>
+
+</p-tabView>
+
+</div> 
+</div>
+</div>

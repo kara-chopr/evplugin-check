@@ -1,0 +1,106 @@
+
+
+<div class="container margin_topfavorite">
+        <div class="haeding_favorite">
+            <h6 style="font-size:18px; text-align: center; margin-bottom: 20px;">Favorite</h6>
+        </div>
+    <div class="ui-grid ui-grid-responsive ui-fluid" >
+        
+                <div class="row" *ngIf="favorites">
+          
+            <div class=" col-md-6 "  *ngFor="let favorite of favorites">
+                    <div   *ngFor="let buisness_type of favorite.buisness_type">
+                <div class="favorite-block" >
+                
+                  
+                             <div class="favorites-cardbox" >
+                        <div class="favorite-loop">
+                            <div class="row">
+                                <div class=" col-md-3 col-sm-12  col-lg-3">
+                                    <div class="card-box">
+                                       
+                                        <div class="images">
+                                            <img src="https://api.evplugincharge.com/{{favorite.cover_photo_url}}" />
+
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                                <div class=" col-md-5 col-sm-12  col-lg-5">
+                                    <div class="card-content">
+                                        <h4 class="card-heading"> {{favorite.business_name}}</h4>
+                                        <h4 class="card-heading"> {{buisness_type.type_name}}</h4>
+                                        <span class="address">
+                                            <i class="fa fa-map-marker" style="color: orange;"></i>
+                                            {{favorite.location}},{{favorite.city}},
+                                            {{favorite.state}}
+                                        </span>
+                                        <span class="favoritetiming" *ngIf="favorite.open_24 == 0">
+                                            <i class="fa fa-clock-o" style="color: #0097A7;"></i>
+                                            {{favorite.open_time}} &nbsp;  {{favorite.close_time}}
+                                        </span>
+                                        <span class="favoritetiming" *ngIf="favorite.open_24 == 1">
+                                                <i class="fa fa-clock-o" style="color: #0097A7;"></i>
+                                               24 Hrs
+                                            </span>
+
+                                    </div>
+                                </div>
+                                <div class=" col-md-3 col-sm-12  col-lg-3">
+                                    <div class="views">
+                                        <span class="date">
+                                            <i class="fa fa-heart" style="color: orangered;"></i>
+                                            <!-- {{favorite.created_at}} -->
+                                        </span>
+                                        <span class="comments">
+                                            <i class="fa fa-comments" style="color: #0097A7;"></i> {{favorite.no_of_reviews}} &nbsp;
+                                            <i class="fa fa-eye" style="color: #0097A7;"></i> {{favorite.no_of_views}}
+                                        </span>
+                                        <span class="star" *ngIf="favorite.avg_rating > 0">
+                                                <ngb-rating [rate]="favorite.avg_rating" 
+                                                max="5"  [readonly]="readonly"></ngb-rating>
+                                              
+                                        </span>
+                                    </div>
+                                   
+                           
+                                </div>
+                                <div class=" col-md-1 col-sm-1  col-lg-1">
+                                    <div class="action">
+                                        <ul>
+                                                <li
+                                                matTooltip="VIEW">
+                                                        <i class="fa fa-eye" style="color: brown; width: 10px; padding: 0px 15px 10px 10px;"
+                                                        (click)="redirectToproductDescription(favorite.business_id)"></i>
+                                                </li>
+                                            <li
+                                            matTooltip="Remove From The Faovrite">
+                                                    <i class="fa fa fa-trash" style="color: brown; width: 10px; padding: 0px 15px 10px 10px;"
+                                                    (click)="deletefavorite(favorite.business_id)"></i>
+                                            </li> 
+                                           
+                                        </ul>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+               
+               
+             
+               
+               
+
+
+
+
+            </div>
+            
+            
+        </div>
+        </div>
+</div>
+    
+    </div>
+    </div>

@@ -1,0 +1,1536 @@
+<app-loader *ngIf="loading"></app-loader>
+
+ <div class=" slidder">
+     <img src="assets/b2.jpg" class="img-responsive" style="background-size:cover; width:100%; "/>
+    <!-- <owl-carousel-o [options]="slidderOption">
+
+
+        <ng-container *ngFor="let slidder of slidders">
+            <ng-template carouselSlide>
+                <div class="ui-grid-row">
+
+                    <div class="slidder-image">
+                        <img src="{{slidder.image}}" />
+
+                    </div>
+
+                </div>
+            </ng-template>
+        </ng-container>
+
+
+    </owl-carousel-o> -->
+
+    <div class="sliddernearmeformSection form-background">
+        <div class="container">
+
+            <div class="row ">
+                <div class="nearSearchlocation ">
+                    <ul>
+
+                        <div id="search-input">
+                            <form id="nearmeFormStart"  [formGroup]="nearmeFormGroup" (ngSubmit)="onSubmitnearmeForm()"
+                                novalidate>
+                                <li class="selectBoxarea"
+                                *ngIf="businessServiceResponses && businessServiceResponses.success">
+                                    <select class="selectedpluginarea" id="selectedpluginareaid" 
+                                    formControlName="business_type_id" (change)="getbussinessId($event.target.value)">
+                                   
+                                        <option *ngFor=" let servicesCatgries of businessServiceResponses.success"
+                                        >
+                                            {{servicesCatgries.type_name}}</option>
+                                    </select>
+                                </li>
+                                <li class="searchstatecity">
+
+                                    <input ngx-google-places-autocomplete (keyup)="changeConfig()" 
+                                    
+                                    formControlName="google_places_autocomplete"      class="statecityinput" #places="ngx-places" (onAddressChange)="handleAddressChange($event)" />
+                                    
+                                </li>
+                                <input type="hidden" formControlName="latitude"/>
+                                <input type="hidden" formControlName="longitude"/>
+                                <li class="sliddersubmitButton">
+
+                                    <button type="submit" class="nearmeButton">
+                                        <i class=" fa fa-location-arrow hidemobileicon"></i> Near me</button>
+
+
+
+                                </li>
+                            </form>
+                        </div>
+                    </ul>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+</div> 
+<div class="fiveboxessection">
+    <div class="container">
+        <div class="row">
+            <div class="five-boxes">
+
+                <!-- <div class="ui-grid-row center">
+                        <div class="evstation_categriesheading">
+                            <h3>WHERE CAN YOU FIND US?</h3>
+                        </div>
+                        </div>  -->
+
+                <div>
+                    <div class="evstation-categries">
+                        <div class="row">
+                            <div class="col-md-2 col-sm-2 col-xs-12 ">
+                                <div class="evstation_box">
+                                    <div class="categries_icon ">
+                                        <img src="{{evstation_categriess[0].icon}}" />
+                                        <p class="listing-number">{{evplugin_evestationsLength}}</p>
+                                    </div>
+                                    <div class="category-container evstation_container">
+                                        <h6 class="category-name">
+                                            <a>
+                                                {{evstation_categriess[0].categries}}</a>
+                                        </h6>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-12 ">
+                                <div class="resturent_box">
+                                    <div class="categries_icon">
+                                        <img src="{{evstation_categriess[1].icon}}" />
+                                        <p class="listing-number">{{evplugin_resturantsLength}}</p>
+                                    </div>
+                                    <div class="category-container resturants_container">
+                                        <h6 class="category-name">
+                                            <a>
+                                                {{evstation_categriess[1].categries}}</a>
+                                        </h6>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-12 ">
+                                <div class="mall_box">
+                                    <div class="categries_icon">
+                                        <img src="{{evstation_categriess[2].icon}}" />
+                                        <p class="listing-number">{{evplugin_mallsLength}}</p>
+                                    </div>
+                                    <div class="category-container mall_container">
+                                        <h6 class="category-name">
+                                            <a>
+                                                {{evstation_categriess[2].categries}}</a>
+                                        </h6>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-12 ">
+                                
+                                <div class="resturent_box">
+                                    <div id="hotel_icon">
+                                        <img src="{{evstation_categriess[3].icon}}" />
+                                        <p class="listing-number">{{evplugin_hotelsLength}}</p>
+                                    </div>
+                                    <div class="category-container hotel_container">
+                                        <h6 class="category-name">
+                                            <a>
+                                                {{evstation_categriess[3].categries}}</a>
+                                        </h6>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-12">
+                                <div class="parking_box">
+                                    <div class="categries_icon">
+                                        <img src="{{evstation_categriess[4].icon}}" />
+                                        <p class="listing-number">{{evplugin_parkingsLength}}</p>
+                                    </div>
+                                    <div class="category-container parking_container">
+                                        <h6 class="category-name">
+                                            <a>
+                                                {{evstation_categriess[4].categries}}</a>
+                                        </h6>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-------------------mobile---view-------section-------------------->
+<div class="col-sm-12 pokman8">
+    <div class="container">
+    <div class="row">
+        
+              <ul class="icon_section">
+                  <li>
+                        <div class="categries_icon ">
+                                <img src="{{evstation_categriess_mobile[0].icon}}" />
+                                <p class="listing-number"> {{evstation_categriess[0].categries}}</p>
+                            </div>
+                  </li>
+                  <li>
+                        <div class="categries_icon">
+                                <img src="{{evstation_categriess_mobile[1].icon}}" />
+                                <p class="listing-number"> {{evstation_categriess[1].categries}}</p>
+                            </div>
+                  </li>
+                  <li>
+                        <div class="categries_icon">
+                                <img style="    width:71%;" src="{{evstation_categriess_mobile[2].icon}}" />
+                                <p style="    margin-left: 17px;" class="listing-number"> {{evstation_categriess[2].categries}}</p>
+                            </div>
+                  </li>
+                  <li>
+                        <div class="categries_icon">
+                                <img style="    width:80%;" src="{{evstation_categriess_mobile[3].icon}}" />
+                                <p style="    margin-left: 13px;" class="listing-number"> {{evstation_categriess[3].categries}}</p>
+                            </div>
+                  </li>
+                  <li>
+                        <div class="categries_icon">
+                                <img style="    width: 69%;" src="{{evstation_categriess_mobile[4].icon}}" />
+                                <p style="    margin-left: 8px;" class="listing-number"> {{evstation_categriess[4].categries}}</p>
+                            </div>
+                  </li>
+              </ul>
+    </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-------------------mobile---view-------section----end---------------->
+
+<!-- Our Product Carousel Starts Here-->
+<div id="our-products">
+    <div class="products-heading">
+        <p class="producthead">Explore our products</p>
+        <p class="product-subheading">Our charging solutions are compatible with every (future) electric vehicle.</p>
+
+
+    </div>
+    <div class="container">
+    <div class="productcarouselrow">
+        <owl-carousel-o [options]="chargerowlOption">
+
+
+            <ng-container *ngFor="let car of chargerDescriptionResponse">
+                <ng-template carouselSlide>
+                    <div class="ui-grid ui-grid-responsive descriptionrow">
+
+                        <div class="ui-grid-row ">
+
+                            <div class="  col-sm-3 col-md-3 col-xs-3 hidemobileview-chargerdescription">
+                                <div class="chargericonwrapper">
+                                    <span class="chargingicon icon-renault"></span>
+                                    <span class="chargertext">Cloud</span>
+                                </div>
+                                <div class="chargericonwrapper">
+
+                                    <span class="chargingicon  icon-nissan" *ngIf="car.pname !=='AC ROPE SET ' && car.pname !=='Electric Vehicle Charger'">
+                                    </span>
+
+                                    <span class="chargingicon  acropesetSocket" *ngIf="car.pname =='AC ROPE SET '"></span>
+                                    <span class="chargingicon  vechilecharger" *ngIf="car.pname =='Electric Vehicle Charger'"></span>
+
+                                    <span class="chargertext" *ngIf="car.pname !=='AC ROPE SET ' && car.pname !=='Electric Vehicle Charger'">Socket
+                                        Pin 7</span>
+                                    <span class="chargertext" *ngIf="car.pname =='AC ROPE SET '">Socket Pin 3</span>
+                                    <span class="chargertext" *ngIf="car.pname =='Electric Vehicle Charger' ">Socket
+                                        Pin 9</span>
+
+                                </div>
+
+                                <div class="chargericonwrapper">
+                                    <span class="chargingicon   icon-energy" *ngIf="(car.pname !=='DELTA DC Wallbox 25kW' && car.pname !=='DELTA Ultra Fast Charger 50kW')"><i
+                                            class="fa fa-power-off fa-2x" style="margin-top:5px; color:red; float:left"></i></span>
+                                    <span class="chargertext" style="text-align: center; margin-left: -4px; font-weight: 800"
+                                        *ngIf="(car.pname !=='DELTA DC Wallbox 25kW' && car.pname !=='DELTA Ultra Fast Charger 50kW')">Power</span>
+                                    <span class="chargingicon  vechilecharger" *ngIf="car.pname =='DELTA Ultra Fast Charger 50kW'"></span>
+                                    <span class="chargertext" *ngIf="car.pname =='DELTA Ultra Fast Charger 50kW'">Socket
+                                        Pin 9</span>
+                                    <span class="chargingicon   vechilecharger " *ngIf="(car.pname =='DELTA DC Wallbox 25kW')">
+
+                                    </span>
+                                    <span class="chargertext" *ngIf="car.pname =='DELTA DC Wallbox 25kW'">Socket Pin 9</span>
+                                </div>
+                                <!--    <div class="chargericonwrapper" pTooltip="KeContact X-series are equipped with GSM and can transfer information about status of their usage to the server">
+                                        <span class="chargingicon   icon-vde"></span>
+                                        <span class="chargertext">Ready</span>
+                                </div>  -->
+                            </div>
+                           
+                            <div class=" col-md-6 col-xs-12 col-sm-12" *ngFor="let productImage of car.productImage">
+                                <div class="chargerimage" (click)="storechargerId(car.pid)"
+                                [routerLink]="['/home/shared/Chargerdescription', car.url]">
+                                    <img src="http://api.evplugincharge.com{{productImage.image}}" class="center-block img-responsive">
+
+                                </div>
+
+
+                            </div>
+
+                            <div class="  col-md-3 col-xs-12 col-sm-3 hidemobileview-chargerdescription">
+                                <div class="chargerrightwrapper">
+                                    <div class="chargericonwrapperright">
+                                        <span class="chargingicon  icon-jack1"></span>
+                                        <span class="chargertextright">Booking via APP </span>
+                                    </div>
+                                    <!--  <div class="chargericonwrapperright" pTooltip="KeContact X-series are equipped with GSM and can transfer information about status of their usage to the server">
+                                            <span class="chargingicon   icon-master"></span>
+                                            <span class="chargertextright">Ready</span>
+                                    </div>  -->
+                                    <div class="chargericonwrapperright">
+                                        <span class="chargingicon    icon-connectivity"></span>
+                                        <span class="chargertextright">Adaptor {{car.adaptertype}}</span>
+                                    </div>
+                                    <div class="chargericonwrapperright">
+                                        <span class="chargingicon    icon-wifi"></span>
+                                        <span class="chargertextright">RFID Card</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="description-title">
+                                    <h3 
+                                    (click)="storechargerId(car.pid)"
+                                [routerLink]="['/home/shared/Chargerdescription', car.url]">{{car.pname}}</h3>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="  col-md-9 col-sm-9 col-xs-9">
+                                <div class="descriptionbox">
+
+                                    <div class="description">
+                                        <p><i class="fa fa-power-off powerofficon"></i>&nbsp;<strong>Power:</strong>
+
+                                            <span class="rightdescription">{{car.power}}</span></p>
+                                        <p><i class="fa fa-renren cablesizeicon"></i>&nbsp;<strong>Cable size:</strong>
+
+                                            <span class="rightdescription">{{car.cable}}</span></p>
+                                        <p><i class="fa fa-sun-o compatibilityicon"></i>&nbsp;<strong>Machine Type:</strong>
+                                            <span class="rightdescription">{{car.type}}</span>
+                                        </p>
+
+                                        <p><i class="fa fa-inr priceicon"></i>&nbsp;<strong>Price:</strong>
+                                            <span class="price-final rightdescription">
+
+                                                {{car.price}}
+                                            </span>
+                                        </p>
+                                    </div>
+
+                                    <!--- <button mat-raised-button (click)="openDialog()">Pick one</button> -->
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="order-button">
+                                    <button type="button" class="btn btn-green order-button" (click)="openDialog( car.productImage,car.pid)">ORDER</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </ng-container>
+
+        </owl-carousel-o>
+    </div>
+</div>
+</div>
+<!-- Our Product Carousel Ends Here-->
+
+
+
+<!-- Why Choose Us Starts Here-->
+<div class="container">
+    <div class="ui-grid ui-grid-responsive ui-fluid">
+        <div class="ourspecility">
+            <div class="ui-grid-row">
+                <div class="ourspecility-heading" style=" text-align: center;
+                    width: 100%;
+                    margin-top: -18px;
+                    margin-bottom: 30px;">
+                    <h3>
+                        <span style="color:#e80b34eb;
+                           border-bottom: 1px #ccc solid;padding-bottom: 3px;">WHY
+                        </span>DRIVERS CHOOSE EVPLUGIN?
+                    </h3>
+                </div>
+            </div>
+            <div class="ui-grid-row">
+
+                <div class="  col-md-7 col-xs-12 col-sm-7 col-lg-7">
+                    <div class="para">
+                        <p>
+                                EVPlugin is the first of its kind electric vehicle (EV) charging service in India 
+                                with the mission to ensure that every EV owner has access to affordable , 
+                                quick and hassle free fast charging facilities . Our founders have many years of 
+                                experience in EV industry . With our EV charging facilities and products , we are the 
+                                torch bearers of the electric vehicles ’ rap idly growing market.
+                        </p>
+                        <p>
+                                EVPlugincharge.com and its apps are your best bet when it comes to buying EV parts 
+                                and or booking an appointment at EV charging stations for charging your vehicle , 
+                                as we make the complicated process of finding , booking EV stations and charging your EV easier an d simpler. We have collaborated with different restaurants , malls, hotels and parking lots to give you a smooth experience. This way you can eat, shop, and rest while we charge your EV in a couple of minutes. You can also explore our products to get an EV charger for your home. When it comes to quality , our products are the best in
+                                 the market. Our products are designed to be compatible with future electric vehicle .
+                        </p>
+                        <!---    <div class="order-button"><button class="btn btn-expolre order-button" type="button">Explore More</button></div>  -->
+
+                    </div>
+                </div>
+                <div class="  col-sm-5 col-xs-12 col-md-5">
+                    <div class="specilityimage">
+                        <img src="assets/busines-section-2.png" class="img-responsive" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Why Choose Us Ends Here-->
+
+<p class="producthead"> <span style="color:#e80b34eb;
+    border-bottom: 1px #ccc solid;padding-bottom: 3px;">Explore </span>  Our Station </p>
+<!-- All Stations Tabs Starts Here-->
+<div id="business_catgriestab">
+    <div class="container">
+        <div class="ui-grid ui-grid-responsive ui-fluid">
+            <div class="ui-grid-row medium_tabButton">
+                <ul class="tabButtonul">
+                    <li *ngFor=" let tabButton of tabButtons">
+
+                        <div class="tabButton">
+                            <p class="tabButtonheading " [ngClass]="{'activeTabButton': activeTabButton == tabButton.buttonText}"
+                                (click)="activeClassTabButton(tabButton.buttonText)">&nbsp;&nbsp;{{tabButton.buttonText}}</p>
+                        </div>
+
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+        <div class="ui-grid ui-grid-responsive ui-fluid">
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-12">
+                    <!---   All Stations Starts  Here-->
+                    <div class="allStaions show" *ngIf="activeTabButton == 'All' " [class.show]="activeTabButton == 'All' ">
+                        <div class="container ">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="evplugin" id="evstation">
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="evpluginCarousel col-md-4">
+                                <owl-carousel-o [options]="allStationowlCarouselOption">
+
+                                    <ng-container *ngFor="let evplugin_evestation of evpluginDatas">
+                                        <ng-template carouselSlide>
+
+                                            <div class="card-container" (click)="showuserDetails(evplugin_evestation)">
+                                                <div class="row">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12"
+                                                    [routerLink]="['/home/shared/productdescription',evplugin_evestation.url]">
+
+                                                        <div class="evplugin_image">
+                                                            <img src="https://api.evplugincharge.com{{evplugin_evestation.cover_photo_url}}" />
+                                                            <div class="overlay">
+                                                                <div class="text"> {{evplugin_evestation.pname}} </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 col-xs-12 col-sm-12">
+                                                        <div class="evplugin_heading">
+                                                            <p>{{evplugin_evestation.pname}}</p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row">
+
+                                                    <div class="col-md-12 col-xs-12 col-sm-12">
+                                                        <div class="listing_box">
+
+                                                            <div class="listing_location">
+                                                                <i class="fa fa-map-marker famap_marker famarkerClass"></i>
+                                                                <p class="rr"> {{evplugin_evestation.address}} 
+                                                                    <!-- &nbsp;{{evplugin_evestation.city}} -->
+                                                                    <!-- &nbsp;{{evplugin_evestation.state}} -->
+                                                                </p>
+                                                                <!-- &nbsp; {{evplugin_evestation.city_name}}  -->
+
+                                                            </div>
+                                                            <!-- <div class="listing_charging">
+                                                                <span class="faplug">
+                                                                    <i class=" fa fa-plug  "></i>
+                                                                    {{evplugin_evestation.adaptor}}</span>
+                                                                <span class="fainr">
+                                                                    <i class=" fa fa-inr  "></i>
+                                                                    {{evplugin_evestation.chargerprice}}
+                                                                </span>
+                                                            </div> -->
+                                                            <div class="listing_timing">
+                                                                <span class="opentime"> <i class="fa fa-clock-o faclock"></i>&nbsp;
+                                                                    {{evplugin_evestation.open_time}}</span>
+                                                                <span class="closetime">
+                                                                    {{evplugin_evestation.close_time}}
+                                                                </span>
+                                                            </div>
+                                                            <div class="listing_view">
+                                                                <span class=" faeye">
+                                                                    <i class="fa fa-eye" style="color: #009ACD;"></i>&nbsp;
+                                                                    {{evplugin_evestation.no_of_views}}
+                                                                </span>
+                                                                <span class="facomment">
+                                                                    <i class="fa fa-comment" style="color: gold;"></i>&nbsp;
+                                                                    {{evplugin_evestation.no_of_reviews}}
+                                                                </span>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </ng-template>
+                                    </ng-container>
+
+                                </owl-carousel-o>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!---   All Stations Ends  Here-->
+
+                    <!---   All Ev Staions Starts  Here-->
+                    <div class="evStation show" *ngIf="activeTabButton == 'Ev Stations' " [class.show]="activeTabButton == 'Ev Stations' ">
+                        <div class="container ">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="evplugin" id="evstation">
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="evpluginCarousel col-md-4">
+                                <owl-carousel-o [options]="allStationowlCarouselOption">
+
+                                    <ng-container *ngFor="let evplugin_evestation of evplugin_evestations">
+                                        <ng-template carouselSlide>
+
+                                            <div class="card-container" (click)="showuserDetails(evplugin_evestation)">
+                                                <div class="row">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12"
+                                                    [routerLink]="['/home/shared/productdescription', evplugin_evestation.url]">
+
+                                                        <div class="evplugin_image">
+                                                            <img src="https://api.evplugincharge.com{{evplugin_evestation.cover_photo_url}}" />
+                                                            <div class="overlay">
+                                                                <div class="text"> {{evplugin_evestation.pname}} </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 col-xs-12 col-sm-12">
+                                                        <div class="evplugin_heading">
+                                                            <p>{{evplugin_evestation.pname}}</p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row">
+
+                                                    <div class="col-md-12 col-xs-12 col-sm-12">
+                                                        <div class="listing_box">
+
+                                                            <div class="listing_location">
+                                                                <i class="fa fa-map-marker famap_marker famarkerClass"></i>
+                                                                <p class="rr">
+                                                                        {{evplugin_evestation.address}}
+                                                                     <!-- {{evplugin_evestation.location}} &nbsp;
+                                                                     {{evplugin_evestation.city}}
+                                                                    &nbsp;{{evplugin_evestation.state}} -->
+                                                                </p>
+
+                                                            </div>
+                                                            <div class="listing_charging">
+                                                                <!-- <span class="faplug">
+                                                                    <i class=" fa fa-plug  "></i>
+                                                                    {{evplugin_evestation.adaptor}}</span>
+                                                                <span class="fainr">
+                                                                    <i class=" fa fa-inr  "></i>
+                                                                    {{evplugin_evestation.chargerprice}}
+                                                                </span> -->
+                                                            </div>
+                                                            <div class="listing_timing">
+                                                                <span class="opentime"> <i class="fa fa-clock-o faclock"></i>&nbsp;
+                                                                    {{evplugin_evestation.open_time}}</span>
+                                                                <span class="closetime">
+                                                                    {{evplugin_evestation.close_time}}
+                                                                </span>
+                                                            </div>
+                                                            <div class="listing_view">
+                                                                <span class=" faeye">
+                                                                    <i class="fa fa-eye"></i>&nbsp;
+                                                                    {{evplugin_evestation.no_of_views}}
+                                                                </span>
+                                                                <span class="facomment">
+                                                                    <i class="fa fa-comment"></i>&nbsp;
+                                                                    {{evplugin_evestation.no_of_reviews}}
+                                                                </span>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </ng-template>
+                                    </ng-container>
+
+                                </owl-carousel-o>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!---   All Ev Staions Ends  Here-->
+                    <!---   All Restaurant Starts  Here-->
+                    <div class="Restaurant show" *ngIf="activeTabButton == 'Restaurant' " [class.show]="activeTabButton == 'Restaurant' ">
+                        <div class="container ">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="evplugin" id="restaurant">
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="evpluginCarousel col-md-4">
+                                <owl-carousel-o [options]="allStationowlCarouselOptions">
+
+                                    <ng-container *ngFor="let evplugin_resturant of evplugin_resturants">
+                                        <ng-template carouselSlide>
+
+                                            <div class="card-container" (click)="showuserDetails(evplugin_resturant)">
+                                                <div class="row">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12"
+                                                    [routerLink]="['/home/shared/productdescription', evplugin_resturant.url]">
+
+                                                        <div class="evplugin_image">
+                                                            <img src="https://api.evplugincharge.com{{evplugin_resturant.cover_photo_url}}" />
+                                                            <div class="overlay">
+                                                                <div class="text"> {{evplugin_resturant.pname}} </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 col-xs-12 col-sm-12">
+                                                        <div class="evplugin_heading">
+                                                            <p>{{evplugin_resturant.pname}}</p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row">
+
+                                                    <div class="col-md-12 col-xs-12 col-sm-12">
+                                                        <div class="listing_box">
+
+                                                            <div class="listing_location">
+                                                                <i class="fa fa-map-marker famap_marker famarkerClass"></i>
+                                                                <p class="rr"> 
+                                                                        {{evplugin_resturant.address}}
+                                                                    <!-- {{evplugin_resturant.location}} &nbsp;{{evplugin_resturant.city}}
+                                                                    &nbsp;{{evplugin_resturant.state}} -->
+                                                                </p>
+
+                                                            </div>
+                                                            <div class="listing_charging">
+                                                                <!-- <span class="faplug">
+                                                                    <i class=" fa fa-plug  "></i>
+                                                                    {{evplugin_resturant.adaptor}}</span>
+                                                                <span class="fainr">
+                                                                    <i class=" fa fa-inr  "></i>
+                                                                    {{evplugin_resturant.chargerprice}}
+                                                                </span> -->
+                                                            </div>
+                                                            <div class="listing_timing">
+                                                                <span class="opentime"> <i class="fa fa-clock-o faclock"></i>&nbsp;
+                                                                    {{evplugin_resturant.open_time}}</span>
+                                                                <span class="closetime">
+                                                                    {{evplugin_resturant.close_time}}
+                                                                </span>
+                                                            </div>
+                                                            <div class="listing_view">
+                                                                <span class=" faeye">
+                                                                    <i class="fa fa-eye"></i>&nbsp;
+                                                                    {{evplugin_resturant.no_of_views}}
+                                                                </span>
+                                                                <span class="facomment">
+                                                                    <i class="fa fa-comment"></i>&nbsp;
+                                                                    {{evplugin_resturant.no_of_reviews}}
+                                                                </span>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </ng-template>
+                                    </ng-container>
+
+                                </owl-carousel-o>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!---   All Restaurant Ends  Here-->
+
+                    <!---   All Mall Starts  Here-->
+
+
+                    <div class="Mall show" *ngIf="activeTabButton == 'Mall' " [class.show]="activeTabButton == 'Mall' ">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="evplugin" id="evstation">
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="evpluginCarousel">
+                                <owl-carousel-o [options]="allStationowlCarouselOptions">
+
+                                    <ng-container *ngFor="let evplugin_mall of evplugin_malls">
+                                        <ng-template carouselSlide>
+
+                                            <div class="card-container" (click)="showuserDetails(evplugin_mall)">
+                                                <div class="row">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12"
+                                                    [routerLink]="['/home/shared/productdescription', evplugin_mall.url]">
+
+                                                        <div class="evplugin_image">
+                                                            <img src="https://api.evplugincharge.com{{evplugin_mall.cover_photo_url}}" />
+                                                            <div class="overlay">
+                                                                <div class="text"> {{evplugin_mall.pname}} </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 col-xs-12 col-sm-12">
+                                                        <div class="evplugin_heading">
+                                                            <p>{{evplugin_mall.pname}}</p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row">
+
+                                                    <div class="col-md-12 col-xs-12 col-sm-12">
+                                                        <div class="listing_box">
+
+                                                            <div class="listing_location">
+                                                                <i class="fa fa-map-marker famap_marker famarkerClass"></i>
+                                                                <p class="rr"> 
+                                                                        {{evplugin_mall.address}}
+                                                                    <!-- {{evplugin_mall.location}} &nbsp;{{evplugin_mall.city}}
+                                                                    &nbsp;{{evplugin_mall.state}} -->
+                                                                </p>
+                                                              
+                                                            </div>
+                                                            <div class="listing_charging">
+                                                                <!-- <span class="faplug">
+                                                                    <i class=" fa fa-plug  "></i>
+                                                                    {{evplugin_mall.adaptor}}</span>
+                                                                <span class="fainr">
+                                                                    <i class=" fa fa-inr  "></i>
+                                                                    {{evplugin_mall.chargerprice}}
+                                                                </span> -->
+                                                            </div>
+                                                            <div class="listing_timing">
+
+                                                                <span class="opentime"> <i class="fa fa-clock-o faclock"></i>
+                                                                    {{evplugin_mall.open_time}}</span>
+                                                                <span class="closetime"> {{evplugin_mall.close_time}}</span>
+                                                            </div>
+                                                            <div class="listing_view">
+                                                                <span class=" faeye">
+                                                                    <i class="fa fa-eye"></i>&nbsp;
+                                                                    {{evplugin_mall.no_of_views}}
+                                                                </span>
+                                                                <span class="facomment">
+                                                                    <i class="fa fa-comment"></i>&nbsp;
+                                                                    {{evplugin_mall.no_of_reviews}}
+                                                                </span>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </ng-template>
+                                    </ng-container>
+
+                                </owl-carousel-o>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!---   All Mall Ends  Here-->
+
+                    <!---   All Hotel Starts  Here-->
+
+
+                    <div class="Hotel show" *ngIf="activeTabButton == 'Hotel' " [class.show]="activeTabButton == 'Hotel' ">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="evplugin" id="evstation">
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="evpluginCarousel col-md-4">
+                                <owl-carousel-o [options]="allStationowlCarouselOption">
+
+                                    <ng-container *ngFor="let evplugin_hotel of evplugin_hotels">
+                                        <ng-template carouselSlide>
+
+                                            <div class="hotel_cont" (click)="showuserDetails(evplugin_hotel)">
+                                                <div class="row">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12"
+                                                    [routerLink]="['/home/shared/productdescription', evplugin_hotel.url]">
+
+                                                        <div class="evplugin_image">
+                                                             <img src="https://api.evplugincharge.com{{evplugin_hotel.cover_photo_url}}" />
+                                                            <div class="overlay">
+                                                                <div class="text"> {{evplugin_hotel.pname}} </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 col-xs-12 col-sm-12">
+                                                        <div class="evplugin_heading">
+                                                            <p>{{evplugin_hotel.pname}}</p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row">
+
+                                                    <div class="col-md-12 col-xs-12 col-sm-12">
+                                                        <div class="listing_box">
+
+                                                            <div class="listing_location">
+                                                                <i class="fa fa-map-marker famap_marker famarkerClass"></i>
+                                                                <p class="rr"> 
+                                                                        {{evplugin_hotel.address}}
+                                                                    <!-- {{evplugin_hotel.location}} &nbsp;{{evplugin_hotel.city}}
+                                                                    &nbsp;{{evplugin_hotel.state}} -->
+                                                                </p>
+                                                                <!-- {{evplugin_hotel.city_name}} </p> -->
+
+                                                            </div>
+                                                            <div class="listing_charging">
+                                                                <!-- <span class="faplug">
+                                                                    <i class=" fa fa-plug  "></i>
+                                                                    {{evplugin_hotel.adaptor}}</span>
+                                                                <span class="fainr">
+                                                                    <i class=" fa fa-inr  "></i>
+                                                                    {{evplugin_hotel.chargerprice}}
+                                                                </span> -->
+                                                            </div>
+                                                            <div class="listing_timing">
+                                                                <span class="opentime"> <i class="fa fa-clock-o faclock"></i>
+                                                                    {{evplugin_hotel.open_time}}</span>
+                                                                <span class="closetime"> {{evplugin_hotel.close_time}}
+                                                                </span>
+                                                            </div>
+                                                            <div class="listing_view">
+                                                                <span class=" faeye">
+                                                                    <i class="fa fa-eye"></i>&nbsp;
+                                                                    {{evplugin_hotel.no_of_views}}
+                                                                </span>
+                                                                <span class="facomment">
+                                                                    <i class="fa fa-comment"></i>&nbsp;
+                                                                    {{evplugin_hotel.no_of_reviews}}
+                                                                </span>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </ng-template>
+                                    </ng-container>
+
+                                </owl-carousel-o>
+                            </div>
+                            <div class="hotelcomingsoon" *ngIf="evplugin_hotelsLength == 0 ">
+                                <h3>Coming Soon</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!---   All Hotel Ends  Here-->
+
+                    <!---   All Hotel Ends  Here-->
+
+                    <!---   All Parking  Here-->
+
+                    <div class="Parking" *ngIf="activeTabButton == 'Parking' " [class.show]="activeTabButton == 'Parking' ">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="evplugin" id="evstation">
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="evpluginCarousel">
+                                <owl-carousel-o [options]="allStationowlCarouselOption">
+
+                                    <ng-container *ngFor="let evplugin_parking of evplugin_parkings">
+                                        <ng-template carouselSlide>
+
+                                            <div class="card-container" (click)="showuserDetails(evplugin_parking)">
+                                                <div class="row">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+
+                                                        <div class="evplugin_image">
+                                                            <img src="https://api.evplugincharge.com{{evplugin_parking.cover_photo_url}}" />
+                                                            <div class="overlay">
+                                                                <div class="text"> {{evplugin_parking.pname}} </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 col-xs-12 col-sm-12">
+                                                        <div class="evplugin_heading">
+                                                            <p>{{evplugin_parking.pname}}</p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row">
+
+                                                    <div class="col-md-12 col-xs-12 col-sm-12">
+                                                        <div class="listing_box">
+
+                                                            <div class="listing_location">
+                                                                <i class="fa fa-map-marker famap_marker famarkerClass"></i>
+                                                                <p class="rr"> 
+                                                                        {{evplugin_parking.address}}
+                                                                    <!-- {{evplugin_parking.location}} &nbsp;{{evplugin_parking.city}}
+                                                                    &nbsp;{{evplugin_parking.state}} -->
+                                                                </p>
+                                                                <!-- {{evplugin_parking.city_name}} -->
+
+                                                            </div>
+                                                            <div class="listing_charging">
+                                                                <!-- <span class="faplug">
+                                                                    <i class=" fa fa-plug  "></i>
+                                                                    {{evplugin_parking.adaptor}}</span>
+                                                                <span class="fainr">
+                                                                    <i class=" fa fa-inr  "></i>
+                                                                    {{evplugin_parking.chargerprice}}
+                                                                </span> -->
+                                                            </div>
+                                                            <div class="listing_timing">
+                                                                <span class="opentime"> <i class="fa fa-clock-o faclock"></i>&nbsp;
+                                                                    {{evplugin_parking.open_time}}</span>
+                                                                <span class="closetime">
+                                                                    {{evplugin_parking.close_time}}</span>
+                                                            </div>
+                                                            <div class="listing_view">
+                                                                <span class=" faeye">
+                                                                    <i class="fa fa-eye"></i>&nbsp;
+                                                                    {{evplugin_parking.no_of_views}}
+                                                                </span>
+                                                                <span class="facomment">
+                                                                    <i class="fa fa-comment"></i>&nbsp;
+                                                                    {{evplugin_parking.no_of_reviews}}
+                                                                </span>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </ng-template>
+                                    </ng-container>
+
+                                </owl-carousel-o>
+                            </div>
+                            <div class="hotelcomingsoon" *ngIf="evplugin_parkingsLength == 0 ">
+                                <h3>Coming Soon</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!---   All Parking  Ends Here-->
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- All Stations Ends Here  -->
+<!-- Evstation Section  Starts Here-->
+<!-- <div class="container ">
+        <div class="row">
+                <div class="col">
+                <div class="evplugin" id="evstation">
+                        <h4 [innerHtml]="config.getTranslation('EV_Station')" class="evstation_heading"></h4>
+        
+            </div>
+        </div>
+        </div>
+        <div class="evpluginCarousel">
+            <owl-carousel-o [options]="chargerowlOption">
+ 
+                <ng-container *ngFor="let evplugin_evestation of evplugin_evestations">
+                  <ng-template carouselSlide >
+                       
+                            <div class="card-container"  (click)="showuserDetails(evplugin_evestation)">
+                                <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                        
+                                    <div class="evplugin_image">
+                                        <img src="https://www.evplugincharge.com{{evplugin_evestation.cover_photo_url}}" />
+                                        <div class="overlay">
+                                            <div class="text"> {{evplugin_evestation.name}} </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-xs-12 col-sm-12">
+                                        <div class="evplugin_heading">
+                                            <p>{{evplugin_evestation.name}}</p>
+                                        </div>
+                                    </div>
+        
+                                </div>
+                                <div class="row">
+        
+                                    <div class="col-md-12 col-xs-12 col-sm-12">
+                                        <div class="listing_box">
+        
+                                            <div class="listing_location">
+                                                <i class="fa fa-map-marker famap_marker famarkerClass"></i>
+                                                <p class="rr"> {{evplugin_evestation.state_name}} &nbsp; {{evplugin_evestation.city_name}} </p>
+                                               
+                                            </div>
+                                            <div class="listing_charging">
+                                                <span class="faplug">
+                                                    <i class=" fa fa-plug  "></i>
+                                                    {{evplugin_evestation.adaptor}}</span>
+                                                <span class="fainr">
+                                                    <i class=" fa fa-inr  "></i>
+                                                    {{evplugin_evestation.charging_price}}
+                                                </span>
+                                            </div>
+                                            <div class="listing_timing">
+                                               <span class="opentime"> <i class="fa fa-clock-o faclock"></i>&nbsp; 
+                                               {{evplugin_evestation.open_time}}</span>
+                                               <span class="closetime">
+                                                {{evplugin_evestation.close_time}}
+                                                </span>
+                                            </div>
+                                            <div class="listing_view">
+                                                <span class=" faeye">
+                                                    <i class="fa fa-eye"></i>&nbsp; {{evplugin_evestation.no_of_views}}
+                                                </span>
+                                                <span class="facomment">
+                                                    <i class="fa fa-comment"></i>&nbsp; {{evplugin_evestation.no_of_reviews}}
+                                                </span>
+                                            </div>
+        
+                                        </div>
+        
+                                    </div>
+        
+                                </div>
+                            </div>
+                       
+                        </ng-template>
+                    </ng-container>
+                  
+                  </owl-carousel-o>
+                </div>
+         
+        </div> -->
+
+
+<!-- Evstation Section  Ends Here-->
+
+
+<!-- resturent Section  Starts Here-->
+
+<!-- <div class="container ">
+            <div class="row">
+                    <div class="col">
+                    <div class="evplugin" id="restaurant">
+                            <h4 [innerHtml]="config.getTranslation('restaurant_heading')" class="resturent_heading"></h4>
+            
+                </div>
+            </div>
+            </div>
+            <div class="evpluginCarousel">
+                <owl-carousel-o [options]="chargerowlOptions">
+     
+                    <ng-container *ngFor="let evplugin_resturant of evplugin_resturants">
+                      <ng-template carouselSlide >
+                           
+                                <div class="card-container"  (click)="showuserDetails(evplugin_resturant)">
+                                    <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                            
+                                        <div class="evplugin_image">
+                                            <img src="https://www.evplugincharge.com{{evplugin_resturant.cover_photo_url}}" />
+                                            <div class="overlay">
+                                                <div class="text"> {{evplugin_resturant.name}} </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-xs-12 col-sm-12">
+                                            <div class="evplugin_heading">
+                                                <p>{{evplugin_resturant.name}}</p>
+                                            </div>
+                                        </div>
+            
+                                    </div>
+                                    <div class="row">
+            
+                                        <div class="col-md-12 col-xs-12 col-sm-12">
+                                            <div class="listing_box">
+            
+                                                <div class="listing_location">
+                                                    <i class="fa fa-map-marker famap_marker famarkerClass"></i>
+                                                    <p class="rr"> {{evplugin_resturant.state_name}} &nbsp; {{evplugin_resturant.city_name}} </p>
+                                                   
+                                                </div>
+                                                <div class="listing_charging">
+                                                    <span class="faplug">
+                                                        <i class=" fa fa-plug  "></i>
+                                                        {{evplugin_resturant.adaptor}}</span>
+                                                    <span class="fainr">
+                                                        <i class=" fa fa-inr  "></i>
+                                                        {{evplugin_resturant.charging_price}}
+                                                    </span>
+                                                </div>
+                                                <div class="listing_timing">
+                                                   <span class="opentime"> <i class="fa fa-clock-o faclock"></i>&nbsp; 
+                                                   {{evplugin_resturant.open_time}}</span>
+                                                   <span class="closetime">
+                                                    {{evplugin_resturant.close_time}}
+                                                    </span>
+                                                </div>
+                                                <div class="listing_view">
+                                                    <span class=" faeye">
+                                                        <i class="fa fa-eye"></i>&nbsp; {{evplugin_resturant.no_of_views}}
+                                                    </span>
+                                                    <span class="facomment">
+                                                        <i class="fa fa-comment"></i>&nbsp; {{evplugin_resturant.no_of_reviews}}
+                                                    </span>
+                                                </div>
+            
+                                            </div>
+            
+                                        </div>
+            
+                                    </div>
+                                </div>
+                           
+                            </ng-template>
+                        </ng-container>
+                      
+                      </owl-carousel-o>
+                    </div>
+             
+            </div> -->
+<!--resturent Section   Ends Here-->
+
+
+<!-- Mall Section  Starts Here-->
+
+<!-- <div class="container">
+    <div class="row">
+            <div class="col">
+            <div class="evplugin" id="evstation">
+                    <h4 [innerHtml]="config.getTranslation('mall_heading')" class="mall_heading"></h4>
+    
+        </div>
+    </div>
+    </div>
+    <div class="evpluginCarousel">
+        <owl-carousel-o [options]="chargerowlOptions">
+ 
+            <ng-container *ngFor="let evplugin_mall of evplugin_malls">
+              <ng-template carouselSlide >
+                   
+            <div class="card-container"  (click)="showuserDetails(evplugin_mall)">
+                            <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                            
+                                            <div class="evplugin_image">
+                                                <img src="https://www.evplugincharge.com{{evplugin_mall.cover_photo_url}}" />
+                                                <div class="overlay">
+                                                    <div class="text"> {{evplugin_mall.name}} </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                        </div>
+                            <div class="row">
+                                <div class="col-md-12 col-xs-12 col-sm-12">
+                                        <div class="evplugin_heading">
+                                                <p>{{evplugin_mall.name}}</p>
+                                            </div>
+                                </div>
+    
+                            </div>
+                            <div class="row">
+    
+                                <div class="col-md-12 col-xs-12 col-sm-12">
+                                        <div class="listing_box">
+
+                                                <div class="listing_location">
+                                                    <i class="fa fa-map-marker famap_marker famarkerClass"></i>
+                                                    <p class="rr"> {{evplugin_mall.state_name}} &nbsp; {{evplugin_mall.city_name}} </p>
+                                                   
+                                                </div>
+                                                <div class="listing_charging">
+                                                    <span class="faplug">
+                                                        <i class=" fa fa-plug  "></i>
+                                                        {{evplugin_mall.adaptor}}</span>
+                                                    <span class="fainr">
+                                                        <i class=" fa fa-inr  "></i>
+                                                        {{evplugin_mall.charging_price}}
+                                                    </span>
+                                                </div>
+                                                <div class="listing_timing">
+                                                         
+                                                            <span class="opentime">  <i class="fa fa-clock-o faclock"></i> {{evplugin_mall.open_time}}</span>
+                                                            <span class="closetime">   {{evplugin_mall.close_time}}</span>
+                                                </div>
+                                                <div class="listing_view">
+                                                    <span class=" faeye">
+                                                        <i class="fa fa-eye"></i>&nbsp; {{evplugin_mall.no_of_views}}
+                                                    </span>
+                                                    <span class="facomment">
+                                                        <i class="fa fa-comment"></i>&nbsp; {{evplugin_mall.no_of_reviews}}
+                                                    </span>
+                                                </div>
+            
+                                            </div>
+    
+                                </div>
+    
+                            </div>
+                        </div>
+                    </ng-template>
+                </ng-container>
+              
+              </owl-carousel-o>
+            </div>
+     
+    </div> -->
+
+<!-- Mall Section  Ends Here-->
+
+
+<!-- Hotel Section  Starts Here-->
+<!-- <div class="container">
+    <div class="row">
+            <div class="col">
+            <div class="evplugin" id="evstation">
+                    <h4 [innerHtml]="config.getTranslation('hotel_heading')" class="evstation_heading"></h4>
+    
+        </div>
+    </div>
+    </div>
+    <div class="evpluginCarousel">
+        <owl-carousel-o [options]="customOptions">
+ 
+            <ng-container *ngFor="let evplugin_hotel of evplugin_hotels">
+              <ng-template carouselSlide >
+                   
+            <div class="card-container"  (click)="showuserDetails(evplugin_hotel)">
+                            <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                            
+                                            <div class="evplugin_image">
+                                                    <img src="https://www.evplugincharge.com{{evplugin_hotel.cover_photo_url}}" />
+                                                    <div class="overlay">
+                                                        <div class="text"> {{evplugin_hotel.name}} </div>
+                                                    </div>
+                                                </div>
+                                        </div>
+                        </div>
+                            <div class="row">
+                                <div class="col-md-12 col-xs-12 col-sm-12">
+                                        <div class="evplugin_heading">
+                                                <p>{{evplugin_hotel.name}}</p>
+                                            </div>
+                                </div>
+    
+                            </div>
+                            <div class="row">
+    
+                                <div class="col-md-12 col-xs-12 col-sm-12">
+                                        <div class="listing_box">
+
+                                                <div class="listing_location">
+                                                    <i class="fa fa-map-marker famap_marker famarkerClass"></i>
+                                                    <p class="rr"> {{evplugin_hotel.state_name}} &nbsp; {{evplugin_hotel.city_name}} </p>
+                                                   
+                                                </div>
+                                                <div class="listing_charging">
+                                                    <span class="faplug">
+                                                        <i class=" fa fa-plug  "></i>
+                                                        {{evplugin_hotel.adaptor}}</span>
+                                                    <span class="fainr">
+                                                        <i class=" fa fa-inr  "></i>
+                                                        {{evplugin_hotel.charging_price}}
+                                                    </span>
+                                                </div>
+                                                <div class="listing_timing">
+                                                        <span class="opentime">  <i class="fa fa-clock-o faclock"></i> {{evplugin_hotel.open_time}}</span>
+                                                        <span class="closetime">   {{evplugin_hotel.close_time}} </span>
+                                                </div>
+                                                <div class="listing_view">
+                                                    <span class=" faeye">
+                                                        <i class="fa fa-eye"></i>&nbsp; {{evplugin_hotel.no_of_views}}
+                                                    </span>
+                                                    <span class="facomment">
+                                                        <i class="fa fa-comment"></i>&nbsp; {{evplugin_hotel.no_of_reviews}}
+                                                    </span>
+                                                </div>
+            
+                                            </div>
+    
+                                </div>
+    
+                            </div>
+                        </div>
+                    </ng-template>
+                </ng-container>
+              
+              </owl-carousel-o>
+            </div>
+     
+    </div> -->
+
+<!-- Hotel Section  Ends Here-->
+
+
+<!-- Parking Section  Starts Here-->
+
+
+<!-- <div class="container">
+    <div class="row">
+            <div class="col">
+            <div class="evplugin" id="evstation">
+                    <h4 [innerHtml]="config.getTranslation('parking_heading')" class="resturent_heading"></h4>
+    
+        </div>
+    </div>
+    </div>
+    <div class="evpluginCarousel">
+        <owl-carousel-o [options]="customOptions">
+ 
+            <ng-container *ngFor="let evplugin_parking of evplugin_parkings">
+              <ng-template carouselSlide >
+                   
+            <div class="card-container"  (click)="showuserDetails(evplugin_parking)">
+                            <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                            
+                                            <div class="evplugin_image">
+                                                    <img src="https://www.evplugincharge.com{{evplugin_parking.cover_photo_url}}" />
+                                                    <div class="overlay">
+                                                        <div class="text"> {{evplugin_parking.name}} </div>
+                                                    </div>
+                                                </div>
+                                        </div>
+                        </div>
+                            <div class="row">
+                                <div class="col-md-12 col-xs-12 col-sm-12">
+                                        <div class="evplugin_heading">
+                                                <p>{{evplugin_parking.name}}</p>
+                                            </div>
+                                </div>
+    
+                            </div>
+                            <div class="row">
+    
+                                <div class="col-md-12 col-xs-12 col-sm-12">
+                                        <div class="listing_box">
+
+                                                <div class="listing_location">
+                                                    <i class="fa fa-map-marker famap_marker famarkerClass"></i>
+                                                    <p class="rr"> {{evplugin_parking.state_name}} &nbsp; {{evplugin_parking.city_name}} </p>
+                                                   
+                                                </div>
+                                                <div class="listing_charging">
+                                                    <span class="faplug">
+                                                        <i class=" fa fa-plug  "></i>
+                                                        {{evplugin_parking.adaptor}}</span>
+                                                    <span class="fainr">
+                                                        <i class=" fa fa-inr  "></i>
+                                                        {{evplugin_parking.charging_price}}
+                                                    </span>
+                                                </div>
+                                                <div class="listing_timing">
+                                                        <span class="opentime">  <i class="fa fa-clock-o faclock"></i>&nbsp; {{evplugin_parking.open_time}}</span>
+                                                        <span class="closetime">     {{evplugin_parking.close_time}}</span>
+                                                </div>
+                                                <div class="listing_view">
+                                                    <span class=" faeye">
+                                                        <i class="fa fa-eye"></i>&nbsp; {{evplugin_parking.no_of_views}}
+                                                    </span>
+                                                    <span class="facomment">
+                                                        <i class="fa fa-comment"></i>&nbsp; {{evplugin_parking.no_of_reviews}}
+                                                    </span>
+                                                </div>
+            
+                                            </div>
+    
+                                </div>
+    
+                            </div>
+                        </div>
+                   
+                    </ng-template>
+                </ng-container>
+              
+              </owl-carousel-o>
+          </div>
+    </div> -->
+
+
+<!-- Parking Section  Ends Here-->
+
+<!-- Testimonial Section  Starts Here-->
+
+<div id="testimonial">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="testimonial_heading">
+                    <h2> Testimonial</h2>
+                </div>
+                <div class="testimonial_line">
+                    <div class=" line_1"></div>
+                    <div class="flipInX-1  icon">
+                        <span class="icon">
+                            <i class="fa fa-stop"></i>&nbsp;&nbsp;
+                            <i class="fa fa-stop"></i>
+                        </span>
+                    </div>
+                    <div class=" line_2"></div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-md-12 col-xs-12 col-sm-12">
+                <div class="client-feedback">
+                    <div class="evpluginCarousel" *ngIf="testimonial && testimonial.success.data">
+                        <owl-carousel-o [options]="customOptions">
+                           
+                            <ng-container *ngFor="let car of testimonial.success.data">
+                                <ng-template carouselSlide>
+                                    <div class="col-md-12 col-xs-12 col-sm-12">
+                                        <div class="client_picture">
+                                            <img src="https://api.evplugincharge.com{{car.image}}" />
+                                        </div>
+                                    </div>
+                                    <div class="testimonial-content">
+                                        <div class="title">
+                                            <h3>{{car.name}}</h3>
+                                        </div>
+                                        <div class="client-content">
+                                            <p>{{car.description}}</p>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </ng-container>
+
+                        </owl-carousel-o>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+<!-- Testimonial Section  Ends Here-->

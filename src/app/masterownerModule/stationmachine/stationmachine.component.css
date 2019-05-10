@@ -1,0 +1,16 @@
+.station_wrapper{
+    width:100%; float: left;margin-top: 100px;
+}
+.station_heading{
+    font-size: 13px;  color: #d25215;;
+}
+.machineOn{
+    font-size: 12px; background: #12AE57; transition: 0.5s; text-align: center;
+    color: #fff;  border-radius:10px; cursor: pointer; width:1%;
+}
+.machineOff{
+    font-size: 12px; background: #d25215; transition: 0.5s; text-align: center;
+    color: #fff;  border-radius:10px; cursor: pointer; width:1%;
+    
+}
+.margin_top{ width:100%; margin-bottom: 20px;}

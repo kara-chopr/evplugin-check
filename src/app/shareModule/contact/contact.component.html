@@ -1,0 +1,144 @@
+<app-loader *ngIf="loading"></app-loader>
+<p-toast position="top-right"></p-toast>
+<div class="container margin_top">
+  <div class="ui-grid ui-grid-responsive ui-fluid">
+    <div class="ui-grid-row">
+      <div class="  ui-md-6 ui-sm-6  ui-lg-6">
+        <h5 style="margin-top: 0px; text-align: center">
+          <i class="fa fa-comments" style="font-size: 20px; color: #0097A7;
+                "></i>
+          How can we help you?
+        </h5>
+        <form class="form_wrapper"
+        [formGroup]="contactFormGroup" (ngSubmit)="onSubmitcontactForm()" novalidate>
+          <div class="row">
+            <div class="col-md-12">
+
+              <div class="name">
+
+                <mat-form-field class="loginform-control">
+                  <input matInput type="text" placeholder="Enter a name"
+                  formControlName="name">
+
+                  <div class="errormesage"
+                  *ngIf="!contactFormGroup.controls['name'].valid
+                  && contactFormGroup.controls['name'].touched">
+                  <p>*Fields Required</p>
+                  </div>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+
+              <div class="email">
+
+                <mat-form-field class="loginform-control">
+                  <input matInput type="text" placeholder="Enter a email"
+                  formControlName="email">
+                  <div class="errormesage"
+                  *ngIf="!contactFormGroup.controls['email'].valid
+                  && contactFormGroup.controls['email'].touched">
+                  <p>*Fields Are Required &  Required Full Email Address</p>
+                  </div>
+
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="mobile">
+
+                <mat-form-field class="loginform-control">
+                  <input matInput type="number" min="0" class="loginform-control" placeholder="Mobile No"
+                  formControlName="mobile" (change)="showotppassword()">
+                  <div class="errormesage"
+                  *ngIf="!contactFormGroup.controls['mobile'].valid
+                  && contactFormGroup.controls['mobile'].touched">
+                  <p>*Fields Are Required </p>
+                  </div>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="col-md-12" *ngIf="otppasswordFlag">
+              <input type="text" class="contact_listing orderForm-Control" placeholder="OTP Password" #otpMatced
+                (change)="otpChecked(otpMatced.value)"  formControlName="otp"
+                />
+             </div>
+             <div class="col-md-6" *ngIf="resendOtpFlag">
+              <div class="resendotp">
+               <button type="button" class="resend_password"
+               (click)= "showotppassword();hideresendButton()">Resend Otp</button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="mobile">
+
+
+                <mat-form-field class="loginform-control">
+                  <textarea matInput placeholder="Leave a comment"
+                  formControlName="remarks"></textarea>
+                  <div class="errormesage"
+                  *ngIf="!contactFormGroup.controls['remarks'].valid
+                  && contactFormGroup.controls['remarks'].touched">
+                  <p>*Fields Are Required </p>
+                  </div>
+                </mat-form-field>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="submit">
+                <button type="submit" class=" submit_button"
+                [disabled]="!nextButtonFlag">Submit</button>
+              </div>
+            </div>
+          </div>
+
+
+
+        </form>
+      </div>
+      <div class="  ui-md-6 ui-sm-6 ui-lg-6">
+        <div class="contact">
+          <div class="contact-heading">
+            <h4><span style="color:red">C</span>ontact Info</h4>
+            <div class="address">
+              <p><i class="fa fa-map-marker" style="color:red"></i>
+              &nbsp;  Office Address:- 39, Second Floor, Shahpur Jat , New Delhi - 110049
+              </p>
+              <p>
+                <i class="fa fa-envelope" style="color:#1ab188"></i>
+                &nbsp;  info@evplugincharge.com
+              </p>
+              <p><i class="fa fa-phone" style="color:#269AF2"></i>
+                &nbsp;  +91-9899140809
+              </p>
+            </div>
+
+          </div>
+        </div>
+        <div class="map-contact">
+          <agm-map [latitude]="lat" [longitude]="long">
+            <ng-container>
+              <agm-marker [latitude]="lat" [longitude]="long"></agm-marker>
+
+            </ng-container>
+          </agm-map>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

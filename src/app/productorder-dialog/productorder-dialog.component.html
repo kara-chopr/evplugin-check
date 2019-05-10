@@ -1,0 +1,89 @@
+<app-loader *ngIf="loading"></app-loader>
+ <!-- <div class="ordersubmittedmessage" *ngIf="ordersubmittedmessage">
+  <h6>{{ordersubmittedmessage}}</h6>
+</div> -->
+<p-toast position="top-right"></p-toast>
+<div class="dialog_wrapper">
+  
+    <div class="product_image">
+<img src="http://api.evplugincharge.com{{description}}"/> 
+       
+    </div>
+  <div class="line"></div>
+    <div class="orderformwrapper">
+     
+            <div class="order_form">
+           
+              <div class="order_formheading">
+                <h3>HOW TO CONTACT YOU?</h3>
+              </div>
+              <form id="orderFormStart" [formGroup]="orderForm" (ngSubmit)="onSubmitorderForm()"
+              novalidate>
+                   <mat-form-field class="orderForm-Control">
+                    <input matInput placeholder="Your Name" class="orderForm-control"
+                    formControlName="name"> 
+                  
+                    <div class="errormesage"
+                    *ngIf="!orderForm.controls['name'].valid
+                    && orderForm.controls['name'].touched">
+                    <p>*Fields Required</p>
+                    </div>
+                   </mat-form-field> 
+                  <mat-form-field class="orderForm-Control">
+                      <input matInput placeholder="Your Email" 
+                      formControlName="email">
+                      <div class="errormesage"
+                      *ngIf="!orderForm.controls['email'].valid
+                      && orderForm.controls['email'].touched">
+                      <p>*Fields Are Required &  Required Full Email Address</p>
+                      </div>
+                    </mat-form-field>
+                    <mat-form-field class="orderForm-Control">
+                        <input matInput placeholder="Your Phone"  type="number"
+                        formControlName="mobile"
+                        (change)="showotppassword()">
+                        <div class="errormesage"
+                        *ngIf="!orderForm.controls['mobile'].valid
+                        && orderForm.controls['mobile'].touched">
+                        <p>*Fields Required</p>
+                        </div>
+                       
+                      </mat-form-field>
+                      <div class="col-md-12" *ngIf="otppasswordFlag">
+                        <input type="text" class="contact_listing orderForm-Control" placeholder="OTP Password" #otpMatced
+                          (change)="otpChecked(otpMatced.value)"  formControlName="otp"
+                          />
+                       </div>
+                       <div class="col-md-6" *ngIf="resendOtpFlag">
+                        <div class="resendotp">
+                         <button type="button" class="resend_password"
+                         (click)= "showotppassword();hideresendButton()">Resend Otp</button>
+                        </div>
+                      </div>
+                       <input  type="hidden" 
+                        formControlName="pid" >
+                         
+                     
+                      <mat-form-field class="orderForm-Control">
+                          <textarea matInput placeholder="I am interested"
+                          formControlName="message"></textarea>
+                          <div class="errormesage"
+                          *ngIf="!orderForm.controls['message'].valid
+                          && orderForm.controls['message'].touched">
+                          <p>*Fields Required</p>
+                          </div>
+                        </mat-form-field>
+                <button class="orderformSubmitbutton" type="submit"  [disabled]="!nextButtonFlag">order</button>
+                <button mat-button [mat-dialog-close]="true"
+                class="orderformclosebutton"><i class=" fa fa-close"></i></button>
+                </form>
+            </div>
+    </div>
+   
+    
+</div>
+
+
+    
+     
+    

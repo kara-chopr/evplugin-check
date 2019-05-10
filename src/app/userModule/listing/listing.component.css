@@ -1,0 +1,359 @@
+ul,li{margin: 0; padding: 0;}
+
+.margin_top{
+  margin-top:100px;
+}
+.marginupper{
+  margin-top: -10px;
+}
+.basic_info{ width:100%; float: left;}
+.basicinfo_heading{ width:100%; color: #0097A7;}
+.basicinfo_heading h3{ font-size: 14px; margin-left:6px;}
+.basic_infoselection{ width:100%; float: left;}
+.basic_infoselection ul { list-style: none;}
+.basic_infoselection ul li {
+  display: inline-block;
+  margin-right: 9px;
+  width: 14%;
+  }
+  label > input{
+    visibility: hidden; 
+    position: absolute; 
+  }
+  label > input + i{ 
+    cursor:pointer;
+    border-bottom:2px solid transparent;
+  }
+  label > input:checked + i{ 
+    /* border-bottom:2px solid #f00; */
+  }  
+  label > input + img { cursor:pointer;
+    border-bottom:2px solid transparent;        width: 58%;
+    height: 94px;}
+  /* label > input:checked + img{ border-bottom: #f00 2px solid;} */
+  .offgrid-text{     
+    font-size: 14px;
+    text-align: center;
+    color: #606160;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: -80px;
+}
+.activeTabButton {
+  
+  color: red;
+   
+  
+}
+.listing_form  .mat-form-field{
+  display: block;
+
+}
+.errormesage{
+  font-size: 11px; color: #f00;
+}
+  .resendotp{ line-height: 31px;}
+  .resendotp button{    
+    color: #E91E63;
+   
+    border-radius: 21px;
+    
+    background: white;
+    border: pointer;
+    border: 1px solid red;
+    font-size: 12px;
+    margin-top: 12px;
+  
+  }
+  .resendotp button:hover{
+    background: red;
+    color:white;
+  }
+  
+  .listing_form{ width:100%; float: left;}
+  .form_start{ width: 100%; float: left;}
+  .form-group{ width:100%; float: left;}
+  .form-group h3 {width: 100%;
+  float: left;
+  margin-top: 28px;
+  color: #0097A7;
+  margin-bottom: 23px;}
+  .listingcontrol{
+      width:100%; float: left;  border-left:none;
+      border-right:none; border-top:none; 
+      border-bottom:1px #ccc solid;margin-top: 10px;
+      
+  }
+  .fontcolor{
+    color: #0097A7;
+  }
+  .margintop{width:100%; float: left; margin-top: 17px;}
+  .submit_buton{
+    width: 80px;
+    line-height:24px;
+    background: #f00;
+    border-radius: 5px;
+    
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+}
+.selected_imagethumnail{ list-style-type: none;}
+.selected_imagethumnail li { width:20% ;display: inline-block; margin-right: 10px;}
+  .listingcontrol:focus{ outline:0;}
+  .contact_listing{ width: 100%; float: left;
+margin-top: 10px;
+  border-left:none;
+border-right:none; border-top:none; 
+border-bottom:1px #ccc solid;}
+.contact_listing:focus{ outline: 0;}
+.select-open{ width:100%; float: left; border-top:none;
+border-bottom:1px #ccc solid; border-right:none;
+border-left:none; margin-top: 10px; }
+.select-open:focus{ outline:0;}
+.location-heading{ width:100%; float: left; margin-top: 16px;}
+.location-heading h3{
+    width: 100%;
+  float: left;
+  margin-top: 28px;
+  color: #0097A7;
+  margin-bottom: 23px; display: block;
+}
+.otppassword{ margin-top: 10px;}
+.checkbox24{ width:100%; float: left;margin-top: 68px;}
+.location-map{ width:100%; float: left; margin-top: 15px; 
+margin-bottom: 15px;}
+.location-map img { width:100%; float: left;}
+.next_button{ width: 90px;
+    background-color: rgb(244,81,30);
+    float: right;
+    padding: 10px;
+    color: #fff;
+    border: none;
+    border-radius: 6px; cursor: pointer; margin-bottom: 10px;}
+    .multistepform-steps{ width:100%; float: left;}
+    .multistepform-steps ul { list-style: none;}
+    .multistepform-steps ul li { display: inline-block; 
+      border-right:1px #000 solid; padding-left: 10px;
+    padding-right: 10px;padding-top: 5px;background: #ccc;
+  width:50% }
+    .multistepform-steps ul li:last-child{border-right:none;}
+    
+.station_information{ width:100%; float: left;}
+.station_heading { font-size: 16px; color:#0097A7;}
+.Vehicle-type{ width:100%;}
+.viecle-selected {width:100%; padding: 0px 0px 0px 0px;}
+.form_heading{font-size: 9px;}
+.priceheading {margin-top: 10px;}
+.submit_heading{float: left;
+  width: 100%;margin-bottom: 18px;}
+  .stationcontrol{
+    width:100%; float: left;  border-left:none;
+    border-right:none; border-top:none; 
+    border-bottom:1px #ccc solid; margin-top: 10px;
+    
+}
+.stationcontrol:focus{ outline:0;}
+.checkboxcontrol{
+   margin-top: 20px;
+  
+}
+agm-map{width:100%; height: 300px;;}
+.form-top{ float: left; margin-top: 20px;}
+.amenities{ cursor:pointer; width:100%; float: left;
+  margin-right:6px;
+padding: 2px; font-size: 12px;}
+ 
+#fileupload{width: 100%;}
+#fileupload img{width:100%; height: 109px;}
+.inputWrapper {
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  background-color: #12ae57;
+  color: #fff;
+  /* padding: 5px; */
+  padding-top: 13px;
+  padding-left: 8px;
+  border-radius: 10%;
+}
+
+.fileInput {
+  cursor: pointer;
+  height: 100%;
+  position:absolute;
+  top: 0;
+  right: 0;
+  /*This makes the button huge so that it can be clicked on*/
+  font-size:50px;
+}
+.hidden {
+  /*Opacity settings for all browsers*/
+  opacity: 0;
+  -moz-opacity: 0;
+  filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0)
+}
+.seletedImageRemove{
+  position: relative;
+
+}
+.seletedImageRemove:after{
+  position: absolute;
+  top: 5px; left: 15px;
+  
+}
+
+label > input{
+  visibility: hidden; 
+  position: absolute; 
+}
+label > input + i{ 
+  cursor:pointer;
+ 
+}
+label > input:checked + .amenities{ 
+  width: 100%;
+    background-color: #0097A7;
+ 
+  color: #fff;
+ 
+} 
+.comments{ width:100%; float: left;} 
+.comments-box{ width:100%; float: left; line-height: 30px;}
+.business_photo{width: 100%;
+  /* float: left; */
+  margin-top: 17px;
+  margin-bottom: 20px;}
+.mat_card{width:13%;}
+.mat_card img { width:100%;}
+.button-previous{ width:80px; line-height: 30px; background: #ccc;
+border-radius:5px; cursor: pointer; margin-top: 10px;}
+.button-next{ width:80px; line-height: 30px; background: #f00;
+  border-radius:5px; float: right; color: #fff; text-align: center;
+cursor: pointer;}
+.next-button {float: right;     margin-top: -39px;}
+.button-next:focus{ outline: 0;}
+.button-previous:focus{ outline: 0;}
+.previous-button{float: left;}
+.buttonfinish{ float: left;display: block; clear: both; width:80px;
+   line-height: 30px; background: #f00;
+  border-radius:5px; float: right; color: #fff; text-align: center;
+cursor: pointer; margin-top: 10px;
+}
+.firstlevel{   background: #0097A7 !important; color: #fff;}
+.secondlevel{background: #0097A7 !important; color:#fff;}
+
+.thirdlevel{  background: #0097A7 !important; color: #fff;}
+.yy{   background: #f00;}
+.contact-form{ margin-top: 16px;color: #0097A7;}
+
+@media(max-width:768px){
+  .contact_listing[_ngcontent-c4] {
+   
+    margin-top: 35px;
+}
+.select-open[_ngcontent-c4] {
+ 
+  margin-bottom: 10px;
+}
+.basic_infoselection ul li {
+  display: inline-block;
+    margin-right: 10px;
+    width: 12%;
+ 
+}
+
+/* rahul media query start */
+.multistepform-steps ul {
+  list-style: none;
+  display: flex !important;
+  margin-left: 18px !important;
+}
+.basicinfo_heading h3 {
+  font-size: 14px;
+  margin-left: 12px !important;
+}
+.basic_infoselection ul {
+  list-style: none;
+  display: flex !important;
+}
+.offgrid-text {
+  font-size: 12px;
+  text-align: center;
+  color: #606160;
+  font-weight: 600;
+  margin-top: 6px;
+  margin-bottom: -6px !important;
+  margin-left: -23px !important;
+}
+ ul {
+  list-style: none;
+  display: flex !important;
+  margin-left: 16px !important;
+}
+/* rahul media query end */
+
+.no{
+  float: left;
+    margin-left: 30px;
+    margin-top: -17px;
+}
+.form-top {
+  float: left;
+  margin-top: 0px;
+}
+.amenities {
+ 
+   float:none; 
+  
+ 
+}
+.contact_listing {
+ 
+  margin-bottom: 30px;
+}
+.form_heading {
+  font-size: 12px;
+  margin-top: 10px;
+  float: left;
+}
+.submit_buton{float:left}
+.checkboxclass {
+  width: 20%;
+  float: left;
+  margin-top: 13px;
+}
+.multistepform-steps ul li {
+ 
+  width: 100%;
+  margin-right: 10px;
+  display: block;
+  
+}
+.multistepform-steps ul li:nth-child(2) {
+  
+  margin-top: 0px;
+  float: left;
+}
+}
+@media (max-width: 420px){
+.basic_infoselection ul li{
+ 
+  margin-right: 13px;
+  width: 42%;
+}
+.multistepform-steps ul li {
+ 
+  width: 100%;
+  margin-right: 10px;
+  
+  
+}
+.multistepform-steps ul li:nth-child(2) {
+  
+  margin-top: 0px;
+  float: left;
+}
+
+}

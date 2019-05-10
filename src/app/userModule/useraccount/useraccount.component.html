@@ -1,0 +1,80 @@
+<div class="container margin_topuseracount" *ngIf="myWalletBalanceResponses">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="account_balance">
+        <div class="col-md-7">
+          <label>Account Balance:</label>
+        </div>
+        <div class="col-md-5">
+          <p><i class="fa fa-inr">&nbsp;{{myWalletBalanceResponses[0].amount}}</i></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4" *ngIf="userDetails">
+      <div class="account_balance">
+        <div class="col-md-7">
+          <label>Account Number:</label>
+        </div>
+        <div class="col-md-5">
+          <p>&nbsp;{{userDetails[0].account_number}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+         <a type="submit" class="add_fund "
+          (click)="myFunc()" >Add Fund</a>
+      </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-12">
+      <div class="highlight">
+        <h6>Transaction History</h6>
+      </div>
+    </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+          <h6 style="text-align: center">Date/Time</h6>
+          </div>
+          <div class="col-md-3">
+           <h6 style="text-align: center">Amount </h6> 
+          </div>
+          <div class="col-md-5">
+              <h6 style="text-align: center">Status</h6> 
+          </div>
+    </div>
+    <div *ngFor="let account of userAccount">
+    <div class="row">
+       
+            <div class="col-md-4">
+              <div class="account_date">
+              <p style="text-align: center"> {{account.created}}</p>
+           
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="account_balance">
+             
+               
+                  <p style="text-align: center"><i class="fa fa-inr">{{account.amount}}</i></p>
+               
+              </div>
+            </div>
+            <div class="col-md-5">
+                <div class="account_description">
+               <p style="text-align: center" *ngIf="account.type=='1'">Added To Wallet</p>
+               <p style="text-align: center" *ngIf="account.type=='2'">Booking Amount Deducted</p>
+               <p style="text-align: center" *ngIf="account.type=='3'">Booking Cancellation Refund</p>
+               <p style="text-align: center" *ngIf="account.type=='4'">RFID Deducted</p>
+                 
+                    
+                 
+                </div>
+              </div>
+    </div>
+  
+
+</div>
+          </div>
+ 

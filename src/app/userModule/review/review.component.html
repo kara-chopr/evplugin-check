@@ -1,0 +1,63 @@
+<div class="container reviewmargin_top">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="review_heading">
+                <h6 style="font-size: 23px; text-align: center">Review</h6>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6" *ngFor="let favorite of favorites">
+            <div *ngFor="let buisness_info of favorite.buisness_info">
+            <div class="favorites-cardbox">
+                <div class="favorite-loop">
+                    <div class="row">
+                      
+                        <div class=" col-md-12 col-sm-12  col-lg-12">
+                            <div class="card-content">
+                                <h4 class="card-heading">
+                                        <i class="fa fa-address-card" style="color: #3384c9;"></i>
+                                 {{buisness_info.business_name}}</h4>
+                                <span class="address">
+                                    <i class="fa fa-map-marker" style="color: orange;"></i>
+                                    {{buisness_info.city_name}} &nbsp;{{buisness_info.state_name}}</span>
+                               
+                            </div>
+                        </div>
+                     
+                    </div>
+                    <div class="row">
+                        <div class=" col-md-12 col-sm-12  col-lg-12">
+                            <div class="views">
+                                <span class="date">
+                                  <i class="fa fa-calendar-times-o" style="color: green"></i>&nbsp;
+                                    {{favorite.replied_date}}
+                                </span>
+                            
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class=" col-md-11 col-sm-12  col-lg-11">
+                                <div class="views">
+                                    <span class="date">
+                                            <i class="fa fa-user-circle-o " style="color: red"></i>&nbsp;
+                                        {{favorite.review_text}}
+                                    </span>
+                                
+                                </div>
+    
+                            </div>
+                            <div class="col-md-1">
+                          
+                                </div>
+                </div>
+                       
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>

@@ -1,0 +1,162 @@
+
+
+<div class="station_boookingwrapper" *ngIf="myBookingResponses">
+  <button mat-button [mat-dialog-close]="true" class="no_button closebutton">
+    <i class="fa fa-close" style="color: red;font-weight:bold; font-size: 20px;" ></i>
+  </button>
+<div class="station_heading">
+  <h6>Station Booking</h6>
+</div>
+<div class="booking_listing">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="bookingid">
+        <label>Booking Id </label>
+  
+        <p>{{myBookingResponses.id}}</p>
+
+      </div>
+    </div>
+    <div class="col-md-4">
+        <div class="bookingid">
+          <label>User Name </label>
+    
+          <p>{{myBookingResponses.name}}</p>
+
+        </div>
+      </div>
+      <div class="col-md-4">
+          <div class="bookingid">
+            <label>Station Name </label>
+      
+            <p>{{myBookingResponses.business_name}}</p>
+  
+          </div>
+        </div>
+  </div>
+
+    <div class="row" >
+        <div class="col-md-4">
+          <div class="bookingid">
+            <label>Machine ID </label>
+      
+            <p style="margin-left:15px;">M{{myBookingResponses.m_id}}</p>
+  
+          </div>
+        </div>
+      
+          <div class="col-md-4">
+              <div class="bookingid">
+                <label> Date</label>
+          
+                <p>{{myBookingResponses.b_date}}</p>
+      
+              </div>
+            </div>
+            <div class="col-md-4">
+                <div class="bookingid">
+                  <label>Time </label>
+            
+                  <p>{{myBookingResponses.time}}</p>
+        
+                </div>
+              </div>
+           
+      </div>
+      <div class="row" style="margin-top:20px;">
+        
+        
+            <div class="col-md-4">
+                <div class="bookingid">
+                  <label> Booked on</label>
+            
+                  <p>{{myBookingResponses.created_on}}</p>
+        
+                </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="bookingid">
+                    <label>Vechicle No </label>
+              
+                    <p>{{myBookingResponses.vehicle_no}}</p>
+          
+                  </div>
+                </div>
+             
+                <div class="col-md-4">
+                    <div class="bookingid">
+                      <label>Status  </label>
+                
+                      <p *ngIf="myBookingResponses.booking_status=='1'">Initiated</p>
+                      <p *ngIf="myBookingResponses.booking_status=='2'">Confirmed</p>
+                      <p *ngIf="myBookingResponses.booking_status=='3'">Charging</p>
+                      <p *ngIf="myBookingResponses.booking_status=='4'">Completed</p>
+                      <p *ngIf="myBookingResponses.booking_status=='5'">Cancelled</p>
+            
+                    </div>
+                  </div>
+        </div>
+     
+        
+</div>
+<hr>
+
+<div>
+<div class="station_heading" *ngIf="booking_chargesFlag">
+    <h6>Charges</h6>
+  </div>
+<div class="chargeswrapper" *ngIf="booking_chargesFlag">
+  
+  <div class="row">
+    <div class="col-md-4">
+      <div class="booking">
+          <label>Charges Name </label>
+                
+          <p>Booking</p>
+          <p>Booking GST</p>
+          <p>Infra</p>
+          <p>Infra GST</p>
+          <p>Electricity</p>
+          <p>Total</p>
+         
+      </div>
+    </div>
+    <div class="col-md-4" *ngIf="booking_chargesFlag">
+        <div class="booking">
+            <label>Charges</label>
+            <p>{{bookingcharge}}</p>
+            <p>{{bookingchargegst}}</p>
+            <p>{{infra_charges}}</p>
+            <p>{{infra_chargesgst}}</p>
+            <p>{{electricty_charges}}</p>
+            <p>{{amount}}</p>
+            <!-- <p>{{myBookingResponses.booking_charges.booking_charge}}</p>
+            <p>{{myBookingResponses.booking_charges.booking_charge}}</p>
+           
+            <p>{{myBookingResponses.booking_charges.infra_charges}}</p>
+            <p>{{myBookingResponses.booking_charges.infra_charges_gst}}</p>
+            <p>{{myBookingResponses.booking_charges.electricty_charges}}</p>
+            <p>{{myBookingResponses.booking_charges.amount}}</p> -->
+        </div>
+      </div>
+      <div class="col-md-4" *ngIf="cancel_chargesFlag">
+          <div class="booking">
+          
+              <label>Deducted 10%  </label>
+                    
+              <p>{{myBookingResponses.cancel_charge.booking_refund}}</p>
+            <p>{{myBookingResponses.cancel_charge.booking_gst_refund}}</p>
+            <p>{{myBookingResponses.cancel_charge.infra_refund}}</p>
+            <p>{{myBookingResponses.cancel_charge.infra_gst_refund}}</p>
+            <p>{{myBookingResponses.cancel_charge.electricity_refund}}</p>
+            <p>{{myBookingResponses.cancel_charge.amount}}</p>
+          </div>
+        </div>
+  </div>
+  <hr>
+  <!-- <p class="pokman" *ngIf="cancel_chargesFlag"> Refund Amount:- 159</p> -->
+ 
+  </div>
+  </div>
+
+</div>

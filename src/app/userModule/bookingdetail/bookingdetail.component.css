@@ -1,0 +1,46 @@
+.mybooking_wrapper{width:500px;}
+.mybooking_heading{
+    width:100%; float: left;
+}
+.mybooking_wrapper{
+    position: relative;
+}
+ul,li { margin: 0; padding: 0}
+.mybooking_heading h6{
+font-size: 20px; color: #666; text-align: center;margin-bottom: 14px;
+}
+.table_heading{
+    width: 100%;
+    float: left;
+    background: #0bb958;
+    border-radius: 10px;
+    color: #fff;
+    padding-top: 9px;
+    padding-bottom: -5px;
+    /* padding-left: 5px; */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    padding-bottom: -10px;
+}
+.border_bottom{ width:100%; float: left; height: 1px; background: #666;}
+.table_heading ul { list-style: none;}
+.table_heading ul li {display: inline-block; margin-right: 40px;}
+.orderformclosebutton{
+    position: absolute;
+right: 12px;
+top: -10px;
+background: transparent;
+border: none;
+outline: 0;
+cursor: pointer;
+}
+.label{
+    font-size: 12px; color: rgb(59, 59, 59); font-weight: 800;
+}
+.userDetal{
+    font-size: 12px; color: rgb(78, 76, 76);
+}
+.done_button{
+    float: right;  text-align: center; padding: 4px;
+}

@@ -1,0 +1,44 @@
+<p-toast position="top-right"></p-toast>
+
+<div class="booking_availablity">
+  <div class="container margin_top">
+    <div class="row">
+      <div class="col-md-10 col-xs-10">
+        <div class="booking_availablity-heading">
+          <h3> Booking Availablity</h3>
+          
+           
+          </div>
+        </div>
+        <div class="col-md-2 col-xs-2">
+          <div class="back-button"
+          (click)="redIrectToBooknow()">
+          <p>Back</p>
+        </div>
+          </div>
+      </div>
+   
+   
+   
+   <div class="similiattimeslotSection">
+     <div class="similiattimeslotSection-heading">
+       <h3><span style="color: #ff0707;">S</span>imilar 
+        Time Slot</h3>
+     </div>
+     <div class="row" *ngFor="let bookingAvibilityData of bookingAvibilityDatas">
+       <div class="col-md-12" >
+         <h3 class="timeslottext">
+           {{bookingAvibilityData.date}}
+         </h3>
+       </div>
+       <div class="col-md-2 timeslot" *ngFor="let time of bookingAvibilityData.time">
+          <label (click)="selectedTimdDate(bookingAvibilityData.date,time)">
+          <input type="radio" name="solarpanel" value="offgrid" />
+             <p class="timeslots_text"> {{time}}</p>  
+              </label>
+       </div>
+     </div>
+   </div>    
+     
+  </div>
+</div>

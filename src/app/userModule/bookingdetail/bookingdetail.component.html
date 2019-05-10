@@ -1,0 +1,96 @@
+<div class="mybooking_wrapper">
+    <button mat-button [mat-dialog-close]="true"
+    class="orderformclosebutton"><i class=" fa fa-close"></i></button>
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+            <div class="mybooking_heading">
+              <h6><span style="font-weight: 600; color: #dc143c; ">B</span>ooking Confirmed</h6>
+            </div>
+          </div>
+        </div>
+       <div class="row">
+         <div class="col-md-3">
+           <p class="label">Station Name</p>
+         </div>
+         <div class="col-md-3">
+            <p class="userDetal">{{bookingData.bookDetail.station_name}}</p>
+         </div>
+         <div class="col-md-3">
+          <p class="label">Booking ID</p>
+        </div>
+        <div class="col-md-3">
+           <p class="userDetal">{{bookingData.bookDetail.id}}</p>
+        </div>
+       </div>
+      
+        <div class="row">
+           
+            <div class="col-md-3">
+                <p class="label">Machine ID</p>
+              </div>
+              <div class="col-md-3">
+                  <p class="userDetal">
+                     {{bookingData.bookDetail.m_id}}
+                   </p>
+               </div>
+               <div class="col-md-3">
+                <p class="label">Date/Time</p>
+              </div>
+              <div class="col-md-3">
+                 <p class="userDetal">
+                    {{bookingData.bookDetail.b_date}} <br> {{selectedTime}}
+                  </p>
+              </div>
+          </div>
+         
+            <div class="row">
+               
+                <div class="col-md-3">
+                    <p class="label">Adapter Type</p>
+                  </div>
+                  <div class="col-md-3">
+                     <p class="userDetal">
+                        {{bookingData.bookDetail.adapter_type}}
+                      </p>
+                  </div>
+                  <div class="col-md-3">
+                    <p class="label">Vechile No:</p>
+                  </div>
+                  <div class="col-md-3">
+                     <p class="userDetal">
+                        {{bookingData.bookDetail.vehicle_no}}
+                      </p>
+                  </div>
+              </div>
+              
+                <div class="row">
+                  
+                    <div class="col-md-3">
+                        <p class="label"> Charging Time</p>
+                      </div>
+                      <div class="col-md-3">
+                         <p class="userDetal">
+                            {{bookingData.bookDetail.charging_time}} Minutes
+                          </p>
+                      </div>
+                      <div class="col-md-3">
+                        <p class="label">Total Charges</p>
+                      </div>
+                      <div class="col-md-3">
+                         <p class="userDetal">
+                            <i class="fa fa-inr"></i>&nbsp;{{bookingData.amount}} 
+                          </p>
+                      </div>
+                  </div>
+                
+                   
+                     
+                         
+                        
+                            <button type="button" class="btn btn-success done_button"
+                            (click)="rediectTomyBooking()">DONE</button>
+                         
+                        
+    </div>
+    </div>

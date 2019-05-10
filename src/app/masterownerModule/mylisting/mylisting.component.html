@@ -1,0 +1,109 @@
+<div class="container margin_toplisting">
+    <div class="row">
+    <div class="col-md-12">
+        <div class="button_addbussiness pull-right">
+            <button class="btn btn-success"
+            (click)="redirecttoList()" >Add New Bussiness</button>
+        </div>
+    </div>
+    </div>
+    <div class="row">
+            <div class="ui-md-6 ui-sm-12  ui-lg-6 col-xs-12" *ngFor="let favorite of favorites">
+<div class="favorites-cardbox" >
+        <div class="favorite-loop">
+            <div class="row">
+                <div class=" col-md-3 col-sm-12  col-lg-3">
+                    <div class="card-box">
+
+                        <div class="images">
+                            <img src="{{favorite.vin}}" />
+
+                        </div>
+                    </div>
+                </div>
+                <div class=" col-md-5 col-sm-12  col-lg-5">
+                    <div class="card-content">
+                        <h4 class="card-heading"> {{favorite.business_name}}</h4>
+                        <span class="address">
+                            <i class="fa fa-map-marker" style="color: orange;"></i>
+                            {{favorite.location}} {{favorite.city}} {{favorite.state}}
+                        </span>
+                        <span class="favoritetiming" *ngIf="favorite.open_24 !==1">
+                            <i class="fa fa-clock-o" style="color: #0097A7;"></i>
+                            {{favorite.open_time}} &nbsp; {{favorite.close_time}}
+                        </span>
+                        <span class="favoritetiming" *ngIf="favorite.open_24 ==1">
+                                <i class="fa fa-clock-o" style="color: #0097A7;"></i>
+                                <p>24 Hrs Open</p>
+                            </span>
+
+                    </div>
+                </div>
+                <div class=" col-md-3 col-sm-12  col-lg-3">
+                    <div class="views">
+                        <span class="date">
+                            <i class="fa fa-heart" style="color: orangered;"></i>
+                          
+                        </span>
+                        <span class="comments">
+                            <i class="fa fa-comments" style="color: #0097A7;"></i> {{favorite.no_of_reviews}} &nbsp;
+                            <i class="fa fa-eye" style="color: #0097A7;"></i> {{favorite.no_of_views}}
+                        </span>
+                        <span class="star" *ngIf="favorite.avg_rating > 0">
+                                <ngb-rating [rate]="favorite.avg_rating" 
+                                max="5"  [readonly]="readonly"></ngb-rating>
+                              
+                        </span>
+                    </div>
+
+                </div>
+                <div class=" ui-md-1 ui-sm-1  ui-lg-1">
+                    <div class="lightbox-button">
+                        <i class="fa  fabutton fa-ellipsis-v" (click)="op.toggle($event)"></i>
+                        <div class="viewdeleteparent">
+                            <p-overlayPanel #op>
+                                <div class="viewdelete_menu">
+                                    <ul>
+                                        <li>
+                                           
+                                                <i class="fa fa fa-trash" style="color:#759e0c; width: 10px; padding: 0px 15px 10px 10px;"></i>
+                                                Remove 
+                                          
+                                        </li>
+                                        <li (click)="redirectToproductDescription(favorite.business_id)">
+                                                 
+                                                <i class="fa fa-eye" style="color: brown; width: 10px; padding: 0px 15px 10px 10px;"
+                                                ></i>
+                                                View
+                                        </li>
+                                        <li (click)="editListbussiness(favorite.business_id)">
+                                               
+                                                    <i class="fa  fa-pencil " style="color:#01A5F3; width: 10px; padding: 0px 15px 10px 10px;"></i>
+                                                    Edit
+                                            </li>
+                                            <li (click)="addmachine(favorite.business_id)">
+                                                 
+                                                        <i class="fa fa-eject " style="color: orange; width: 10px; padding: 0px 15px 10px 10px;"></i>
+                                                        Add Machine
+                                                </li>
+                                                <li (click)="addmanger(favorite.business_id)">
+                                                     
+                                                            <i class="fa fa-info" style="color: orangered; width: 10px; padding: 0px 15px 10px 10px;"></i>
+                                                            Add Manager
+                                                    </li>
+            
+
+                                    </ul>
+                                </div>
+                            </p-overlayPanel>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+</div>

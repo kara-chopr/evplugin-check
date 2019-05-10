@@ -1,0 +1,30 @@
+.download_icon{width:100%; float: left;}
+.download_icon img { width:98%; height: auto;}
+.downloadApp {cursor: pointer;}
+.downloadapp_header{    margin: 0px auto;
+    font-weight: bold;
+    text-align: left;
+    color: orangered;  font-size: 21px;}
+    .app_redirectlink{ width:100%;  margin-top: 20px; float: left;}
+   .showsigunupbox{cursor: pointer; }
+    .downloadapp_content{ width:100%; float: left;}
+    .best_offer{ font-size: 15px;
+        font-weight: 400;
+        margin-top: 11px;
+        margin-bottom: 9px; }
+    .download_para {font-size: 14px; font-weight: 200;color: #484848;;
+    letter-spacing: 1px; line-height: 20px;}
+    .orderformclosebutton{
+        position: absolute;
+        right: -6px;
+        top: -19px;
+        background: transparent;
+        border: none;
+        outline: 0;
+        cursor: pointer;
+    }
+    .loginsignupwrapper{ width: 600px; float: left; position: relative;}
+    @media screen and (max-width:768px) {
+        .loginsignupwrapper{ width:100%; float: none; }
+        .app_redirectlink img { width:80%;}
+    }

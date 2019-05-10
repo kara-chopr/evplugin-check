@@ -1,0 +1,206 @@
+<!--- Booking Forms Starts Here-->
+
+<div class="container margin_topbook">
+    <p-toast position="top-right"></p-toast>
+    <div class="order_form">
+        <div class="order_formheading ">
+            <h3><span class="book_wordheading">Book </span>Now </h3>
+        </div>
+        <form id="bookFormStart" [formGroup]="booknowFormgroup" (ngSubmit)="onSubmitbookingForm()">
+            <!--- Booking Forms Adapter Type  Machine Type Row Starts Here-->
+            <div class="row">
+                <div class="col-md-4">
+                    <label class="labelbookingform">Adapter Type :</label>
+                    <mat-form-field>
+                        <mat-select placeholder="Select Type Adapter" (selectionChange)="adapterTypevalueMethod($event)"
+                            formControlName="adapter_type">
+                            <mat-option *ngFor="let adapterType of adapterTypes" [value]="adapterType.value">
+                                {{adapterType.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                </div>
+                <div class="col-md-4">
+                    <label class="labelbookingform">Machine Type :</label>
+                    <mat-form-field>
+                        <mat-select (selectionChange)="machineTypeMethod($event)" placeholder="Select Machine Type"
+                            formControlName="machine_type">
+                            <mat-option *ngFor="let adapterTypess of acselectedValue" [value]="adapterTypess.value">
+                                {{adapterTypess.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+
+                </div>
+                <div class="col-md-4">
+                    <label class="labelbookingform">Power Capacity :</label>
+                    <mat-form-field>
+                        <mat-select placeholder="Select Power Capacity" formControlName="power_capacity">
+                            <mat-option *ngFor="let adapterTypess of machineselectedvalue" [value]="adapterTypess.value">
+                                {{adapterTypess.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                </div>
+
+
+
+
+
+            </div>
+            <!--- Booking Forms Adapter Type Machine Type Row Ends Here-->
+
+
+            <!---  Select Date Row Starts Here-->
+            <div class="row">
+                <div class="col-md-4">
+                    <label class="labelbookingform">Select Date :</label>
+                    <mat-form-field class="example-full-width">
+                        <input matInput [min]="dateObj" [max]="someDate" #jj [matDatepicker]="picker" placeholder="Choose a Booking Date"
+                            (dateChange)="selectedDateMethod(jj.value)" formControlName="b_date">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-4 margin_top">
+                    <label class="labelbookingform">Select Time :</label>
+                    <input type="text" value="{{selectedTime}}" (focus)="open()" class="select_time" placeholder=" Select Booking Time"
+                        formControlName="time">
+
+                </div>
+
+                <div class="col-md-4 margin_top5">
+                    <label class="labelbookingform">Vehicle No :</label>
+
+                    <mat-form-field>
+                            <mat-select placeholder="Select Vehicle No" 
+                                formControlName="vehicle_no">
+                                <mat-option *ngFor="let addVechileResponses of addVechileResponsess" [value]="addVechileResponses.vehicle_no">
+                                    {{addVechileResponses.vehicle_no}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            <!---  Select Date Row Ends Here-->
+
+
+            <!---  Select Charging Time Check Aviablity Button Row Starts Here  -->
+            <div class="row">
+
+                <div class="col-md-4">
+                    <label>Select Charging Time :</label>
+                    <div class="" *ngIf="(selectedadaptorTypevalue !== 'AC' && selectedadaptorTypevalue !== 'DC')">
+                        Hours
+                        <mat-radio-group class="achourradio-group" name="achournameValue">
+                            <mat-radio-button class="ACselectedRadiobuttonHours" *ngFor="let hoursRadioButtonValue of AChoursRadioButtonValues"
+                                [value]="hoursRadioButtonValue.hours">
+                                {{hoursRadioButtonValue.hours}}
+                            </mat-radio-button>
+                        </mat-radio-group>
+                        <br>
+
+                        Minutes:
+
+                        <mat-radio-group class="acminuteradio-group" name="acminutenameValue">
+                                <mat-radio-button value="0" class="acminuteradiobutton">0</mat-radio-button>
+                           
+                            <mat-radio-button value="30" class="acminuteradiobutton">30</mat-radio-button>
+                            
+
+
+                        </mat-radio-group>
+
+                    </div>
+                    <div class="" *ngIf="selectedadaptorTypevalue == 'AC'">
+                        Hours:
+                        <mat-radio-group class="achourradio-group" name="achournameValue" formControlName="hours"
+                        >
+                            <mat-radio-button class="ACselectedRadiobuttonHours" *ngFor="let hoursRadioButtonValue of AChoursRadioButtonValues"
+                                [value]="hoursRadioButtonValue.hours" [checked]="hoursRadioButtonValue.checked"
+                                (change)="setAcminuteFlag(hoursRadioButtonValue.hours)">
+                                {{hoursRadioButtonValue.hours}}
+                            </mat-radio-button>
+                        </mat-radio-group>
+                        <br><br>
+
+                        Minutes:
+
+                        <mat-radio-group class="acminuteradio-group" name="acminutenameValue" formControlName="minutes"
+                        >
+                       <mat-radio-button value="0"
+                       [checked]="true">0</mat-radio-button> &nbsp;
+                            <!---   <mat-radio-button value="15">15</mat-radio-button>  -->
+                            <mat-radio-button value="30" *ngIf="minuteFlag"> 30</mat-radio-button>
+                            <!-- <mat-radio-button value="45" *ngIf="acHourradioButtonngModelValue !== '6' "> 45</mat-radio-button> -->
+
+
+                        </mat-radio-group>
+
+                    </div>
+                    <div class="" *ngIf="selectedadaptorTypevalue == 'DC'">
+                        Hours:
+                        <mat-radio-group class="dchourradio-group" name="dchournameValue" formControlName="hours"
+                        >
+                            <mat-radio-button class="DCselectedRadiobuttonHours" *ngFor="let DChoursRadioButtonValue of DChoursRadioButtonValues"
+                                [value]="DChoursRadioButtonValue.hours" (change)="showHideMinutes(DChoursRadioButtonValue.hours)"
+                                [checked]="DChoursRadioButtonValue.checked">
+                                {{DChoursRadioButtonValue.hours}}
+                            </mat-radio-button>
+                        </mat-radio-group>
+                        <br>
+
+                        Minutes:
+
+                        <mat-radio-group class="dcminuteradio-group" name="dcminutenameValue" formControlName="minutes"
+                        >
+                            <mat-radio-button value="0" *ngIf="ZeroMinuesFlag " class="dcminuteradiooButton"
+                            [checked]="!checkedFlag">
+                                0</mat-radio-button>
+                            <mat-radio-button value="30" *ngIf="twoHourFlag" class="dcminuteradiooButton"
+                            [checked]="checkedFlag">
+                                30</mat-radio-button>
+
+                            <mat-radio-button value="45" *ngIf="twoHourFlag " class="dcminuteradiooButton">
+                                45</mat-radio-button>
+
+
+                        </mat-radio-group>
+
+                    </div>
+
+                </div>
+                <input type="hidden" formControlName="s_id" />
+              
+
+                <input type="hidden" formControlName="u_id" />
+                <!--- If Selected Dc Charge Dc Selecteed Radio buttton Timing  Starts Here  
+                                        If Ac  Selected Hide Div Starts Here-->
+
+
+                <div class="col-md-4">
+                    <button class="checkaviablitybutton" type="submit">Check Aviablity</button>
+                </div>
+            </div>
+
+
+        </form>
+
+
+    </div>
+</div>

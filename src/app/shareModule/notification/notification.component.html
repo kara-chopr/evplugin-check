@@ -1,0 +1,14 @@
+<app-loader *ngIf="loading"></app-loader>
+<div class="notification-section margin_top" *ngIf="notificationDatas && notificationDatas.master">
+    <p class="notification">Notification</p>
+<div class="container ">
+  <div class="notification_parent" *ngFor="let notificationData of notificationDatas.master">
+  
+    <p-panel header="{{notificationData.topic}}" [toggleable]="true">
+  <p [innerHTML]="notificationData.description"></p>
+    </p-panel>
+    
+                                    
+
+</div>
+</div>

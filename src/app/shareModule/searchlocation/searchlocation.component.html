@@ -1,0 +1,341 @@
+
+<!-- Filter Selected Location Header Parts Starts Here-->
+<app-loader *ngIf="loading"></app-loader>
+<div class="wrapper ">
+  <div class="container margin_top">
+    <form id="nearmeFormStart"  [formGroup]="nearmeFormGroup" (ngSubmit)="onSubmitnearmeForm()"
+    novalidate>
+    <div class="ui-grid ui-grid-responsive ui-fluid">
+      <div class="ui-grid-row">
+        <div class="  ui-md-2 ui-sm-12 ui-lg-2">
+          <div class="dropdownsearchlocation" *ngIf="businessServiceResponses && businessServiceResponses.success">
+            <select class="select-open" formControlName="business_type_id"  [(ngModel)]="selectedStateModel"
+            (change)="postbusinessserveicetypeId(selectedStateModel)">
+            <option [ngValue]="undefined" disabled selected style="font-size:1px;">Select business Catagries</option>
+              <option *ngFor=" let servicesCatgries of businessServiceResponses.success"
+               [value]="servicesCatgries.type_id">
+               {{servicesCatgries.type_name}}
+              </option>
+            </select>
+
+          </div>
+        </div>
+        <div class="  ui-md-5 ui-sm-12 ui-lg-5">
+          <div class="search-autocomplete">
+           
+            <input ngx-google-places-autocomplete (keyup)="changeConfig()" 
+                                    
+            formControlName="google_places_autocomplete"  class="textbox-autocomplete" #places="ngx-places" (onAddressChange)="handleAddressChange($event)" 
+            placeholder="Search Places" />
+          </div>
+        </div>
+        <input type="hidden" formControlName="latitude"/>
+        <input type="hidden" formControlName="longitude"/>
+        <!-- <  Filter Section Starts Here -->
+        <div class="  ui-md-2 ui-sm-12  ui-lg-2">
+          <div class="filter">
+            <button pButton type="button" label="Filter" class="ui-button-secondary" icon="fa fa-list-ul " (click)="op.toggle($event)"></button>
+
+          </div>
+        </div>
+        <p-overlayPanel #op [style]="{width: '500px'}"
+         [showCloseIcon]="true">
+          <div class="ui-grid ui-grid-responsive ui-fluid">
+            <form  [formGroup]="searchLocationFilter" (ngSubmit)="onSubmitFilterForm()">
+            <div class="row">
+              <div class="  col-md-7">
+                <div class="row">
+                  <div id="radioacdcselection">
+                   
+                      <mat-radio-group  formControlName="adaptor">
+                          <mat-radio-button value="AC">AC</mat-radio-button> &nbsp;
+                          <mat-radio-button value="DC">DC</mat-radio-button>&nbsp;
+                         
+                          <!-- <mat-radio-button value="AC & DC">AC & DC</mat-radio-button> -->
+                        </mat-radio-group>
+                  </div>
+                </div>
+                <div class="ui-grid-row">
+                  <div class="filtertiming">
+                    <h6 style="margin-top: 0px;">
+                      <i class="fa fa-clock-o" style="font-size:20px; color: #0097A7 !important; margin-right: 5px;"></i>
+
+                      Filter on Timings
+                    </h6>
+                  </div>
+                </div>
+                <div class="ui-grid-row">
+                  <div class="open">
+                    
+                       <mat-checkbox value="24open" formControlName="open_24"
+                      (change)="disableopen($event.checked)">24 OPEN
+                    </mat-checkbox>
+                    
+                  </div>
+                </div>
+                <div class="ui-grid-row">
+                  <div class="openTimingDropdown">
+                    <select class="select-opn" name="first" [disabled]="disbleopen_timeFlag"
+                   
+                    formControlName="open_time">
+                      <option *ngFor="let o of opentiming"
+                      value="{{o.value}}">
+                        {{o.time}}
+                      </option>
+                    </select>
+
+                  </div>
+                </div>
+                <div class="ui-grid-row">
+                  <div class="closeTimingDropdown">
+                      <select class="select-opn" name="first" [disabled]="disbleopen_timeFlag"
+                      formControlName="close_time">
+                          <option *ngFor="let o of closetiming"
+                          value="{{o.value}}">
+                            {{o.time}}
+                          </option>
+                        </select>
+                   
+
+                  </div>
+                </div>
+              </div>
+              <div class="  ui-md-5 ui-sm-5  ui-lg-5">
+                <div class="filteronamenities">
+                  <p>
+                    <i class="fa fa-list-ul " style="color:#0097A7 "></i> &nbsp;Filter on amenities</p>
+                </div>
+                <div class="selectedamenities" *ngIf="localStorageHttpnearme && localStorageHttpnearme.success">
+                  <div class="firstaid">
+                      <div class="slectedaminities">
+                    <div class="ui-grid ui-grid-responsive ui-fluid"
+                   >
+                      <div class="ui-grid-row" *ngFor="let nearLocation of localStorageHttpnearme.success">
+                       
+                      
+                        <div class="  ui-md-12 ui-sm-12  ui-lg-12" >
+                          <ul class="filteramenities">
+                            <li *ngFor="let aminiites of nearLocation.amenties|uniquedata">
+                               
+                                <mat-checkbox 
+                              
+                                (change)="aminiiesSelected(aminiites.amenity_id, $event.checked)">
+                                <i class="{{aminiites.amenity_icon}}" style="font-size:18px; color: #de1515"></i>
+                                &nbsp;
+                              {{aminiites.amenity_name}}
+                              </mat-checkbox>
+                   
+                            </li>
+                          </ul>
+                           
+                               
+                              
+  
+                           
+                            
+                          </div>
+                      </div>
+                      </div>
+                    </div>
+
+                  </div>
+                
+                 
+                 
+               
+               
+                 
+                 
+                 
+                 
+                </div>
+
+              </div>
+            </div>
+            
+              <div class="reset-apply">
+                  <div class="ui-grid-row">
+                  <div class="  ui-md-2 ui-sm-12  ui-lg-2">
+                      <button pButton type="button" class="ui-button-secondary" 
+                      label="Reset"
+                      (click)="serchLocationReset()"></button>
+                    </div>
+                    <div class="  ui-md-2 ui-sm-12  ui-lg-2">
+                        <!-- <button pButton type="submit" class="ui-button-success"
+                       label="Apply">
+                          
+                        </button> -->
+                    
+                      </div>
+
+              </div>
+              </div>
+
+          </form>
+          </div>
+
+        </p-overlayPanel>
+    <!-- <  Filter Section ENDS Here -->
+        <div class="  ui-md-2 ui-sm-12  ui-lg-2">
+          <div class="nearme">
+            <button pButton type="submit" label="Near me" class="ui-button-danger"></button>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </form>
+  </div>
+</div>
+
+<!-- Filter Selected Location Header Parts Ends Here-->
+
+
+
+<!-- All Stations Data  Show Here-->
+<div class="container">
+  <div class="ui-grid ui-grid-responsive ui-fluid">
+    <div class="ui-grid-row" *ngIf=" localStorageHttpnearme && localStorageHttpnearme.success ">
+      <div class="  ui-md-7 ui-sm-12  ui-lg-7">
+        <!-- <div class="evplugin-heading">
+          <h3>{{filterDataLocationBinding}}</h3>
+
+        </div> -->
+        <div class="favorite-parent" 
+        [class.showlocation]="allFlag" >
+          <div class="favorites-cardbox" 
+          *ngFor="let allevpluginData of localStorageHttpnearme.success  
+          |filtersearchlocation:searchLocationFilter.value ">
+          <div 
+          *ngFor="let buisness_type of allevpluginData.buisness_type  
+          |filtersearchlocation:searchLocationFilter.value :aminitiehttpResponse">
+            <div class="favorite-loop">
+              <div class="ui-grid-row">
+                <div class=" ui-md-3 ui-sm-12  ui-lg-3">
+                  <div class="card-box" (click)="showuserDetails(allevpluginData)"
+                  [routerLink]="['/home/shared/productdescription']">
+                   
+                    <div class="images">
+                      <img src="http://api.evplugincharge.com{{allevpluginData.cover_photo_url}}" />
+
+                    </div>
+                  </div>
+                </div>
+                <div class=" ui-md-7 ui-sm-12  ui-lg-7">
+                  <div class="card-content" (click)="showuserDetails(allevpluginData)"
+                  [routerLink]="['/home/shared/productdescription']">
+                    <h4 class="card-heading"> {{allevpluginData.pname}}</h4>
+                    <p class="type_name"> {{buisness_type.type_name}}</p>
+                    <span class="address">
+                      <i class="fa fa-map-marker" style="color: orange;"></i>
+                    
+                      {{allevpluginData.location}} &nbsp;{{allevpluginData.city}}&nbsp;{{allevpluginData.state}}</span>
+                    <span class="favoritetiming" *ngIf="allevpluginData.open_24 !==1">
+                      <i class="fa fa-clock-o" style="color: #0097A7;"></i>
+                      {{allevpluginData.open_time}}  &nbsp; {{allevpluginData.close_time}}</span>
+                      <p *ngIf="allevpluginData.open_24==1" class="allDayopen">24 hrs Open</p>
+                  </div>
+                 
+
+                  <div class="views">
+                    <!-- <span class="date">
+                      <i class="fa fa fa-plug " style="color: orangered;"></i>
+                      {{allevpluginData.adaptor}}
+                    </span> -->
+                    <!-- <span class="date">
+                      <i class="fa fa fa fa-inr " style="color: orangered;"></i>
+                      {{allevpluginData.charging_price}}
+                    </span> -->
+                    <span class="comments">
+                      <i class="fa fa-comments" style="color: #0097A7;"></i> {{allevpluginData.no_of_reviews}} &nbsp;
+                      <i class="fa fa-eye" style="color: #0097A7;"></i> {{allevpluginData.no_of_views}}
+                    </span>
+                    <span class="star">
+                     
+                      <ngb-rating [(rate)]="allevpluginData.avg_rating"   [readonly]="readonly"
+                      max="5"></ngb-rating>
+                    </span>
+                  </div>
+
+                </div>
+                <div class=" ui-md-2 ui-sm-12 ui-lg-2">
+                  <div class="booknow" (click)="navigatetoBooknow(allevpluginData)">
+                   <button class="btn btn-danger" style="width:82px; font-size: 11px;">BOOK NOW</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+   
+        </div>
+        </div>
+         <!--- Parking Data Ends Here -->
+
+
+
+           <!---Map Location Starts Here  -->
+
+
+
+     
+      <div class=" col-md-5 col-sm-5 col-xs-12">
+       <div class="location-map" >
+          <agm-map [latitude]="lat" [longitude]="long">        
+            <ng-container>
+                <agm-marker  *ngFor = "let longlat of this.localStorageHttpnearme.success" [latitude]="longlat.latitude" [longitude]="longlat.longitude"></agm-marker>
+               
+            </ng-container>
+        </agm-map>
+        </div>
+       <!--   <div class="location-map" *ngIf="allevpluginDatas && eveStationFlag">
+            <agm-map [latitude]="lat" [longitude]="long">        
+              <ng-container>
+                  <agm-marker  *ngFor = "let longlat of evplugin_evestations" [latitude]="longlat.latitude" [longitude]="longlat.longitude"></agm-marker>
+                
+              </ng-container>
+          </agm-map>
+          </div>
+           <div class="location-map" *ngIf="allevpluginDatas && ResturantFlag">
+              <agm-map [latitude]="lat" [longitude]="long">        
+                <ng-container>
+                    <agm-marker  *ngFor = "let longlat of evplugin_resturants" [latitude]="longlat.latitude" [longitude]="longlat.longitude"></agm-marker>
+                  
+                </ng-container>
+            </agm-map>
+            </div> 
+            <div class="location-map" *ngIf="allevpluginDatas && mallFlag">
+                <agm-map [latitude]="lat" [longitude]="long">        
+                  <ng-container>
+                      <agm-marker  *ngFor = "let longlat of evplugin_malls" [latitude]="longlat.latitude" [longitude]="longlat.longitude"></agm-marker>
+                    
+                  </ng-container>
+              </agm-map>
+              </div>
+              <div class="location-map" *ngIf="allevpluginDatas && hotelFlag">
+                  <agm-map [latitude]="lat" [longitude]="long">        
+                    <ng-container>
+                        <agm-marker  *ngFor = "let longlat of evplugin_hotels" [latitude]="longlat.latitude" [longitude]="longlat.longitude"></agm-marker>
+                      
+                    </ng-container>
+                </agm-map>
+                </div>
+                <div class="location-map" *ngIf="allevpluginDatas && parkingFlag">
+                    <agm-map [latitude]="lat" [longitude]="long">        
+                      <ng-container>
+                          <agm-marker  *ngFor = "let longlat of evplugin_parkings" [latitude]="longlat.latitude" [longitude]="longlat.longitude"></agm-marker>
+                        
+                      </ng-container>
+                  </agm-map>
+                  </div> -->
+                
+      </div>
+
+   
+  </div>
+</div>
+<div class="notFound" *ngIf="locationFlag">
+  <h3>Location Not Found</h3>
+</div>
+</div>

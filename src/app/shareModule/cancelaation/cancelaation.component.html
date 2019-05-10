@@ -1,0 +1,23 @@
+
+
+<div class="container margin_top" *ngIf="cancelation && cancelation[0]">
+   
+       <div class="row">
+         <div class=" col-md-12">
+         <div class="cancellation_heading">
+           <h3>Cancellation & Refund Policy</h3>
+
+         </div>
+         </div>
+      </div>
+      <div class="row" *ngIf="cancelation && cancelation[0].description">
+          <div class=" col-md-12">
+          <div class="cancellation_content">
+            <p [innerHtml]="cancelation[0].description"> </p>
+           
+
+          </div>
+          </div>
+        </div>
+ 
+</div>

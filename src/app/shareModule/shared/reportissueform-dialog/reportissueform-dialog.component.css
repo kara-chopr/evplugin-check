@@ -1,0 +1,31 @@
+.reportissueFormWrapper{
+    width:600px;
+    position: relative;
+}
+
+ul,li{margin: 0; padding: 0}
+
+.orderformclosebutton{
+    position: absolute;
+    right: -6px;
+    top: -19px;
+    background: transparent;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+}
+.enterIssue{
+
+}
+.reportform-control{
+    width:100%; float: left; padding-bottom: 5px;
+}
+.report_checboxes{ width:100%; float: left;}
+.report_checboxes ul { list-style: none;}
+.report_checboxes ul li { display: inline-block; margin-right: 10px;}
+.report_submitButton{
+    background-color: rgb(244,81,30); cursor: pointer; color: #fff; 
+    font-size: 12px; text-align: center; 
+    padding: 6px; border-radius:3px; outline: 0;
+}
+

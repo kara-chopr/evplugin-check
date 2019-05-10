@@ -1,0 +1,82 @@
+<div class = "station_wrapper">
+<div class="container">
+    <p-toast position="top-right"></p-toast>
+  <div class="row margin_top">
+    <div class="col-md-8">
+      <div class="station_heading">
+        <h6> Station Machines</h6>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="addmachine">
+        <button class="btn btn-default"
+        (click)="openDialog()">Add Machine</button>
+      </div>
+      </div>
+  </div>
+ 
+  
+  
+ 
+  
+  <div class="row">
+      <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Machine Code</th>
+              <th scope="col">Stations Name</th>
+              
+              <!-- <th scope="col"> Model No</th> -->
+              <th scope="col"> Serial No:</th>
+              <th scope="col">Power</th>
+              <th scope="col"> Machine Type</th>
+              <th scope="col">Brand Name</th>
+              <th scope="col">Adapter  Type</th>
+              <!-- <th scope="col">Time</th> -->
+              <th scope="col">Machine Status</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody *ngIf="allStationResponses && allStationResponses.success">
+              <ng-container *ngFor="let allStationResponse of allStationResponses.success;let i=index">
+               
+                    
+           <tr *ngFor="let machine of allStationResponse.machine">
+            <td>{{machine.sNo}}</td>
+             
+              <td>{{allStationResponse.stations_name}}</td>
+           
+             <!-- <td>   {{allStationResponse.machine_model_no}}</td> -->
+             
+              <td>{{machine.machine_serial_no}}</td>
+              <td>{{machine.power}}</td>
+              <td>{{machine.machine_type}}</td>
+              <td>{{machine.brand}}</td>
+              <td>{{machine.adaptor}}</td>
+              <!-- <td>{{machine.time}}</td> -->
+              <td *ngIf="machine.machine_status==1" 
+              
+              >ON</td>
+              <td  *ngIf="machine.machine_status==0 "
+              
+              >OFF</td>
+             
+              <td *ngIf="machine.machine_status==1" 
+              (click) ="machineStatus(machine.machine_status,machine.id)"
+              class="machineOff" >Off</td>
+              <td  *ngIf="machine.machine_status==0 "
+              (click) ="machineStatus(machine.machine_status,machine.id)"
+              class="machineOn" >ON</td>
+              
+            </tr>
+          
+            <br>
+
+           
+    </ng-container>
+           
+          </tbody>
+        </table>
+      </div>
+</div>
+</div>

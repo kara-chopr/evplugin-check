@@ -1,0 +1,127 @@
+<div class="addmachinewrapper">
+ <div class="container">
+   <div class="row">
+     <div class="col-md-12">
+       <div class="addmachine_heading">
+         <h6>Add Machine</h6>
+       </div>
+     </div>
+   </div>
+  
+   <div class="row">
+     <div class="col-md-12">
+       <div class="machineserial_no">
+         <div class="row">
+           <div class="col-md-5">
+              <p>Machine Serial No:</p>
+           </div>
+           <div class="col-md-7">
+              <mat-form-field class="orderForm-Control">
+                  <input matInput [(ngModel)]="serialNo" placeholder="Machine Serial No" class="orderForm-control"
+                  (change)="getSerialNo(serialNo)" name="serial">
+                 
+                </mat-form-field>
+           </div>
+         </div>
+        
+       </div>
+     </div>
+     </div>
+     <div *ngIf="addmachineResponse">
+     <div class="row">
+       <div class="col-md-4">
+         <div class="listing_label">
+         <p>Brand Type</p>
+        </div>
+       </div>
+       <div class="col-md-8 col-xs-12">
+         <div class="listing_type">
+          <p>{{addmachineResponse[0].brand}}</p>
+         </div>
+       </div>
+     </div>
+     <div class="row">
+        <div class="col-md-4">
+          <div class="listing_label">
+          <p>Adapter Type</p>
+         </div>
+        </div>
+        <div class="col-md-8 col-xs-12">
+          <div class="listing_type">
+            <p>{{addmachineResponse[0].adaptor}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-md-4">
+            <div class="listing_label">
+            <p>Socket Pin</p>
+           </div>
+          </div>
+          <div class="col-md-8 col-xs-12">
+            <div class="listing_type">
+              <p>{{addmachineResponse[0].socket_pin}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+              <div class="listing_label">
+              <p>Power Capacity</p>
+             </div>
+            </div>
+            <div class="col-md-8 col-xs-12">
+              <div class="listing_type">
+                <p>{{addmachineResponse[0].power}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4" *ngFor="let hoursRadioButtonValue of AChoursRadioButtonValues">
+          <div class="vechcle_charging">
+              <mat-radio-group class="achourradio-group"   name="achournameValue" >
+                  <mat-radio-button class="ACselectedRadiobuttonHours"   
+                  [value]="hoursRadioButtonValue">
+                    {{hoursRadioButtonValue}}
+                  </mat-radio-button>
+                </mat-radio-group>
+             
+          </div>
+        </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="disable_labelcharging">
+              <label>Charging Price</label>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="disable_input">
+              <input type="text" placeholder="0" disabled/>
+            </div>
+          </div>
+        </div>
+        <form [formGroup]="addMachineFormGroup" (ngSubmit)="onSubmitmachineAddForm()">
+        <div class="row">
+          <input type="hidden" formControlName="machine_serial_no">
+          <input type="hidden" formControlName="machine_model_no">
+          <input type="hidden" formControlName="adaptor">
+          <input type="hidden" formControlName="power">
+          <input type="hidden" formControlName="brand">
+          <input type="hidden" formControlName="sid">
+          <input type="hidden" formControlName="electricty_charges">
+          <input type="hidden" formControlName="machine_type">
+          <input type="hidden" formControlName="no_of_guns"> 
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="add_machine">
+              <button type="submit" class="btn btn-default">Add Machine</button>
+            </div>
+          </div>
+        </div>
+      </form>
+      </div>
+      
+   </div>
+ </div>

@@ -1,0 +1,164 @@
+.margin_topprofile{
+    margin-top:95px;
+}
+ul,li{margin: 0; padding: 0}
+
+.siddebarmenu{ width:100%; float: left; background: #ccc; height: 100%;}
+.siddebarmenu ul
+{ list-style: none;}
+
+.siddebarmenu ul li a{ 
+    display: block;
+    padding-left: 10px;
+    margin-top: 20px;
+    margin-left: 0px;
+    font-family: Arial;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #000;
+    border-bottom: 1px solid #efefef;
+    padding-bottom: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.editprofile{
+    margin-top: 10px;
+}
+.bussiness li a.active {
+    display: block;
+    padding-left: 10px;
+    margin-top: 20px;
+    margin-left: 0px;
+    font-family: Arial;
+    font-size: 12px;
+    text-decoration: none;
+    color: #0097A7;
+    border-bottom: 2px solid #0097A7;
+    font-weight: bold;
+    cursor: pointer;
+}
+.siddebarmenu ul li a:hover{
+    border-bottom: 1px #0097A7 solid;
+}
+.favorites-cardbox{ width:100%; float: left; border: 1px #ccc solid;
+     padding: 5px;     margin-bottom: 19px;
+    box-shadow: 0px 1px #a0a0a0;
+}
+.favorites-heading{ font-size: 20px; color: #666;}
+.favorites-heading h3{font-size: 20px; color: #666;}
+.card-box{ width:100%; float: left; padding-right: 10px;}
+.images {width:100%; float: left;}
+.images img { width:96%;}
+.card-content {margin-top:0px;}
+.card-heading{font-size: 16px; color: #666; margin: 0; padding-bottom: 13px;}
+.address {font-size: 13px;
+    color: #717171;}
+    .favoritetiming{float: left;
+        width: 40%;
+        font-size: 13px;
+        display: block;
+        margin-top: 7px;}
+        .views{ float: left;}
+.date{width:70%; float: left;}
+        .comments{ width:60%; float: left;}
+        .star{width:60%; float: left;}
+
+        .lightbox-button{margin-top: 10px; cursor: pointer;}
+        .viewdelete_menu{width:100%; float: left;}
+        .viewdelete_menu ul{ list-style: none;}
+        .viewdelete_menu ul li {display: block;}
+        .viewdelete_menu ul li a {color:#000; font-size: 13px;}
+        .panel-menu .ui-overlaypanel .ui-overlaypanel-content {
+            padding: 5px 0px 10px 0px !important;
+        }
+        .viewdeleteparent{}
+        .profile-picture{ width:100%; }
+        .profile-picture img {border-radius: 50%; width:90%;}
+        .name { margin-bottom: 10px;}
+        .profileid{ margin-bottom: 10px;}
+        .profilephone{margin-bottom: 10px;}
+        .edit_button{ width:70px; line-height: 60px; border-radius: 50%;
+            color: rgba(255,255,255,0.87);
+            background-color: rgb(63,81,181); cursor: pointer;
+            outline: 0; font-size: 16px;
+        }
+        .changepassword-button{}
+        .password_button{
+            width:70px; line-height: 60px; border-radius: 50%;
+            color: rgba(255,255,255,0.87);
+            background-color: rgb(244,81,30); cursor: pointer;
+            outline: 0; font-size: 16px;
+        }
+        .changeprofileimage_button{
+            width:70px; line-height: 60px; border-radius: 50%;
+            color: rgba(255,255,255,0.87);
+            background-color: rgb(197,17,98); cursor: pointer;
+            outline: 0; font-size: 16px;
+        }
+        .center{width: 75%;
+            margin: 0 auto;
+            padding-left: 63px;}
+        
+            .form-group {
+                width: 100%;
+                float: left;margin-bottom: 19px;
+            }  
+            .form-group h3 {
+                width: 100%;
+                float: left;
+                
+                color: #0097A7;
+                font-size: 17px;
+            }
+            .listingcontrol {
+                width: 100%;
+                float: left;
+                border-left: none;
+                border-right: none;
+                border-top: none;
+                border-bottom: 1px #ccc solid;
+            }
+            .profileaccount{ width:14%; cursor: pointer;}
+            .profilevechiles{ width:14%; cursor: pointer;}
+            .profilerfid{ width:14%; cursor: pointer;}
+            .profileaddress{ width:14%; cursor: pointer;}
+            .listingcontrol:focus{outline: 0;}
+           
+            .profileeditform{ width:100%; float: left;
+            margin-top: 8px;}
+            .submit{ width:100%; float: left; margin-top: 10px;}
+
+            .editsubmitbutton{ width: 22%; margin: 0 auto 10px auto;
+                background-color: rgb(244,81,30);
+                color: #fff;
+                padding: 11px;
+                border: 0;
+                border-radius: 5px; cursor: pointer;}
+
+            .editsubmitbutton:focus{outline: 0;}
+            .changepassword{ width:100%; float: left;}
+            .profilechangepassword{ width:100%; float: left; margin-top: 30px;}
+            .changepassword{width:100%; float: left; margin-bottom: 2px;
+            }
+
+
+            @media(max-width:768px){
+                .images img{width:100%; height: 140px;} 
+                .viewdelete_menu ul li a {
+                    color: #000;
+                    font-size: 10px;
+                }
+                .profile-picture img {
+                    width:100%; 
+                }
+                .profile-picture{
+                  
+                    float: left;
+                }
+                .profile-description{    float: left;
+                    margin-left: 20px;}
+                .card-heading[_ngcontent-c4] {
+                    width: 60%;
+                        float: left;
+                    }
+            }

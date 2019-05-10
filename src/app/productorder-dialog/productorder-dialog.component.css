@@ -1,0 +1,90 @@
+
+.ordersubmittedmessage{ width:30%; text-align: center; color: #00c16f; font-size: 30px;}
+
+.dialog_wrapper{ width:530px; height: 200px; position: relative;}
+.divider { border-right: 2px #cccc solid;  float: left; height: 100%;;}
+.line{ position: absolute;
+    width: 1px;
+    background-color: black;
+    right: 51%;
+    top: 44px;
+    height: 149%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    }
+    .resendotp{ line-height: 31px;}
+    .resendotp button{ background:#12ae57; color: #fff; border:0; border-radius: 10px; 
+      margin-top: 9px;cursor: pointer;}
+    .orderformwrapper{width:60%; float: left;}
+    .product_image{width:40%; float: left; }
+    .product_image img {
+        /* width: 100%; */
+       
+        margin-left: 21px;
+        width: 150px;
+        /* margin-top: 20px; */
+         height:290px; 
+        /* margin: 0 auto; */
+        /* margin-left: 59px; */ 
+    }
+    .order_form{ width: 70%; float: right;}
+    .order_formheading{text-transform: uppercase;
+        font-weight: 700; font-size: 14px;
+        margin: 15px 0 20px;}
+        .order_formheading h3{ font-size: 14px;}
+        .order_formheading h3:after {
+            width: 45px;
+    height: 2px;
+    background: #00c16f;
+    position: relative;
+    top: 5px;
+    display: block;
+    content: "";
+        }
+        .orderForm-control{
+            width:100%; float: left; display:block; 
+        }
+        .orderformclosebutton{
+            position: absolute;
+    right: 12px;
+    top: -10px;
+    background: transparent;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+        }
+        .errormesage{
+            font-size: 11px; color: #f00;
+          }
+         
+      .order_form  .mat-form-field { display: block;}
+.orderformSubmitbutton{
+    display: block;
+    margin: 0 auto;
+    padding: 8px 0;
+    width: 64%;
+    background: #00c16f;
+    text-transform: uppercase;
+    color: #fff;
+}
+/* .orderformclosebutton {
+    position: absolute;
+    right:20px;
+    top:4px;
+} */
+    @media screen and (max-width:991px) {
+        .line{
+            display: none;
+        }
+        .dialog_wrapper{ width:100%;  position: relative; overflow: auto}
+        .orderformclosebutton{
+            position: absolute;
+            right: 0px;
+            top: -5px;
+            background: transparent;
+            border: none;
+            outline: 0;
+            cursor: pointer;
+        }
+    }

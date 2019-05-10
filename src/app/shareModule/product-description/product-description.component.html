@@ -1,0 +1,356 @@
+
+<app-loader *ngIf="loading"></app-loader>
+<head>
+      <title>Delta Wall Box DC 25kw Charger</title>
+<meta name="description" content="Delta wall box dc 25kw charger has dual output with 94% efficiency. It is very 	easy to installation with Wi-Fi connectivity feature. Order now for setup charging station.">
+</head>
+<div class="container ">
+      <div class="row margin_topproduct"> 
+            <div class="col-md-12 mobileview_main">
+                        <div class="product_heading">
+
+                                    <h4 *ngIf="bussinessId && bussinessId[0].business_name">{{bussinessId[0].business_name}} 
+                                    <span class="station_type" *ngIf="bussinessId && bussinessId[0].type_name">
+                                    {{bussinessId[0].type_name}}
+                                    </span>
+                                    </h4>
+                                    
+                                    <p class="location_name" *ngIf="bussinessId && bussinessId[0].location_name && 
+                                    bussinessId[0].city_name && bussinessId[0].state_name">{{bussinessId[0].location_name}} {{bussinessId[0].city_name}}
+                                    {{bussinessId[0].state_name}}
+                                    </p>
+                                   
+                                    </div>  
+            </div>
+   <!-----letf--tabs---------------------------------->
+ 
+       <div class="col-md-12 mobileview_main3"  >
+             <div class="row" >
+         <div class="col-md-3">
+                  <div class="onpageselectedsection un-styled tab-ul">
+                              <ul>
+                              <li *ngFor=" let 
+                              viewToscrollSection of viewToscrollSections" [class.tab-active]="activeTabName == 'signin-area'" data-login="signin-area" (click)="activeTabName = 'signin-area'"
+                              style="cursor: pointer;">
+                              <a (click)="scrolltoViewSection(viewToscrollSection.id)" class="viewToscrollSection">
+                              {{viewToscrollSection.section}}</a>
+                              </li>
+                              
+                              </ul>
+                              </div>
+                     </div>
+         
+            
+        
+              
+               <div class="col-md-6">
+                     <ul class="section_css">
+                           <li>
+                                    <div class="id">
+                                                <p 
+                                               class="bussinessIdvalue" *ngIf="bussinessId && bussinessId[0].business_id ">ID:{{bussinessId[0]?.business_id}}</p>
+                                                
+                                                </div>   
+                           </li>
+                           <li>
+                                    <span class="heart"  
+                                    >
+                                    <p class="addFavorite" [ngClass]="favoritechecklistFlag ? 'addClass' : 'delteClass'"
+                                    (click)="favoritechecklist()">{{add_deleteText}}</p>
+                                    <p-toast position="top-right"></p-toast>
+                                    </span>   
+                           </li>
+                           <li>
+                                    <button type="button" class="btn-circle report_issue"
+                                    [disabled]="(localstorageRole =='3' || localstorageRole =='4' || 
+                                                localStoragetoken ==null)"
+                                                (click)="reportIssueDialogform()">Report Issue</button>    
+                           </li>
+                           <li>
+                                    <button type="button" class="btn-circle book_now" 
+                                    (click)="redirecToBookNow()">Book Now</button>   
+                           </li>
+                           <li class="review"  *ngIf="bussinessId && bussinessId[0].avg_rating ">
+                                    <ngb-rating [(rate)]="selected" [readonly]="readonly"
+                                    max="5"></ngb-rating>
+                                     <!-- <p> Rating {{bussinessId[0].avg_rating}}</p> -->
+                           </li>
+                           <li>
+                                    <span class="share">
+                                                <i class="fa fa-share-alt"
+                                                (click)="showDialog()" ></i>
+                                                <p-dialog header="Refer as Link "
+                                                [(visible)]="display"
+                                                [width]="300">
+                                                <p class="heading">Please enter Email-ID </p>
+                                                <form>
+                                                <input type="text" 
+                                                class="form-control" placeholder="Enter Email"/>
+                                                <button type="submit" class="submit_button">
+                                                Send
+                                                </button>
+                                                </form> 
+                                                </p-dialog>
+                                                
+                                                </span>
+
+
+                           </li>
+                     </ul>
+                        <!-- <div class="col-md-6">
+                        <span class="heart" *ngIf="rolechecklistFlag !=='3' || rolechecklistFlag !=='4' 
+                        ">
+                        <p class="addFavorite" [ngClass]="favoritechecklistFlag ? 'addClass' : 'delteClass'"
+                        (click)="favoritechecklist()">{{add_deleteText}}</p>
+                        <p-toast position="top-right"></p-toast>
+                        </span>
+                   </div>
+                   <div class="col-md-6">
+                                    <button type="button" class="btn-circle report_issue">Report Issue</button>
+                                    <button type="button" class="btn-circle book_now">Book Now</button>
+
+                              </div> -->
+
+                              </div>
+               
+               <div class="col-md-3">
+                        <div class="sl-h" align="center" style="margin-top: 12px; background: #0097A7; color: white;">
+                                   Near By Station
+                                </div> 
+               </div>
+               <!-- <div class="col-md-2 id">
+                        <p style="position: relative;
+                        top: 9p" class="bussinessIdvalue" *ngIf="bussinessId && bussinessId[0].business_id ">ID:{{bussinessId[0]?.business_id}}</p>
+                        
+               </div>
+               <div class="col-md-3">
+                        <span class="heart" *ngIf="rolechecklistFlag !=='3' || rolechecklistFlag !=='4' 
+                        ">
+                        <p class="addFavorite" [ngClass]="favoritechecklistFlag ? 'addClass' : 'delteClass'"
+                        (click)="favoritechecklist()">{{add_deleteText}}</p>
+                        <p-toast position="top-right"></p-toast>
+                        </span>
+               </div>
+              
+               <div class="col-md-3">
+             <button type="button" class="btn-circle report_issue">Report Issue</button>
+             <button type="button" class="btn-circle book_now">Book Now</button>
+               </div> -->
+            
+         
+
+
+   
+
+
+
+
+         </div>
+       </div>
+
+
+       
+       <!--------similar------listing----start------>
+     
+       <!-------------main------section-------------->
+       <div class="col-md-12" style="margin-top: 4em;">
+             <div class="row">
+              <div class="col-md-9 " *ngIf="coverImageUrl">
+                        <div class="site_image" >
+                                    <img src="http://api.evplugincharge.com{{coverImageUrl}}" />
+                                    
+                                    </div>
+                                    <span   *ngIf="thumnailcoverImageUrl"><img class="ui_image"  src="https://www.evplugincharge.com{{thumnailcoverImageUrl}}"/></span>
+
+
+
+
+
+
+                <div class="col-md-12" id="map">
+                      <div class="row">
+
+                   <div class="col-md-3 after_hover">
+                                                        
+                              <h4 class="adopter_type" >
+                                          <i class="fa fa-clock-o" style="color:red;"> </i> OPENING HRS</h4>
+                                          <div class="opening_time">
+                                          
+                                          <span style="font-size:10px;" class="opentimeheading"> <i class="fa fa-clock-o" style="color:red;"> </i> Opening Time </span>
+                                           <span class="closetimeheading" *ngIf="closetimeFlag"> <i class="fa fa-clock-o" style="color:red;" > </i> Close Timing</span>
+                                          </div>
+                                          
+                                          <p *ngIf="!closetimeFlag" class="allDayopen">24 hrs Open</p>
+                                          <p *ngIf="closetimeFlag"><span class="opentime" 
+                                          *ngIf="bussinessId && bussinessId[0].open_time ">{{bussinessId[0].open_time}} </span>
+                                          
+                                          
+                                          
+                                          <span class="closetiming"
+                                          *ngIf="bussinessId && bussinessId[0].close_time ">{{bussinessId[0].close_time}}
+                                          </span>
+                             
+
+
+                   </div>
+
+                   <div class="col-md-3 after_hover">
+                              <h4 class="adopter_type"  >
+                                          <i class="fa fa-phone" style="color:black; position: relative;
+                                          left:-2px; "> </i> CONTACT</h4>
+                                          <p class="client_address" *ngIf="bussinessId && bussinessId[0].address "
+                                          ><i class="fa fa-address-book-o" style="color:red"></i> &nbsp;{{bussinessId[0].address}}</p>
+                                          <a class="client_mobileNumber1" href="tel:{{bussinessId[0].pmobile}}"
+                                          *ngIf="bussinessId && bussinessId[0].pmobile " >
+                                          <i class="fa fa-mobile" style="font-size:17px; color:red; margin-right:5px;position:relative;top: 2px;"></i>
+                                          &nbsp;{{bussinessId[0].pmobile }}</a>
+                                          <a class="client_landlineNumber" href="tel:{{bussinessId[0].plandline}}"
+                                          *ngIf="bussinessId && bussinessId[0].plandline" ><i class="fa fa-phone "></i>
+                                          &nbsp; {{bussinessId[0]?.plandline}}</a>
+                                          <a class="client_landlineNumber1"  href="mailto:{{bussinessId[0].pemail}}"
+                                          *ngIf="bussinessId && bussinessId[0].pemail"><i class="fa fa-envelope" style="color: #139bdc; font-size: 12px;">
+                                                {{bussinessId[0].pemail}}</i>
+                                          &nbsp;</a>
+
+
+
+
+                   </div>
+                 
+                   <div class="col-md-3 after_hover" >
+
+                              <h4 class="adopter_type">
+                                          <i class="fa fa-bolt mobile_icon" style="float:left; color: orange; position: relative;
+                                          left: 1px; "> </i> &nbsp;ADOPTER TYPE</h4>
+                                          <p style="font-size: 10px;" class="client_mobileNumber"
+                                          *ngFor="let machine of bussinessId[0].machine"> 
+                                          {{machine?.adaptor}}</p>
+                                             
+
+
+
+
+
+                   </div>
+
+                   <div class="col-md-2 after_hover" >
+                                                                
+                              <i class="fa fa-plug" style="float:left; color: red;  position:relative;
+                              left:-6px; top: 21px; font-size: 11px;"> </i><h4  class="adopter_type" >
+                               MACHINE TYPE</h4>
+                            <p style="margin-left: 33px;
+                            font-size: 10px;" *ngFor="let machine of bussinessId[0].machine">   {{machine.machine_type}}</p>
+
+
+                   </div>
+
+
+                      </div>
+                </div><!------------------detail-section---end --------here------------------->
+                        <div class="col-md-12"  >
+                              <div class="row">
+                                          <div  class="detail-location">
+                                                      <div  class="loction_heading">
+                                                      <h4 class="loction_heading2" ><i class="fa fa-map-marker"> </i> &nbsp;Location</h4>
+                                                      </div>
+                                                      <div class="map"  *ngIf="bussinessId && this.bussinessId[0].latitude "> 
+                                                      <agm-map [latitude]="latitute" [longitude]="longtitute">
+                                                      <agm-marker [latitude]="latitute" [longitude]="longtitute"></agm-marker>
+                                                      <agm-direction *ngIf="origin && destination" [origin]="origin" [destination]="destination">
+                                                      </agm-direction> 
+                                                      </agm-map>
+                                                      </div>
+                                                      </div>
+
+                                                      <a (click)="getDirection()" target="_blank"
+                                                      style=" color: red; margin-top: 5px; float: right; cursor: pointer;">Get Direction</a>
+
+
+
+                              </div>
+
+                        </div><!---map--div--end------->
+                        <div class="col-md-12" id="review">
+                                    <div class="row">
+                                                <div  class="amenities" >
+                                                            <h4><i class="fa fa-gears" > </i> &nbsp;Amenities</h4>
+                                                            <div class="amentiesdescription">
+                                                            <div class="amenitiecard" *ngIf="bussinessId &&aminites">
+                                                            <mat-card *ngFor="let amenitie of aminites" >
+                                                            <i class="{{amenitie.amenity_icon}}" [ngStyle]="{'color': amenitie.amenity_color}"></i>
+                                                            &nbsp; {{amenitie.amenity_name}}
+                                                            </mat-card>
+                                                            
+                                                            </div>
+                                          </div>
+                                          </div>
+<!------------------detail-section---end --------here------------------->
+              </div>
+              
+             </div>
+             <div class="col-md-12">
+                   <div class="row">
+                         <div class="col-md-8">
+                              <div class="reviews"  *ngIf="bussinessId && rating ">
+                                          <h4 class="reviewDialogBox" 
+                                  
+                                          style="font-size:18px;"><i class="fa fa-comments"
+                                          > </i> Review</h4>
+                                  
+                                  <p *ngFor="let userRating of rating">
+                                  {{userRating.review_text}}
+                                  </p>
+                                  </div>
+                                  </div>
+                                  <p style="color:red;font-size:13px; cursor:pointer;" (click)="writeReviewDialog()">Write A Review</p>
+                                  <div class="writereviewDialog" *ngIf="localStoragetoken"></div>
+                   </div>
+             </div>
+       </div>
+       <!-----similar-listing--start----->
+       <div class="col-md-3">
+
+                  <div class="simliar-listing">
+                              <ul class="card">
+                              <li *ngFor="let simlarListing of similiarListingResponse" style="cursor:pointer">
+                                  <div class="card" *ngFor="let businessType of simlarListing.buisness_type">
+                                <div class="card-header">
+                                      <div class="image"
+                                      (click)="redirecToproductDescrition(simlarListing.business_id)">
+                                              <img src="https://api.evplugincharge.com{{simlarListing.cover_photo_url}}"/>
+                                              
+                                              </div>
+                                </div>
+                                <div class="card-body"
+                                (click)="redirecToproductDescrition(simlarListing.business_id)">
+                                      <p style="font-size:17px; color:orange; text-align: center; font-weight: 700">{{businessType.type_name}}</p>
+                                <p >  <i class="fa fa-map-marker " style="color:red"></i> &nbsp;{{simlarListing.location}} {{simlarListing.city}}</p>
+                                <p style="    font-size: 12px;"
+                                *ngIf="simlarListing.open_24 !==1" class="allDayopen"><i class="fa fa-clock-o" style="color:darkgreen;"></i>
+                                    &nbsp;{{simlarListing.open_time}} &nbsp; {{simlarListing.close_time}}</p>
+                                    <p *ngIf="simlarListing.open_24==1" class="allDayopen"
+                                   >24 hrs Open</p>
+                                   
+                                  </div> 
+                              
+                              </div>
+                              <!-- <div class="image">
+                              <img src="https://api.evplugincharge.com{{simlarListing.cover_photo_url}}"/>
+                              
+                              </div>
+                              <i class="fa fa-map-o " style="color:red"></i> &nbsp;{{simlarListing.address}} -->
+                              </li>
+                              </ul>
+                              </div>
+
+
+
+
+
+
+        </div>
+        <!-------------similar-listing---end->
+<---------main----section----end---------------------------->
+
+      </div>
+    </div>

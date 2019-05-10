@@ -1,0 +1,7 @@
+.station_wrapper{
+    width:100%; float: left;
+}
+.station_heading{
+    font-size: 13px;  color: #d25215;;
+}
+.margin_top{ width:100%; margin-bottom: 20px;}

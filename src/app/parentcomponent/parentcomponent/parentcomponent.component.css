@@ -1,0 +1,73 @@
+.feedbackform{
+    position: relative;
+    }
+    .toggle-button{
+    position: fixed;
+    right: 20px; bottom: 30px; z-index: 99;
+    width:40px;height: 40px; border-radius:50%; background : #0097A7;
+    font-size:20px; cursor: pointer;
+    
+    }
+    .feedbackformtoglleicons{ colOr:#fff; font-size: 21px;}
+    .feedback-control{ margin-left:7px;
+    border-left : none;
+    border-right : none;
+    border-top: none;
+    border-bottom: 1px #ccc solid;
+    }
+    .feedbackformtoglleicons i{ padding-left: 11px;
+    padding-top: 9px;}
+    .feedback-heading{font-size: 12px; font-weight: 600}
+    .feedback-heading h5{font-size: 12px; font-weight: 600}
+    .feedbackformstart{ width:250px; height:280px; position: fixed;
+    bottom: 95px; right:20px; background: #fff; z-index: 99;
+    overflow: auto;border: 1px solid rgb(0, 151, 167);
+    border-radius: 10px; padding: 5px;}
+    .feedbackform-wrapper{ width:100%; float: left;}
+    .feedbackgroup{ width:100%; }
+    .feedback-control { float: left; outline: 0;
+    border-right:none; border-left:none; border-top:none;
+    border-bottom:1px #ccc solid; padding-left: 5px;
+    margin-bottom: 5px;}
+    .submit_feedback{ cursor: pointer;
+    text-transform: none;
+    line-height: 30px;background-color: rgb(244,81,30);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+    color: #fff; outline: 0; width:100%;}
+    
+    .resendotp button{ background:#12ae57; color: #fff; border:0; border-radius: 10px; 
+    margin-top: 9px;cursor: pointer;}
+    
+    
+    @media screen and (max-width:768px) {
+    .toggle-button{
+    position: fixed;
+    right: 7%;
+    bottom: 30%;
+    z-index: 99;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #0097A7;
+    font-size: 20px;
+    cursor: pointer;
+    
+    }
+    .feedbackformstart{ width:250px; height:300px; position: fixed;
+    bottom: 289px; right:20px; background: #fff; z-index: 99;
+    overflow: hidden;border: 1px solid rgb(0, 151, 167);
+    border-radius: 10px; padding: 5px;}
+    }
+    
+    .feedback_close{
+    position: absolute;
+    right: 3px;
+    top: 0px;
+    font-size: 17px;
+    cursor: pointer
+    }
+    .errormesage{
+   font-size: 10px;
+    margin: 1px 6px;
+    color: red; 
+    }

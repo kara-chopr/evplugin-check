@@ -1,0 +1,100 @@
+<div class="add_manager margin_tops">
+  <div class="container">
+    <div class="addmanger_heading">
+      <h4 style="text-align: center; font-size: 16px; color: #666;
+      font-weight: 600">Add Manger</h4>
+    </div>
+      <p-toast position="top-right"></p-toast>
+    <form [formGroup]="addNangerFormFroup" (ngSubmit)="onSubmitaddMangerForm()">
+    <div class="row">
+     
+      <div class="col-md-6">
+        <div class="name">
+            <mat-form-field class="addmanager-Control">
+                <input matInput placeholder="Your Name" class="addmanager-Control"
+                formControlName="name">
+                <div class="errormesage"
+                *ngIf="!addNangerFormFroup.controls['name'].valid
+                && addNangerFormFroup.controls['name'].touched">
+                <p>*Fields Required</p>
+                </div>
+              </mat-form-field>
+        </div>
+      </div>
+      <div class="col-md-6">
+          <div class="name">
+              <mat-form-field class="addmanager-Control">
+                  <input matInput placeholder="Email" class="addmanger-control"
+                  formControlName="email">
+                  <div class="errormesage"
+                  *ngIf="!addNangerFormFroup.controls['email'].valid
+                  && addNangerFormFroup.controls['email'].touched">
+                  <p>*Fields Are Required &  Required Full Email Address</p>
+                  </div>
+                </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+            <div class="name">
+                <mat-form-field class="addmanager-Control">
+                    <input matInput placeholder="Mobile" class="addmanger-control" type="number"
+                    formControlName="mobile">
+                    <div class="errormesage"
+                    *ngIf="!addNangerFormFroup.controls['mobile'].valid
+                    && addNangerFormFroup.controls['mobile'].touched">
+                    <p>*Fields Required</p>
+                    </div>
+                  </mat-form-field>
+            </div>
+          </div>
+          <div class="col-md-6">
+              <div class="name">
+                  <mat-form-field class="addmanager-Control">
+                      <input matInput placeholder="Password" class="addmanger-control" type="password"
+                      formControlName="password">
+                      <div class="errormesage"
+                      *ngIf="!addNangerFormFroup.controls['password'].valid
+                      && addNangerFormFroup.controls['password'].touched">
+                      <p>*Fields Required</p>
+                      </div>        
+                </mat-form-field>
+          </div>
+        </div>
+       
+       
+  </div>
+  <div class="row">
+      <div class="col-md-6">
+          <div class="name">
+              <mat-form-field class="addmanager-Control">
+                  <input matInput placeholder="Confirm Password" class="addmanger-control"
+                  formControlName="c_password" type="password"
+                  [errorStateMatcher]="matcher">
+                  <div class="errormesage"
+                  *ngIf="!addNangerFormFroup.controls['c_password'].valid
+                  && addNangerFormFroup.controls['c_password'].touched">
+                  <p>*Fields Required</p>
+                  </div>
+                  <mat-error *ngIf="addNangerFormFroup.hasError('notSame')">
+                      Passwords do not match
+                    </mat-error> 
+                </mat-form-field>
+          </div>
+          <input  type="hidden" 
+          formControlName="sid" >
+        </div>
+        <div class="col-md-6">
+            <div class="name">
+              
+              <button type="submit" class="btn btn-default update_button">Submit</button>
+        </div>
+      </div>
+     
+     
+</div>
+
+  </form>
+  </div>
+</div>

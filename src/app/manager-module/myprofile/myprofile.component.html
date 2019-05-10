@@ -1,0 +1,234 @@
+
+<div class="container margin_topprofile">
+       
+<div class="review" >
+    <div class="favorites-heading">
+        <h3>My Profile</h3>
+
+    </div>
+    <div class="row" *ngIf="userDetailsLocalStorage">
+        
+        <div class=" col-md-3 col-sm-3  col-lg-3" *ngIf="userDetailsLocalStorage">
+            <div class="profile-picture">
+                <img src="https://api.evplugincharge.com{{this.userDetails[0].pic}}" />
+
+            </div>
+        </div>
+        <div class=" col-md-9 col-sm-9 col-lg-9" *ngIf="userDetailsLocalStorage">
+            <div class="profile-description">
+                <div class="name">
+                    <p> Name :{{userName}}</p>
+
+                </div>
+                <div class="profileid">
+                    <i class="fa fa-user"> </i>
+                    PID:{{this.userDetails[0].id}}
+                </div>
+                <div class="profilephone">
+                    <i class="fa fa-phone"> </i>
+                   {{userMobile}}
+
+                </div>
+                <div class="profilephone">
+                    <i class="fa fa-envelope"> </i>
+                   {{userEmail}}
+
+                </div>
+                <!-- <div class="profileaccount" >
+                   <p  (click)="accountRouting()">    <i class="fa fa-address-book"> </i>
+                       Account
+                    </p>
+                    </div> -->
+                    <div class="profilevechiles">
+                            <p  (click)="gstDetail()">   <i class="fa fa-inr "> </i>
+                             GST Details
+                            </p>
+            
+                            </div>
+                    <!-- <div class="profilevechiles">
+                        <p  (click)="vechileRouting()">  <i class="fa fa-car "> </i>
+                          My Vechiles
+                        </p>
+        
+                        </div> -->
+                        <!-- <div class="profilerfid">
+                            <p  (click)="rfidRouting()">   <i class="fa fa-credit-card "> </i>
+                               RFID</p>
+            
+                           
+                            </div> -->
+                            <!-- <div class="profileaddress">
+                                <p  (click)="addressRouting()">    <i class="fa fa-envelope"> </i>
+                                   Address
+                              </p>
+                                 
+                                </div> -->
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div class="row center">
+        <div class=" col-md-3 col-sm-3  col-lg-3">
+            <div class="editprofile-button">
+                <button type="button" class="edit_button" (click)="changeProfileTab('EDITPROFILE')">
+                    <i class="fa fa-pencil"> </i>
+                </button>
+
+            </div>
+        </div>
+        <div class=" col-md-3 col-sm-3 col-lg-3">
+            <div class="changepassword-button">
+                <button type="button" class="password_button" (click)="changeProfileTab('changepassword')">
+                    <i class="fa fa-key"> </i>
+                </button>
+
+            </div>
+        </div>
+        <div class=" col-md-3 col-sm-3  col-lg-3">
+            <div class="changeprofileimage-button">
+                <button type="button" class="changeprofileimage_button" (click)="changeProfileTab('changeprofileimage')">
+                    <i class="fa fa-camera"> </i>
+                </button>
+
+            </div>
+        </div>
+    </div>
+    <div class="line"></div>
+    <div class="editprofilesection" *ngIf="tabview == 'EDITPROFILE'">
+        <div class="row">
+            <div class=" col-md-7 col-sm-7  col-lg-7">
+                <div class="editprofile">
+                    <h3>Edit Profile</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class=" col-md-7 col-sm-7  col-lg-7">
+                <form class="profileeditform" 
+                [formGroup]="orderForm" (ngSubmit)="onSubmitprofileForm()">
+                     <div class="form-group">
+                        <h3> Name</h3>
+                        <input type="text" class="listingcontrol" 
+                        formControlName="name" />
+                    </div>
+                    <div class="form-group">
+                        <h3> Email</h3>
+                        <input type="text" class="listingcontrol"  
+                        formControlName="email" />
+                    </div>
+                    <div class="form-group">
+                        <h3> Mobile</h3>
+                        <input type="text" class="listingcontrol"  
+                        formControlName="mobile" 
+                        (change)="showotppassword()"/>
+                    </div>
+                    <div class="form-group" *ngIf="otppasswordFlag">
+                        <input type="text" class="contact_listing" placeholder="OTP Password" #otpMatced
+                        (change)="otpChecked(otpMatced.value)" />
+                        </div>
+                        <div class="form-group" *ngIf="resendOtpFlag">
+                        <div class="resendotp">
+                        <button type="button" class="resend_password"
+                        (click)= "showotppassword();hideresendButton()">Resend OTP</button>
+                        </div>
+                        </div>
+                    <!-- <div class="form-group">
+                        <h3> Mobile</h3>
+                        <input type="number" class="listingcontrol" 
+                        formControlName="mobile"/>
+                    </div> -->
+                    <div class="form-group">
+                        <h3> city</h3>
+                        <input type="text" class="listingcontrol" 
+                        formControlName="city" placeholder="Enter City"/>
+                    </div>
+                    <div class="form-group">
+                        <h3> State</h3>
+                        <input type="text" class="listingcontrol" 
+                        formControlName="state" placeholder="Enter State"/>
+                        <input type="hidden" formControlName="uid"/>
+                        <input type="hidden" formControlName="company_name"/>
+                        <input type="hidden" formControlName="company_address"/>
+                    </div>
+                    <!-- <div class="form-group">
+                        <h3> Gst No</h3>
+                        <input type="text" class="listingcontrol" placeholder="Enter GST"
+                        formControlName="gst"/>
+                        
+                    </div> -->
+                    <!-- <div class="form-group">
+                            <h3>Pan No</h3>
+                            <input type="text" class="listingcontrol" placeholder="Enter Pan No"
+                            formControlName="pancard"/>
+                           
+                        </div> -->
+                    <div class="submit">
+                        <button class="editsubmitbutton" type="submit"
+                        [disabled]=" !orderForm.valid && otppasswordFlag">Save</button>
+                    </div>
+
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div class="changepassword" *ngIf="tabview == 'changepassword'">
+            <div class="editprofile">
+                    <h3>Change Password</h3>
+                </div>
+        <div class="row">
+            <div class=" col-md-7 col-sm-7  col-lg-7">
+                <form class="profilechangepassword"
+                [formGroup]="changepasswordFormGroup" (ngSubmit)="onSubmitchangepasswordForm()">
+                    <div class="form-group">
+                      
+                        <input type="password" class="listingcontrol changepassword" placeholder="Current Password" 
+                        formControlName="oldpass"/>
+                    </div>
+                    <div class="form-group">
+                      
+                            <input type="password" class="listingcontrol changepassword" placeholder="New Password" 
+                            formControlName="newpass"/>
+                        </div>
+                       <input type="hidden" formControlName="uid"/>
+                        <div class="submit">
+                                <button class="editsubmitbutton" type="submit">Save</button>
+                            </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="changepassword" *ngIf="tabview == 'changeprofileimage'">
+            <div class="row">
+                    <div class=" col-md-7 col-sm-7  col-lg-7">
+                        <div class="edit-heading">
+                            <h3>Edit </h3>
+                        </div>
+                    </div>
+             </div>
+            <div class="row">
+                <div class=" col-md-7 col-sm-7  col-lg-7">
+                    <form class="profilevhangeimage"
+                    [formGroup]="editImage" (ngSubmit)="onSubmiteditImageForm()">
+                        <div class="form-group">
+                          
+                            <input type="file" accept=".png, .jpg, .jpeg,.svg" id="selectFile"
+                            
+                           (change)="processFile($event)" name="selectFile"/>
+                        </div>
+                        <input type="hidden" formControlName="user_id"/>
+                            
+                            <div class="submit">
+                                    <button class="editsubmitbutton" type="submit">Save</button>
+                                </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+</div>
+</div>

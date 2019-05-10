@@ -1,0 +1,314 @@
+ul,li{ padding: 0; margin: 0;;}
+.margin_top{
+    margin-top:100px;
+  }
+/*   */
+.chargerdescription-heading {text-align: left;
+    
+    font-size: 18px;color: #585858;font-weight: 600;}
+    .chargerdescription-specification{ font-size:14px; font-weight: 400;
+    line-height: 24px; color: #616161; margin-left: 30px;
+}
+.specificationlines { width:100%; float: left;}
+.specificationlines ul {}
+.specificationlines ul li {margin: 3px 0; display: block;}
+.specificationlines ul li:before {
+    position: absolute;
+    content: "";
+    height: 5px;
+    width: 5px;
+    margin: 7px -15px;
+    display: inline-block;
+    border-radius: 50%;
+    background: #00c16f;
+}
+.pricespan{font-size: 16px;
+    font-weight: 600;
+    color: #00c16f;}
+    
+
+    .price-tag{ width: 100%;
+        float: left;
+        margin-left: -17px;}
+
+.amount{ width:100%; float: left;    margin-left: -20px;}
+.amount p{ width:100%; float: left;}
+
+/*   Gallary Image Starts Here*/
+.selectedimage{ width:100%; float: left; 
+padding:20px;}
+.chargerimage{ width:50%; margin: 0 auto;}
+/*   Gallary Image Selected Radio Button Image Border Starts Here*/
+label > input{ /* HIDE RADIO */
+    visibility: hidden; /* Makes input not-clickable */
+    position: absolute; /* Remove input from document flow */
+    }
+    label > input + img{ /* IMAGE STYLES */
+    cursor:pointer;
+    border:2px solid transparent;
+    }
+    label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+    border:2px solid #f00;
+    }
+    .charger1{ width:100%; float: left; margin-top: 10px }
+    .charger1 img { width:99%; float: left; height: 70px; border:2px solid transparent;;}
+    .charger2{ width:100%; float: left; margin-top: 10px;}
+    .charger2 img { width:99%; float: left; height: 70px; 
+        border:2px solid transparent;}
+    .selectedchargerimage1{ width: 100%; float: left;}
+    .selectedchargerimage1 img { width:100%; height:320px;}
+    .selectedchargerimage2 { width: 100%; float: left;}
+    .selectedchargerimage2 img{ width: 100%; float: left;
+        height: 320px; }
+/*   Gallary Image Selected Radio Button Image Border Ends Here*/
+.description {
+    width: 100%;
+padding-bottom: 0px;
+
+margin-bottom: 0px;
+padding-left: 2px;
+padding-right: 2px;
+}
+.description p {
+    font-size: 13px;
+    color: #777;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 3px;
+    line-height: 30px;
+}
+.rightdescription{float:right;}
+
+.powerofficon{color: #e80b34eb;}
+.cablesizeicon{color: #009ACD;}
+.compatibilityicon{color: orange;}
+.priceicon{color: #d25f28}
+.box-line{width:100%; height: 1px; background:#666;}
+
+.description p:last-child {
+    color: #00c16f;
+    font-size: 13px;
+}
+
+.descriptionrow{ width:100%; float: left; padding: 6px;
+border: 1px #ccc solid; margin-top: 10px}
+.descriptionbox{ width:100%; float: left; padding: 6px;
+     margin-top: 10px}
+/*   Gallary Image Animation Fade Fade Out Css Starts Here*/
+        .step {
+            display: none;
+            opacity: 0;
+          }
+          .show {
+            -webkit-transform: scale(1);
+             transform: scale(1);
+            opacity: 1;
+            -webkit-animation: anim .7s ease-in-out;
+            animation: anim .7s ease-in-out;
+            width: 100%;
+            margin: 0 auto;
+            }
+           
+          
+          @keyframes anim {
+            0% {
+              display: none;
+              opacity: 0;
+            }
+            1% {
+              display: block;
+              opacity: 0;
+              transition: .7s ease-in-out all;
+            }
+            100% {
+              opacity: 1 !important;
+            }
+          }
+          /*   Gallary Image Animation Fade Fade Out Css Ends Here*/
+/*   Gallary Image Ends Here*/
+
+
+/*  Charger Description Css Starts Here*/
+
+
+
+.chargerdescription{ width:100%; float: left; 
+margin-left: 24px;}
+
+.btn-green {
+   
+    font-size: 14px;
+    padding: 12px 29px;
+    
+    border-radius: 27px;
+  
+    text-transform: uppercase;
+    background: #00c16f;
+    color: #fff;
+   
+    cursor: pointer;
+   
+    outline: 0 !important;
+   
+    margin-top: 18px;
+    margin-left: 44%;
+}
+.amountInputbox{width: 30%;
+    line-height: 20px;
+    padding-left: 10px;
+    margin-left: 10px;}
+/*  Charger Description Css Ends Here*/
+
+
+/* Charger  Tab Css Starts Here*/
+.tabButton {
+    
+    width: 190px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    color: #000;
+    font-size: 16px;
+    font-weight: 600; cursor: pointer; margin: 0 15px;
+}
+.underline{ width:100%; float: left; height: 1px; background: #ccc; margin-top: 15px;}
+.tabButtonul{ width: 29%;
+    list-style: none;
+    margin: 0 auto;}
+.tabButtonul li { display: inline-block; width: 45%; }
+.medium_tabButton{
+    width:70%;
+    margin: 35px auto;
+}
+.activeTabButton {
+    
+    border-color: #00c16f !important;
+    color: #00c16f;
+}
+.tabButtonheading{
+    text-align: center;
+    margin: 6px 7px;
+}
+.tabButtonheading:active:after{
+    content: "";
+   color: #00c16f;
+    }
+    /*   characteristic Css Starts Here*/
+    .charger-characteristic{
+        width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+    }
+    .charger_characteristicrow{
+        width:100%; float: left;
+    }
+    .border_bottomtablerow{ width:100%; float: left; border-bottom: 1px #ddd dashed;
+        border-bottom: 1px #ddd dashed;
+        border-right: 1px #ddd solid;
+        border-top: 1px #ddd dashed;}
+    .border_rightColumn{border-right: 1px #ddd solid;
+        border-left: 1px #ddd solid;  float: left;
+    padding-bottom: 10px;}
+    .charger_characteristicperheading{
+        vertical-align: middle;
+        font-size: 12px;
+        font-weight: 700;
+        color: #6b6b6b;
+        padding: 10px 10px;
+        border-top: none;
+        border-bottom: none;
+        line-height: 1.42857143;
+        width: 13%;
+        float: left;
+    }
+    .titleheading{
+        text-align: center;
+        margin-bottom: 21px;
+        /* margin-right: 32%; */
+        color: red;
+        margin-top: 20px;
+        position: relative;
+        border-bottom: 1px #ccc solid;
+        padding-bottom: 14px;
+        padding-top: -2px;
+        width: 100%;
+        letter-spacing: 4px;
+}
+
+    .width100{
+        width: 49%;
+    }
+    .col-md4{
+        width: 39%;
+        float: left;
+    }
+    .col-md8{
+        width: 56%; float: left;
+    }
+    .description_feature{
+        text-align: justify; line-height: 30px;
+    }
+    .description_feature{
+        text-align: justify; line-height: 30px;font-size: 13px; color: #666; font-weight: 700;
+    }
+    .description_specification{
+        text-align: justify;
+    line-height: 30px;
+    font-size: 15px;
+    padding-right: 20px;
+    color: #383838;letter-spacing: 1px;
+    }
+    .charger_characteristicspecification{
+        width: 84%;
+        color: #777;
+        border-top: none;
+        vertical-align: middle;
+        font-size: 14px;
+        font-weight: 400;
+        padding: 7px 0px;
+        border-top: none;
+        border-bottom: none;
+        line-height: 1.42857143;
+        display: inline-block;
+    }
+/*   characteristic Css Ends Here*/
+
+
+
+    /*   Installation Css Starts Here*/
+
+.installationMachimne{ width:100%; float: left;}
+.installationHeading{font-weight: 700;
+    font-size: 16px;
+    margin: 15px 0;}
+    .installationHeading:before{
+        content: "";
+        display: inline-block;
+        margin: 2px 15px 2px 0;
+        height: 2px;
+        width: 60px;
+        background-color: #00c16f;}
+        .installationtext{
+            font-size: 14px; line-height: 20px;
+            color: #656565;
+        }
+        @media screen and (max-width:768px) {
+            .btn-green {
+   
+                font-size: 14px;
+                padding: 2px 10px;
+                
+              
+                outline: 0 !important;
+               
+                margin-top: 18px;
+                margin-left: 3%;
+            }
+
+        }  
+      
+    /*   Installation Css Ends Here*/
+ 

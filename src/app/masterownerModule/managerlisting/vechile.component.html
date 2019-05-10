@@ -1,0 +1,133 @@
+<div class="container margin_topvechile">
+    <div class="row">
+      <div class="col-md-11" *ngIf="hidevechileDetailFlag">
+<div class="vechile_heading">
+  <h4 style="font-size: 20px; color: #666; text-align: center; margin-bottom: 30px; ">
+    <span  style="font-weight: 600; color: #dc143c; ">M</span>anger</h4>
+</div>
+      </div>
+      <div class="col-md-1" *ngIf="hidevechileDetailFlag">
+<span style="float: right; padding-right: 12px;
+cursor: pointer;"
+(click)="hidevechileDetail()"><i class="fa fa-plus"></i></span>
+      </div>
+    </div>
+    <table class="table table-striped" *ngIf="hidevechileDetailFlag">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Mobile</th>
+                <!-- <th scope="col">Model Year</th> -->
+               
+                <th scope="col">Action</th>
+              </tr>
+              </thead>
+              <tbody *ngIf="manageview">
+                  <tr>
+                    <td>{{manageview.name}}</td>
+                    <td>{{manageview.email}}</td>
+                    <td>{{manageview.mobile}}</td>
+                    <!-- <td>{{addVechileResponses.year}} </td> -->
+                   
+                  
+                   
+                    <td>
+                        <i class="fa fa-pencil"></i> &nbsp; 
+                        <i class="fa fa-bitbucket vechileDelete" (click)="vechileDelete(addVechileResponses.id)"></i>
+                   
+                      
+                      </td>
+                    </tr>
+
+              </tbody>
+      </table>
+    <div class="vechileform_wrapper" *ngIf="!hidevechileDetailFlag">
+      <div class="row">
+      <div class="col-md-11">
+          <div class="vechile_heading">
+              <h4 style="font-size: 20px; color: #666; text-align: center; margin-bottom: 30px; ">
+                <span  style="font-weight: 600; color: #dc143c; ">A</span>dd Vechiles</h4>
+            </div>
+      </div>
+      <div class="col-md-1">
+        <button type="button" class="btn btn-default"
+        (click)="hidevechileDetail()">back</button>
+  </div>
+</div>
+
+  <form id="add_vechile" [formGroup]="addVechileFormgroup" (ngSubmit)="onSubmitaddVechileForm()">
+      <div class="row">
+  <div class="col-md-4">
+    <div class="vechleno">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Vechile No" value=""
+            formControlName="vehicle_no" type="text" min="0" maxlength="14">
+            <div class="errormesage"
+            *ngIf="!addVechileFormgroup.controls['vehicle_no'].valid
+            && addVechileFormgroup.controls['vehicle_no'].touched">
+            <p>*Fields Required</p>
+            </div>
+          </mat-form-field>
+    </div>
+  </div>
+  <div class="col-md-4">
+      <mat-form-field>
+          <mat-select placeholder="Vechile Company"
+          formControlName="make">
+            <mat-option *ngFor="let vechileCompany of vechileCompanys" [value]="vechileCompany.value">
+              {{vechileCompany.company}}
+            </mat-option>
+            
+          </mat-select>
+          <div class="errormesage"
+          *ngIf="!addVechileFormgroup.controls['make'].valid
+          && addVechileFormgroup.controls['make'].touched">
+          <p>*Fields Required</p>
+          </div>
+        </mat-form-field>
+    </div>
+    <div class="col-md-4">
+        <mat-form-field>
+            <mat-select placeholder="Model"
+            formControlName="model">
+                <mat-option *ngFor="let vechileModel of vechileModels" [value]="vechileModel.value">
+                  {{vechileModel.company}}
+                </mat-option>
+              </mat-select>
+              <div class="errormesage"
+          *ngIf="!addVechileFormgroup.controls['model'].valid
+          && addVechileFormgroup.controls['model'].touched">
+          <p>*Fields Required</p>
+          </div>
+          </mat-form-field>
+      </div>
+      <!-- <div class="col-md-3">
+          <mat-form-field>
+              <mat-select placeholder="Manufactering Year"
+              formControlName="year">
+                <mat-option *ngFor="let manuYear of manuYears" [value]="manuYear.value">
+                  {{manuYear.year}}
+                </mat-option>
+              </mat-select>
+              <div class="errormesage"
+              *ngIf="!addVechileFormgroup.controls['year'].valid
+              && addVechileFormgroup.controls['year'].touched">
+              <p>*Fields Required</p>
+              </div>
+            </mat-form-field>
+        </div> -->
+      </div> 
+      <!-- <div class="row">
+        <input type="file" class="btn btn-default file_choose" />
+      </div> -->
+      <input type="hidden" formControlName="user_id"/>
+      <div class="row">
+        <div class="vechile_submit">
+          <button type="submit" class="btn btn-success">Add Vechile</button>
+        </div>
+      </div>
+</form>
+
+      </div>
+</div>

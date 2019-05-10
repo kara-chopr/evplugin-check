@@ -1,0 +1,29 @@
+.station_boookingwrapper{ width:459px; position: relative;    background: #f5deb336;}
+.station_heading h6{text-align: center;font-weight: 900;
+    padding-bottom:3px;
+    color: green;
+    }
+.booking_listing{ width: 100%;}
+.bookingid{ width:100%; float: left;}
+.bookingid label {
+    width:60%; float: left; font-size: 12px;     font-weight: bold;
+    color: #616353;
+}
+.bookingid p { width:75%; float: left;
+    font-size: 13px;    margin: 0;
+    margin-top: 3px;}
+    .booking label{ font-size: 12px; font-weight: 600;}
+    .booking p {font-size: 12px;margin-top: 4px;margin: 0;}
+
+
+    .closebutton{ background: transparent; position: absolute; top: 0; right:0;
+    cursor: pointer; border: 0; outline: 0;}
+   
+    .pokman{
+        font-weight: bold;
+    color: #462525;
+    }
+    hr {
+        margin-top: 0.8rem !important;
+        margin-bottom: 0.6rem !important;
+    }    

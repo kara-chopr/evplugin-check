@@ -1,0 +1,120 @@
+
+<app-header></app-header>
+<div class="feedbackform">
+        <!--<p-toast position="top-right"></p-toast>-->
+        <div class="toggle-button">
+        <span class="feedbackformtoglleicons" (click)="(feedbackformshowhide())">
+        <i [ngClass]="toggle ? 'fa fa-comments' : 'fa fa-close'"></i>
+        
+        </span>
+        </div>
+        <div class="feedbackformstart" *ngIf="toggles">
+        <div class="feedback-heading">
+        <h5 style="margin-top: 0px; font-size: 12px;">
+        <i class="fa fa-comments" style="font-size:11px; color: #0097A7;"></i>
+        Your feedback is important to us !!
+        </h5>
+        <span class="feedback_close"><i (click)="feedbackformshowhide()" class="fa fa-close"></i></span>
+        </div>
+        <div class="feedbackform-wrapper">
+        
+        <form [formGroup]="feedFormGroup" (ngSubmit)="onSubmitfeedbackForm()"
+        novalidate>
+        <div class="ui-grid-row">
+        <div class=" ui-md-12 ui-sm-1 ui-lg-12">
+        <div class="feedbackgroup">
+        <input type="text" class="feedback-control" 
+        formControlName="name"
+        placeholder="Name" />
+        <div class="errormesage"
+        *ngIf="!feedFormGroup.controls['name'].valid
+        && feedFormGroup.controls['name'].touched">
+        <p>*Please Enter Name</p>
+        </div> 
+        </div>
+        
+        </div>
+        </div>
+        <div class="ui-grid-row">
+        <div class=" ui-md-12 ui-sm-1 ui-lg-12">
+        <div class="feedback-form">
+        <input type="text"  class="feedback-control"
+        formControlName="email" placeholder="Email" />
+        <div class="errormesage"
+        *ngIf="!feedFormGroup.controls['email'].valid
+        && feedFormGroup.controls['email'].touched">
+        <p>*Please Enter Full Email Address</p>
+        </div> 
+        </div>
+        
+        </div>
+        </div>
+        <div class="ui-grid-row">
+        <div class=" ui-md-12 ui-sm-1 ui-lg-12">
+        <div class="feedback-form">
+        <input type="number" onKeyDown="if(this.value.length==10 && event.keyCode!=8) return false;" class="feedback-control" 
+        min="0" maxlength="10" formControlName="mobile" placeholder="Mobile" (change)="showotppassword()"/>
+        <div class="errormesage"
+        *ngIf="!feedFormGroup.controls['mobile'].valid
+        && feedFormGroup.controls['mobile'].touched">
+        <p>*Please Enter Mobile Number</p>
+        </div> 
+        </div>
+        
+        </div>
+        </div>
+        <div class="col-md-12" *ngIf="otppasswordFlag">
+        <input style="border:none; border-bottom:1px solid gray; font-size: 16.1px; margin-top: 6px;" type="text" class="contact_listing orderForm-Control" placeholder="OTP Password" #otpMatced
+        (change)="otpChecked(otpMatced.value)" formControlName="otp"
+        />
+        
+        </div>
+        <div class="col-md-12" *ngIf="resendOtpFlag">
+        <div class="resendotp">
+        <button type="button" class="resend_password"
+        (click)= "showotppassword();hideresendButton()">Resend OTP</button>
+        </div>
+        </div>
+        <div class="ui-grid-row">
+        <div class=" ui-md-12 ui-sm-1 ui-lg-12">
+        <div class="feedback-form">
+        <textarea onKeyDown="if(this.value.length==140 && event.keyCode!=8) return false;" class="feedback-control" formControlName="remarks"
+        placeholder="Remarks"></textarea>
+        <div class="errormesage"
+        *ngIf="!feedFormGroup.controls['remarks'].valid
+        && feedFormGroup.controls['remarks'].touched">
+        <p>*Please Enter Remarks</p>
+        </div> 
+        </div>
+        
+        </div>
+        </div>
+        <div class="ui-grid-row">
+        <div class=" ui-md-12 ui-sm-12 ui-lg-12">
+        <button type="submit" 
+        class=" submit_feedback">
+        Post Feedback
+        </button> 
+        </div>
+        </div>
+        </form>
+        </div>
+        
+        </div>
+        
+        </div>
+        
+        
+        
+        <go-top-button [animate]="true" [speed]="50" [acceleration]="2" [scrollDistance]="300" [classNames]="'custom-class'" [styles]="{
+        'border-radius': '20px 20px 20px 20px',
+        'right': '5px',
+        'color': 'green',
+        
+        'line-height': '20px'
+        }">
+        <i class='fa fa-arrow-up feedbackicon'></i>
+        </go-top-button>
+<router-outlet></router-outlet>
+
+<app-footer></app-footer>

@@ -1,0 +1,122 @@
+<div class="container margin_toprfid">
+  <div *ngIf="rfdCardResponses && rfdCardResponses.length==0;else OtherDiv">
+      <div class="row">
+          <div class="col-md-12">
+            <div class="authDealer">
+              <h6>Collect new RFID card from your nearest charging station/Authorised dealer.</h6>
+  
+            </div>
+          </div>
+        </div>
+  </div>
+  <ng-template #OtherDiv>
+  <div class="row" *ngIf="rfdCardDetails && walletBalanceRespone && rfdCardResponses&& rfdCardResponses[0].card_status !=='0'
+  && rfdCardResponses[0].card_status !=='3' ">
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="rfd_cardno">
+        <h6>RFID : {{rfdCardResponses[0].rfid_number}}</h6>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="rfd_cardno">
+          <h6>Account Bal : {{walletBalanceRespone[0].amount}}</h6>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="issueDate">
+            <h6>Issue Date: {{rfdCardResponses[0].issue_date}}</h6>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="issueDate" *ngIf="rfdCardResponses[0].card_status == '1'">
+              <h6>Card Status: Active</h6>
+            </div>
+            <div class="issueDate" *ngIf="rfdCardResponses[0].card_status == '2'">
+                <h6>Card Status: Blocked</h6>
+              </div>
+          </div>
+  </div>
+
+  <div class="row" *ngIf="rfdCardDetails && walletBalanceRespone && rfdCardResponses && rfdCardResponses[0].card_status !=='0'">
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="add_button">
+          <button type="button" class="btn btn-success"
+          (click)="addFund()">Add Fund</button>
+        </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="add_button">
+              <button type="button" class="btn btn-danger">Fund Transfer</button>
+            </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="add_button">
+                  <button type="button" class="btn btn-info"
+                  (click)="transactionHistory()">Transaction History</button>
+                </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="add_button">
+                      <button type="button" class="btn btn-warning" 
+                      *ngIf="rfdCardResponses[0].card_status=='2'"
+                      (click)="applyCard()">Apply Card</button>
+                    </div>
+                    <div class="add_button">
+                        <button type="button" class="btn btn-warning"
+                        *ngIf="rfdCardResponses[0].card_status=='1'"
+                        (click)="blockCard()">Block Card</button>
+                      </div>
+                    </div>
+    </div>
+     <div class="row" *ngIf="  rfdCardResponses && rfdCardResponses[0].card_status =='0' && rfdCardResponses[0].card_status !=='1'">
+       <div class="form_heading">
+         <h4>Please Enter RFID CARD Number</h4>
+       </div>
+        <form class="profileeditform"  [formGroup]="rfidOtp" (ngSubmit)="onSubmitRfidnumberForm()">
+      <div class="col-md-6">
+        <mat-form-field class="orderForm-Control">
+          <input matInput placeholder="Enter RFID Number" class="orderForm-control"
+          formControlName="rfid_no" (change)="getOtp()"> 
+        
+          <div class="errormesage"
+          *ngIf="!rfidOtp.controls['rfid_no'].valid
+          && rfidOtp.controls['rfid_no'].touched">
+          <p>*Fields Required</p>
+          </div>
+         </mat-form-field> 
+       
+      </div>
+      <div class="col-md-6">
+        <div class="otp" *ngIf="otpFlag">
+            <mat-form-field class="orderForm-Control">
+                <input matInput placeholder="Enter OTP" class="orderForm-control"
+                formControlName="code"> 
+              
+                <div class="errormesage"
+                *ngIf="!rfidOtp.controls['code'].valid
+                && rfidOtp.controls['code'].touched">
+                <p>*Fields Required</p>
+                </div>
+               </mat-form-field> 
+        </div>
+      </div>
+      <input type="hidden" formControlName="user_id"/>
+      <div class="col-md-6">
+          <div class="submit">
+              <button class="editsubmitbutton btn-success" type="submit">Submit</button>
+          </div>
+      </div>
+
+      </form>
+      </div> 
+      <div class="row" *ngIf="rfidCardForm ||rfdCardResponses && rfdCardResponses[0].card_status =='3' ">
+          <div class="col-md-12">
+            <div class="authDealer">
+              <h6>Collect new RFID card from your nearest charging station/Authorised dealer.</h6>
+  
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      </div>
+   

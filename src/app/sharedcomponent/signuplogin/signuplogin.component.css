@@ -1,0 +1,66 @@
+.login-heading{ width:100%; float: left; text-align: center}
+.login-form{ width:400px; float: left;}
+.form_login{width:400px; float: left;}
+.username{ width:100%; float: left;}
+.menu-toggle{ width:100%;}
+.menu-toggle ul {list-style: none; width:200px; padding: 0px 10px
+0px 10px;}
+.menu-toggle ul li { padding-bottom: 18PX;
+border-bottom: 1px #ccc solid;
+padding-top: 10px;}
+.menu-toggle ul li a{ color:#000; font-size: 13px;
+text-decoration: none;}
+
+.menu-toggle ul li a:hover{color:#12AE57;}
+.menu-toggle ul li a i {float: left; padding-top:0}
+
+.form_login .loginform-control{
+width: 100%;
+
+border-radius: 5px;
+
+}
+.signupform{ width:100%; float: left;}
+.signinform{ width:100%; float: left;}
+.submit_button{ width: 28%;
+
+border: 0;
+outline: none;
+border-radius: 5px;
+padding: 11px 5px 5px 10px;
+font-size: 16px;
+font-weight: 300;
+text-transform: uppercase;
+letter-spacing: .1em;
+background: #1ab188;
+color: #ffffff;
+transition: all 0.5s ease;
+-webkit-appearance: none;
+cursor: pointer;
+
+margin-left: 36%;
+margin-top: 10px;
+margin-bottom: 10px;}
+.orderformclosebutton{
+position: absolute;
+right: -6px;
+top: -19px;
+background: transparent;
+border: none;
+outline: 0;
+cursor: pointer;
+}
+.resendotp{ line-height: 31px;}
+.resendotp button{ background:#12ae57; color: #fff; border:0; border-radius: 4px; 
+margin-top: 9px;cursor: pointer;
+position: relative;
+top: -13px;
+}
+.termsandservicerouting{
+text-decoration: none; color:orangered; margin-top: -2px;
+}
+.loginsignupwrapper{ width: 100%; float: left; position: relative; height: auto;}
+@media screen and (max-width:992px) {
+.login-form{ width:100%; float: left;}
+.form_login{width:100%; float: left;}
+}

@@ -1,0 +1,41 @@
+
+.margin_topcheck{
+    margin-top: 120px;
+}
+.checkavailitypage{
+    width:100%; float: left;
+}
+
+.checkavaility_heading{
+}
+.checkavaility_heading h3{ font-size: 19px; color: #12ae57; position: relative;}
+.back-button{ float: right; cursor: pointer;}
+.checkavailitypage table tbody tr td{ } 
+.addFund{   
+    
+    width: 100px;
+    float: right;
+    font-size: 12px;
+}
+.terms_policy{ width:100%; float: left;}
+.terms_checkbox{ width:6%; float: left;}
+.terms_policytext{ width:70%; float: left;
+    font-size: 12px;
+    letter-spacing: 1px;}
+    .paySectionbutton{
+        width: 100%;
+    float: left;}
+.checkboxterms{width:100%; float: left;}
+    .checkbox_termsprivacy{float: left; width:8%;}
+    .privacytext{
+    margin-top: -3px;
+    font-size: 14px;}
+    .pay_button{
+        width: 100%;
+        margin-top: 15px;
+    margin-bottom: 15px;
+    }
+@media screen and (max-width:768px) {
+    .checkavailitypage table tbody tr td{ font-size: 12px; } 
+   
+}

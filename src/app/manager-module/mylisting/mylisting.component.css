@@ -1,0 +1,31 @@
+
+.card-box{ width:100%; float: left; padding-right: 10px;}
+.images {width:100%; float: left;}
+.mylistingmargin_top{margin-top: 120px;}
+.images img { width:96%;}
+.card-content {margin-top:0px;}
+.card-heading{font-size: 16px; color: #666; margin: 0; padding-bottom: 13px;}
+.address {font-size: 13px;
+    color: #717171; width:100%; float: left;}
+    .favoritetiming{float: left;
+        width: 40%;
+        font-size: 13px;
+        display: block;
+        margin-top: 7px;}
+        .views{ float: left;}
+.date{width:70%; float: left;}
+        .comments{ width:100%; float: left;}
+        .star{width:100%; float: left;}
+
+        .lightbox-button{margin-top: 10px; cursor: pointer;}
+        .viewdelete_menu{width:100%; float: left;}
+        .viewdelete_menu ul{ list-style: none;}
+        .viewdelete_menu ul li {display: block;}
+        .viewdelete_menu ul li a {color:#000; font-size: 13px;}
+        .panel-menu .ui-overlaypanel .ui-overlaypanel-content {
+            padding: 5px 0px 10px 0px !important;
+        }
+        .favorites-cardbox{ width:100%; float: left; border: 1px #ccc solid;
+            padding: 5px;     margin-bottom: 19px;
+           box-shadow: 0px 1px #a0a0a0;
+        }

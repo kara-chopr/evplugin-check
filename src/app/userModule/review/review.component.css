@@ -1,0 +1,67 @@
+.reviewmargin_top{
+    margin-top: 120px;
+}
+ul,li{margin: 0; padding: 0}
+
+.siddebarmenu{ width:100%; float: left; background: #ccc; height: 100%;}
+.siddebarmenu ul
+{ list-style: none;}
+
+.siddebarmenu ul li a{ 
+    display: block;
+    padding-left: 10px;
+    margin-top: 20px;
+    margin-left: 0px;
+    font-family: Arial;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #000;
+    border-bottom: 1px solid #efefef;
+    padding-bottom: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.bussiness li a.active {
+    display: block;
+    padding-left: 10px;
+    margin-top: 20px;
+    margin-left: 0px;
+    font-family: Arial;
+    font-size: 12px;
+    text-decoration: none;
+    color: #0097A7;
+    border-bottom: 2px solid #0097A7;
+    font-weight: bold;
+    cursor: pointer;
+}
+.siddebarmenu ul li a:hover{
+    border-bottom: 1px #0097A7 solid;
+}
+.favorites-cardbox{ width:100%; float: left; border: 1px #ccc solid;
+     padding: 5px 5px 5px 20px;     margin-bottom: 19px;
+    box-shadow: 0px 1px #a0a0a0;
+}
+.favorites-heading{ font-size: 20px; color: #666;}
+.favorites-heading h3{font-size: 20px; color: #666;}
+.card-box{ width:100%; float: left; padding-right: 10px;}
+.images {width:100%; float: left;}
+.images img { width:96%;}
+.card-content {margin-top:0px;}
+.card-heading{font-size: 14px;
+    color: #666;
+    margin: 0;
+    padding-bottom: 3px;
+    padding-top: 5px;}
+.address {font-size: 13px;
+    color: #717171;}
+    .favoritetiming{float: left;
+        width: 40%;
+        font-size: 13px;
+        display: block;
+        margin-top: 7px;}
+        .views{ width:100%;float: left; margin-bottom: 10px;} 
+.date{width:100%; float: left;}
+        .comments{ width:60%; float: left;}
+        .star{width:60%; float: left;}
+
+       

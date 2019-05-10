@@ -1,0 +1,1606 @@
+
+
+
+ul,li{padding: 0; margin: 0}
+
+
+/*  Header Css Stats Here  */
+.slidder{ width:100%; float: left;  
+   
+    background-size:cover; position: relative;
+  
+    margin-top: 77px;
+}
+.slidder img {max-width: 100%; height: auto;     background-size: cover;
+   }
+.slidder .owl-theme .owl-nav.disabled+.owl-dots{
+    position: absolute;
+    right: 29px;
+    bottom: 6px;
+}
+.slidder .ui-carousel .ui-carousel-page-links {
+    
+    position: absolute;
+    top: 375px;
+    z-index: 999;
+}
+.slidder .ui-carousel .ui-carousel-page-links .ui-carousel-page-link {
+    color: #f5ecec;
+    transition: color 0.2s;
+}
+.slidder .ui-carousel .ui-carousel-button {
+    color: #848484;
+    transition: color 0.2s;
+    display: none;
+}
+.slidder-image{ width:100%; float: left; overflow: hidden;}
+.slidder-image img{width:100%; float: left; height:400px;}
+#search-input{   width:100%; }
+.slidder .ui-carousel .ui-carousel-header {
+    background-color:#fff;
+    color: #333333;
+    padding: 0.571em 1em;
+    border:none;
+    margin: 0;
+    font-weight: 400;
+  }
+ .slidder .pi {
+    font-size:19px;
+}
+#search-input .ui-button.ui-state-default.ui-button-warning  {
+    color: #ffffff;
+    background-color: #12ae57;
+    border: 1px solid #12ae57;
+}
+
+p-dropdown{font-weight: 400;
+    
+    border-radius: 30px 0 0 30px;
+    border-right: 1px solid #c2c2c2;
+    color: #6f6f6f; padding: 20px;
+    border-radius: 30px 30px 30px 30px !important;}
+    .ui-dropdown {
+        width: 100% !important;
+        line-height:26px !important;
+        border-radius: 30px 30px 30px 30px !important;
+    }
+    #business_catgriestab .owl-theme .owl-dots, .owl-theme .owl-nav {
+        text-align: center;
+    -webkit-tap-highlight-color: transparent;
+    position: absolute;
+    bottom: -41px;
+   
+   
+    right: 46%;
+    margin: 0;
+    }
+    .statecityinput{
+        width:100%; float: left;line-height: 28px; padding-left: 5px;
+        /* border-top-left-radius: 25px;
+        border-bottom-left-radius: 25px;
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px; */
+    }
+    /* #our-products  .owl-dots, .owl-theme .owl-nav {
+        text-align: center;
+    -webkit-tap-highlight-color: transparent;
+    position: absolute;
+     bottom: -56px;;
+   
+   
+    right:20px;
+    
+    } */
+    #testimonial  .owl-theme .owl-nav {
+        text-align: center;
+    -webkit-tap-highlight-color: transparent;
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+    right: 0;
+    margin: 0;
+    }
+    .hotel_cont{
+        width:100%;
+       
+        margin-right: 20px;
+       cursor: pointer;
+        border: 1px #ccc solid;
+        padding: 7px;
+        box-shadow: 0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
+ background-color: rgb(255,255,255);
+    }
+    .selectedpluginarea{ width:100%; float: left; padding: 6.1px;
+        border-top-left-radius: 25px;
+        border-bottom-left-radius: 25px;
+    }
+    .searchstatecity{width:40%;}
+    .sliddersubmitButton{ width:26%;}
+    .nearmeButton{     font-size: 14px;
+        padding: 6px 14px;
+        display: table;
+        /* margin: 0 auto; */
+        border-radius: 0px;
+        font-family: MyriadSetPro-Bold,sans-serif;
+        text-transform: uppercase;
+        background: #FF5722;
+        cursor: pointer;
+        border: 1px solid green;
+        color: #fff;
+        outline: 0 !important;
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+    }
+    .searchstatecityinputbox{width:100%; padding: 4px;}
+    .slidder .dropdown-textinput .ui-corner-all {
+        border-radius: 30px 3px 3px 30px !important;
+       
+     
+    }
+    .slidder .form-control{ width: 80%;
+        line-height: 34px !important;
+        border-radius: 0 30px 30px 0;
+        margin-left: -3px;
+        padding-left: 20px;
+        margin-top: 24px;}
+        .ui-fluid .ui-inputtext {
+            
+            padding-left: 20px;
+        }
+
+       .nearSearchlocation{
+        position: absolute;
+    left: 55%;
+    width: 792px;
+    margin-left: -410px;
+
+
+    bottom: 3px;
+    z-index: 999;}
+       .nearSearchlocation ul { list-style: none}
+       .nearSearchlocation ul li{ float: left;     margin-left: 2px;}
+       .selectBoxarea{width:30%; }
+
+        #search-input  .ui-button .ui-button-text {
+            display: block;
+            line-height: 22px !important;
+            border-radius: 30px 30px 30px 30px !important;
+
+            
+        }
+        .ui-button-warning{
+            border-radius: 30px 30px 30px 30px !important;
+           
+        }
+        .ui-fluid .ui-button {
+            width: 80%;
+           
+          
+    margin-left: -56px;
+    margin-top: 27px;
+        }
+        /*  Header Css Ends Here  */
+
+
+
+        /*  evstation-categries Css Stats Here  */
+        .evstation-categries{
+            background: #ffffff;
+            width: 85%;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            margin-right: 0px;
+            display: inline-block;
+            margin-left: 15%;
+            margin-top: 18px;
+        }
+        .evstation_box{ 
+            width: 100%;
+   
+    border-radius: 12px;
+        }
+        .resturent_box{
+            width: 100%;
+           
+            border-radius: 12px;
+        }
+        .mall_box{
+            width: 100%;
+          
+            border-radius: 12px;
+        }
+        .parking_box{
+            width: 100%;
+            margin-top: -9px;
+            border-radius: 12px;
+        }
+        .categries_icon{
+            width:100%;
+ margin: 9px auto -8px auto;
+     color: #ffffff;
+    display: inline-block;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+    }
+        .categries_icon img{
+           width:72%; height:auto;
+        }
+        .hotelicon{height: 70px;;}
+        .category-container{
+            color: #fff;
+            margin-top: 6px;
+            padding: 1px 1px;
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+    box-shadow:0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+        }
+        .evstation_container{
+            background: #8CC63F; width:100%;
+        }
+        .resturants_container{
+            background: #3384C9; width:100%;
+        }
+        .resturants_container{
+            background: #3384C9; width:100%;
+        }
+        .mall_container{
+            background: #E9A708; width:100%;
+        }
+        .hotel_container{
+            background: #E75740; width:100%;
+        }
+        .parking_container{
+            background: #808080; width:100%;
+        }
+        .category-name{
+            font-size: 14px;
+    font-weight: 900;
+    margin-top: 1px;
+    margin-bottom: 2px; cursor: pointer;
+        }
+        .category-name a{ 
+            font-size: 14px;
+            font-weight: 400; transition:1s;}
+            .category-name a:hover{color:#12AE57}
+        .listing-number{color: #8a8a8a; font-size: 13px;
+            position: relative;
+                                 top: 9px
+        }
+        .center{ 
+         widtH:80%;float: left; margin-left: 15%;
+         margin-top: 10px;
+           
+    }
+    .fiveboxessection { width:100%; float: left;}
+.five-boxes{text-align: center;}
+.para{ font-size: 13px; line-height: 20px; margin-top: 14px;}
+.para p {text-align: justify;}
+.ourspecility{width:100%; float: left; margin-top: 44px; margin-bottom: 20px;}
+    /*  evstation-categries Css Ends Here  */
+      /*  evstation-categries Css Starts Here  */
+.specilityimage{ width:100%; float: left;}
+.specilityimage img { width: 100%;
+    margin-top:16px;}
+      /*  evstation-categries Css Ends Here  */
+     /*  Charger production Carousel Css Starts Here  */
+
+     .chargericonwrapper{
+        width: 100%;
+        height: 67px;
+        margin: 5px auto;
+        border: 2px dashed #00c16f;
+        border-radius: .3em;
+        display: flex;
+        position: relative;
+        flex-wrap: wrap;
+     }
+     .chargerrightwrapper{width:100%; float:right;}
+     .chargericonwrapperright {
+        width: 100%;
+        height: 67px;
+        margin: 5px auto;
+        border: 2px dashed #00c16f;
+        border-radius: .3em;
+        display: flex;
+        position: relative;
+        flex-wrap: wrap;
+    }
+    .chargingicon {
+        width: 55%;
+        height: 29px;
+       
+        position: relative;
+        display: block;
+        margin: 0px auto;
+    }
+     .chargingicon:after {
+        width: 52px;
+        display: block;
+        position: absolute;
+        top: 2px;
+        left: 4px;
+        right: 4px;
+        bottom: 2px;
+        content: "";
+        height: 36px;
+        float: left;
+        margin-right: 5px;
+        background-repeat: no-repeat;
+    }
+    .dcwallicon {
+        width: 55%;
+        height: 29px;
+       
+        position: relative;
+        display: block;
+        margin: 0px auto;
+    }
+     .dcwallicon:after {
+        width: 52px;
+        display: block;
+        position: absolute;
+        top: 2px;
+        left: 4px;
+        right: 4px;
+        bottom: 2px;
+        content: "";
+        height: 36px;
+        float: left;
+        margin-right: 5px;
+        background-repeat: no-repeat;
+    }
+    .icon-renault:after {
+        background-image: url("/assets/clouds.png");
+
+      
+    }
+    .icon-nissan:after {
+        background-image: url("/assets/5pin.png");
+    }
+    .bharatchargerIcon:after{
+        background-image: url("/assets/3pin.png");
+
+    }
+    .chomoIcon:after{
+        background-image: url("/assets/Chademo.png");
+
+    }
+    .acropesetSocket:after {
+        background-image: url("/assets/charger/3pin.png");
+    }
+    .vechilecharger:after {
+        background-image: url("/assets/charger/9pin.jpg");
+    }
+    .dcwlallbox{
+        background-image: url("/assets/charger/9pin.jpg");
+        background-repeat: no-repeat;
+    }
+    .icon-vde:after {
+        background-position-y: -72px;
+        background-position-x: -72px;
+    }
+    .icon-energy:after {
+       
+        
+    }
+   
+    .icon-jack1:after {
+        background-image: url("/assets/app.png");
+    }
+  .icon-master:after {
+        background-position-y: -36px;
+        background-position-x: -108px;
+    }
+    .icon-connectivity:after {
+        background-image: url("/assets/power-cable.png");
+        margin-top: 1px;
+    margin-left: 0px;
+       
+    }
+    .icon-wifi:after {
+        background-image: url("/assets/credit-card.png");
+        margin-top: 1px;
+    margin-left: 0px;
+    }
+    .chargertext {
+        margin-top: -8px;
+    }
+     .chargertext {
+        color: gray;
+        width: 100%;
+       text-align: center;
+        font-size: 11px;
+        line-height: 12px;
+        font-weight: 700;
+        margin-top: 8px;
+    }
+    .chargertextright {
+        color: gray;
+        width: 100%;
+        text-align: center;
+        margin-left: 0px;
+      font-weight: 600;
+        font-size: 12px;
+        line-height: 12px;
+      
+    }
+    .description-row {
+        padding: 0 10px;
+       
+    }
+    .description-title h3{ 
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 13px;
+        font-weight: 900;
+        cursor: pointer;
+        margin-top: 10px;
+        margin-left: 10px;
+        color: #6f6f6f;
+    }
+  
+    .description {
+        width: 100%;
+    padding-bottom: 0px;
+     
+    margin-bottom: 0px;
+    padding-left: 2px;
+    padding-right: 2px;
+    }
+    .description p {
+        font-size: 13px;
+        color: #777;
+        white-space: nowrap;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 3px;
+    }
+    .rightdescription{float:right;}
+    
+    .powerofficon{color: #e80b34eb;}
+    .cablesizeicon{color: #009ACD;}
+    .compatibilityicon{color: orange;}
+    .priceicon{color: #d25f28}
+    .box-line{width:100%; height: 1px; background:#666;}
+   
+    .description p:last-child {
+        color: #00c16f;
+        font-size: 13px;
+    }
+
+    .descriptionrow{ width:100%; float:  left; padding: 6px;
+    border: 1px #ccc solid; margin-top: 10px;height: 376px;
+
+}
+    .descriptionbox{ width:100%; float: left; padding: 6px;
+         margin-top: 10px}
+    .btn-green {
+        font-size: 14px;
+        padding: 19px 75px;
+        display: table;
+        margin: 0 auto;
+        border-radius: 50px;
+        font-family: MyriadSetPro-Bold,sans-serif;
+        text-transform: uppercase;
+        background: #00c16f;
+        padding: 1px 14px;
+        color: #fff;
+        outline: 0 !important;
+        margin: 79px -13px;
+    }
+.btn-expolre {font-size: 14px;
+    font-size: 12px;
+    padding: 15px 12px;
+    display: table;
+    /* margin: 0 auto; */
+    border-radius: 50px;
+    font-family: MyriadSetPro-Bold,sans-serif;
+    text-transform: uppercase;
+    background: #00c16f;
+    /* padding: 19px 88px; */
+    color: #fff;
+    width: 26%; outline: 0;
+}
+
+#our-products .ui-carousel .ui-carousel-header {
+    background-color:#fff; border:none;
+    color: #333333;
+    padding: 0.571em 1em;
+    
+    margin: 0;
+    font-weight: 400;
+}
+.resturentCarousel .pi{
+    font-size: 30px;
+
+}
+#our-products .pi {
+    font-size: 30px;
+}
+.evpluginCarousel .pi {
+    font-size: 30px;
+}
+#testimonial .pi {
+    font-size: 30px;
+}
+#our-products{width: 98%;
+    position: relative;
+    margin: 0 auto;}
+    #our-products .owl-theme .owl-nav {
+        position: absolute;
+        margin-top: 12px;
+        top: -54px;
+        right: 5px;
+        height: 30px;
+    }
+.products-heading{  text-align: center}
+.producthead {
+    font-size: 22px;
+    font-weight: 700;
+    color: #3a3a3a;
+    letter-spacing: 1px;
+}
+    .product-subheading{
+        color: #4a4a4a;line-height: 1.75;
+        padding: 0 .7em;
+    margin: 0 auto 30px;
+    max-width: 50%;
+    text-align: center;
+    }
+.productcarouselrow{
+    width:100%; float: left; margin-top: -30px;
+}
+.evstation_categriesheading{
+    width:100%; float: left;
+}
+.evstation_categriesheading h3{font-size:23px;
+    
+    text-transform: uppercase;
+    color: #181a1b;
+    text-align: center;
+    margin-bottom:20px;
+    margin-bottom: 20px;
+    padding-right: 140px;
+}
+.chargerimage{width: 100%;
+  cursor: pointer;
+    margin-left: 0px; }
+.chargerimage img{ width:150px; height:217px;} 
+      /*  Charger production Carousel Css Ends Here  */
+
+
+    /*  product_description Css Stats Here  */
+   
+    .product_description{
+        width:100%; float: left;
+    background-color: #f0f0f0!important; background-size: cover;
+    margin-top: -20px;
+    padding: 70px 0 40px;
+}
+.heading_works{
+    margin-bottom: 50px;
+    text-align: center;
+}
+.heading_works h3 {
+    line-height: 20px;
+    color:#969595;
+    letter-spacing: 3px;
+}
+.heading_works h2 {
+    line-height: 20px;
+    
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 35px;
+    color: #232323;
+    letter-spacing: 3px;
+}
+.process-cycle {
+    padding: 0 20px;
+    position: relative;
+    margin-bottom: 30px;
+}
+.process-cycleicon{
+    background: #fff none repeat scroll 0 0;
+    border-radius: 50%;
+    box-shadow: 0 1px 2px 1px rgba(0,0,0,.1);
+    height: 100px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    padding: 9px 5px;
+    width: 100px;
+    position: relative;
+}
+.process-cycleicon img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    margin-top: -30px; /* Half the height */
+    margin-left: -30px; /* Half the width */
+}
+.process_heading{
+font-weight: 600;
+    color: #242424;
+   
+    position: relative;
+    text-align: center;
+    font-size: 20px;
+}
+.content{font-size: 14px;
+    font-weight: 400;
+    line-height: 27px;
+    color: #999; 
+text-align: center;}
+.myStyle{
+    width:80%; margin: 0 auto;
+}
+
+ /*  product_description Css Ends Here  */
+ .solar-chargingmachine{ width:100%; float: left;}
+ .solarmachine{width:100%; float: left; position: relative;}
+ .solarmachine img { width:97%; margin: 0 auto;}
+ .chargingmachine{ width:100%; float: left;}
+ .chargingmachine img { width:97%; height: auto;}
+ .button{ position: absolute; bottom: 30px; right:20px;
+}
+.solarbutton{background-color: #12AE57;
+    padding: 8px 9px 8px 9px;
+    outline: 0;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 5px; }
+ .solarpanelheading { width:100%; float: left; }
+ .solarpanelheading p{ font-size: 11px;
+   
+    color: #606160;
+    font-weight: 600;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;}
+    .offgrid-text{font-size: 9px; text-align:center;
+        color: #606160; font-weight: 600; margin-top: 10px; 
+        margin-bottom: 20px;}
+ /* label > input{ 
+  visibility: hidden;
+  position: absolute; 
+}
+label > input + img{
+  cursor:pointer;
+  border:2px solid transparent;
+}
+label > input:checked + img{ 
+  border:2px solid #f00;
+}  */
+.solar{ width:100%;  padding-right: 10px; margin-top: 10px;
+float: left;}
+.specification-heading{ width:100%; float: left;}
+.specification-heading p {font-size: 11px; font-weight: 600;
+color: #666; padding-top: 10px;}
+.solar li{ list-style: none; font-size: 10px; 
+    margin-bottom: 10px;}
+.next{ float:right; margin-top: 20px;}
+  .next-button{ width:85px; float:right; background: #FF5722;
+cursor: pointer; outline: 0; color: #fff; border-radius:5px;
+padding: 8px 6px 8px 6px;} 
+.showselectedgrid{ width:90%; margin: 20px auto;}
+.showselectedgrid img { width:100%; height: auto;}
+ .form-group{ width:100%; float: left;}
+ .userform{ width:100%; float: left; margin-bottom: 20px;}
+ .userform-control { width:100%; float:left; border-left:none;
+border-right:none; border-top:none; font-size: 10px;
+border-bottom:1px #ccc silid; padding-left: 10px; margin-top: 15px;}
+.userform-control:focus { 
+    outline: 0;}
+    .prevoius{ width:60px; height: 60px; float:left;}
+    .previous-button {background-color: #f1f1f1; padding: 4px 4px 4px  4px;
+   cursor: pointer; border-radius:5px;}
+   .postenquiry{ float:right; }
+   .postenquiry-button {background-color: rgb(244,81,30);padding: 6px 6px 6px  6px;
+    cursor: pointer; border-radius:5px; color: #fff; text-align: center;
+outline: 0;}
+ /*  solarpanel charging panel Css Stats Here  */
+  /*  product_description Css Stats Here  */
+
+  /*  Evstation Section and carousel global Css Starts Here  */
+
+.card-container{ width:94%; float:left; margin-right: 20px; cursor: pointer;
+ padding: 5px; border:1px #ccc solid; padding: 10px;
+ box-shadow: 0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
+ background-color: rgb(255,255,255);
+    border-radius: 2px; margin:8px;
+}
+ .evplugin{
+    width:100%; float: left; 
+}
+.evplugin_image{
+    width:98%; float: left; position: relative;
+}
+.evplugin_image img{ width:100%;}
+.ui-carousel-page-links {
+    margin: 0 .5em;
+    margin-top: .125em;
+    float: left;
+   
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #12AE57;
+  }
+  
+  .evplugin_image:hover .overlay {
+    opacity: 1;
+  }
+  .text {
+    color: white;
+    font-size: 13px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+.ui-carousel .ui-carousel-viewport .ui-carousel-items .ui-carousel-item {
+     border:none !important;
+     background: transparent;
+}
+.evplugin_heading{
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 27px;
+    color: #35ce79;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0px;
+   
+}
+.transition {
+    transition: all .4s ease-in-out;
+  }
+   
+ /*
+
+ */
+ .demo-one {
+  height: 260px;
+  background-color: #FFFFFF;
+}
+
+.demo-one img {
+  height: 260px;
+  width: 260px;
+}
+   /*
+ */
+      .visible {
+        opacity: 1;
+      }
+    
+   
+    .progress {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 5px;
+      background: #ff5252;
+    }
+   
+    .click-area {
+      width: 50px;
+      text-align: center;
+    }
+     
+   
+  
+.listing_box{    width: 100%;
+    float: left;
+    padding-right: 10px;
+     cursor: pointer;}
+    .listing_location{ 
+        font-size: 13px;
+        margin-top: -21px;
+        width: 100%;
+        float: left;
+        color: #a7a4a4;
+        font-size: 11px;
+    }
+        
+.famap_marker {    color: orange;
+    width: 6%;
+    float: left;
+    margin-top: 2px;}
+.listing_charging{font-size: 14px; line-height: 0px;
+     width:100%; float: left; margin-top: 0px;}
+.faplug{color: #ff1858; width:50%; float:left;}
+fainr{margin-left: 8px;}
+.listing_timing{
+    font-size: 14px; line-height: 24px; width:100%; 
+        float: left;}
+
+.faclock{color: #0d3f8a;}
+.listing_view{width:100%; float: left;}
+.faeye{width:40%; float: left;}
+.evplugin .ui-carousel .ui-carousel-header {
+  
+     color: #333333;
+     padding: 0.571em 1em;
+     border: none !important;
+     margin: 0;
+     font-weight: 400;
+     background-color:#fff !important;
+   }
+  
+/*  Evstation Section and carousel global Css Ends Here  */
+
+
+
+ /*  Evstation Section and mall etc heading  Starts Here  */
+.evstation_heading{
+    width:100%; float: left; margin-top: 20px; margin-bottom:10px;
+    color: #8e0611;
+}
+.resturent_heading{
+    width: 100%;
+    float: left;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: green;
+    
+}
+
+.mall_heading{
+    width:100%; float: left; margin-top: 30px; margin-bottom: 10px;
+    color: orange;
+    
+}
+
+/*  Evstation Section and mall etc heading  Ends Here  */
+
+
+/*  Testimonial Section   Starts Here  */
+#testimonial{
+    width:100%; float: left; background:url("/assets/te.png") center center;
+     padding-top: 100px; padding-bottom: 100px;
+    background-size:cover; padding: 0px 0 30px; height:auto;
+  
+}
+
+.testimonial_heading{width:100%; }
+.testimonial_heading h2{ font-size: 26px; text-align: center;
+    color: #757575; letter-spacing: 1px;}
+    .testimonial_line{ width: 167px;
+        margin: -17px auto;}
+    .line_1 {
+        background-color: #6d6d6d;
+        display: inline-block;
+        height: 1px;
+        vertical-align: middle;
+        width: 60px;
+    }
+    .icon {
+        color: #f9ca40;
+        display: inline-block;
+        font-size: 7px;
+        line-height: 4px;
+        margin: 0 3px;
+        vertical-align: middle;
+    }
+     .icon {
+        color: #f9ca40;
+        display: inline-block;
+        font-size: 7px;
+        line-height: 4px;
+        margin: 0 3px;
+        vertical-align: middle;
+    }
+    .line_2 {
+        background-color: #6d6d6d;
+        display: inline-block;
+        height: 1px;
+        vertical-align: middle;
+        width: 60px;
+    }
+    .client_picture{
+        width: 13%;
+        
+        margin:20px auto;}
+        .client_picture img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+        }
+        .testimonial-content {
+            
+            
+            padding-top: 10px;
+            float: left;
+            text-align: center;
+            line-height: 30px;
+        }
+        .title {
+          
+            font-size: 17px;
+            font-weight: 900;
+            color: #868686;
+           
+            margin: 0;
+        }
+        .client-content{
+            font-size: 18px;
+            font-size: 17px;
+    font-style: italic;
+    color: #565656;
+    margin-top: 0px;
+}
+#testimonial .ui-carousel .ui-carousel-header {
+  
+    color: #333333;
+    padding: 0.571em 1em;
+    border: none !important;
+    margin: 0;
+    font-weight: 400;
+    background-color: transparent !important;
+    position: absolute;
+    top: -23%;
+    right: 30px;
+    z-index: 999;
+  }
+  #testimonial .pi {
+   font-size:30px;
+}
+#testimonial .ui-carousel .ui-carousel-viewport {
+
+    border:none !important;
+     background-color:transparent !important;
+      
+  }
+  #testimonial .ui-carousel .ui-carousel-dropdown, .ui-carousel .ui-carousel-mobiledropdown {
+    
+    display:none;
+  }
+  .ui-carousel-dropdown, .ui-carousel .ui-carousel-mobiledropdown{
+      display:block;
+  }
+  #testimonial .ui-carousel-next-button{ }
+/*  Testimonial Section   Starts Here  */
+
+
+
+ /* Media Query Starts Here   */
+
+ @media screen and (max-width:991px) {
+    .slidder .ui-carousel .ui-carousel-page-links {
+    
+     
+    }
+    .evstation_box{ 
+        width: 100%;
+border:none;
+border-radius: 12px;
+    }
+    .resturent_box{
+        width: 100%;
+        border: none;
+        border-radius: 12px;
+    }
+    .tabButtonul {
+        width: 100%;
+        
+        margin: 0 ;
+    }
+    .tabButtonul li {
+        display:block !important;
+        width: 100% !important;
+        margin-bottom: 10px;
+    }
+    .nearSearchlocation ul li{     display: inline-block; width:32%;}
+    .selectBoxarea {
+        width: 59%;
+        margin: 6px auto;
+    }
+    .searchstatecity {
+        width: 60%;
+        margin: 6px auto; overflow: auto;
+    }
+    .selectedpluginarea {
+       
+        float: none;
+       
+    }
+    .sliddersubmitButton {
+        width: 36%;
+        margin: 0 auto;
+    }
+    .nearSearchlocation{ 
+        position: absolute;
+        left: 24px;
+        width: 104%;
+        margin-left: -21px;
+        bottom: -17px;
+        z-index: 2;
+    }
+
+  
+    .hidemobileview-chargerdescription{ display:none;}
+    .chargerimage{margin: 0 auto;
+        width: 40%;}
+        .chargerimage img{ width:100%; height:auto;}
+        .center{ 
+            widtH:100%;float: none; margin-left:0%;
+            margin-top: 5px;
+              
+       }
+       .btn-green {
+       
+        margin-top: 0px;
+    } 
+    .slidder .owl-theme .owl-nav {
+       
+        display: none;
+    }
+    #our-products .owl-theme .owl-nav {
+       
+    }
+    .fiveboxessection {
+        width: 90%;
+        float: left;
+    }
+ }
+ @media screen and (max-width:768px) {
+    .slidder img {max-width: 100%; height: auto;     background-size: cover;
+    }
+    .hidemobileview-chargerdescription{ display:none;}
+.slidder-image img {
+    width: 100%;
+    float: left;
+    height: 200px;
+    }
+    .hidemobileicon  { display:none;}
+    .sliddersubmitButton {
+        width: 50%;
+        margin: 0 auto;
+    }
+    .slidder .dropdown-textinput .ui-corner-all {
+        border-radius: 3px 3px 3px 3px !important;
+     
+    }
+    .form-control {
+        width: 78%;
+        line-height: 25px !important;
+        border-radius: 0 0px 0px 0;
+        margin-left: 20px;
+        padding-left: 20px;
+    }
+    .nearSearchlocation ul li {
+    float: none;
+    width: 75%;
+    }
+    .ui-dropdown {
+        width: 78% !important;
+        line-height: 18px !important;
+        border-radius: 0px 0px 0px 0px !important;
+        margin-bottom: 10px;
+    }
+    #search-input .ui-button.ui-state-default.ui-button-warning {
+        color: #ffffff;
+        background-color: #12ae57;
+        border: 1px solid #12ae57;
+        margin-top: 10px;
+        margin-left: 19%;
+        width: 120px;
+    }
+    .form-background{ width:100%; float: left; background: #666;
+   background-size:cover; padding-top: 5px; padding-bottom: 5px;}
+   #search-input .ui-button .ui-button-text {
+    display: block;
+    line-height: 21px !important;
+     border-radius: 0px 0px 0px 0px !important;
+    
+}
+.product_description {
+    width: 100%;
+    float: left;
+    background-color: #f0f0f0!important;
+    background-size: cover;
+   margin-top: 0px; 
+   padding: 23px 0 5px;
+}
+.heading_works h3 {
+   font-size: 14px;
+   margin-top: -8px;
+}
+.heading_works h2 {
+    line-height: 20px;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 5px;
+    color: #232323;
+    letter-spacing: 3px;
+}
+.heading_works {
+    margin-bottom: 25px;
+    text-align: center;
+}
+.card-container {
+    width: 96%;
+    float: none;
+    margin-right: 20px;
+    cursor: pointer;
+    padding: 5px;
+    border: 1px #ccc solid;
+    padding: 7px;
+}
+.text {
+  
+    font-size: 8px;
+   
+}
+.evplugin_heading {
+    font-size: 12px;
+   
+    line-height: 18px;
+    
+    margin-top: 3px;
+    margin-bottom: 1px;
+}
+.evplugin_heading {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 18px;
+    
+    margin-top: 3px;
+    margin-bottom: 1px;
+}
+.faplug {
+    color: #ff1858;
+    width: 17%;
+    float: left;
+    font-size: 11px;
+}
+.rr{
+    width:80%;
+    float: left;
+    margin-left: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 10px;
+}
+.faeye{width:17%; float: left;}
+.opentime{ width: 18%; float: left;}
+.closetime{ width:40%; float: left;}
+.evplugintext{    width:20%;
+    float: left;
+    margin-left: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 10px;}
+.fainr{ width:35%; float: left;
+    font-size: 13px;}
+    .famap_marker {
+        width: 2%;
+        float: left;
+    }
+   
+        .listing_timing {
+            font-size: 11px;
+            line-height: 24px;
+            width: 100%;
+            float: left;
+        }
+        ui-carousel-mobiledropdown ui-widget ui-state-default ui-corner-left ng-star-inserted{
+            display:none !important;
+        }
+        .famap_marker {
+            width: 2%;
+            float: left;
+        }
+        .evplugin_image img {
+            width: 100%;
+            height: 148px;
+        }
+        .link-half ul {
+            width:50%; margin: 0 auto;
+        }
+        .link-half ul li{
+                 margin-bottom: 0px; 
+    }
+    .policy-heading{width: 100%;
+        font-size: 15px;
+        color: #fff;
+        margin-top: -31px;
+        text-align: center;}
+    .about-heading{
+    
+    }
+    .link-half ul {
+        list-style: none;
+        margin-top: -24px;
+        padding-left: 10px;
+    }
+    .link-half ul {
+        list-style: none;
+        width: 60%;
+        text-align: center;
+    }
+    
+    .social-icons ul {
+        list-style: none;
+        width: 95%;
+        margin: 0 auto;
+        padding-left: 22px;
+    }
+    .quicklinks_heading {
+        
+        text-align: center;
+    } 
+    
+    .evplugin_heading {  padding-top: 10px;
+    font-weight: 700}
+    .title {
+       
+        margin-top: -20px;
+    }
+    .client-content {
+        
+        font-size: 15px;
+        
+        margin-top: -11px;
+    }
+    .title {
+        font-size: 13px;
+        
+        margin-top: -22px;
+    }
+    .myStyle{
+        width:80%; margin: 0 auto;
+    }
+    .button{ display:none}
+    .slidder .form-control{ width: 80%;
+        line-height: 10px !important;
+        border-radius: 0px 0px 0px 0px;
+        margin-left: 0px;
+        padding-left: 00px;
+        margin-top: 04px;}
+        .categries_icon{
+            width:100%;
+ margin: 9px auto -8px auto;
+     color: #ffffff;
+    display: inline-block;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+    }
+    .categries_icon {
+        width:auto;
+        margin: 10px auto 2px auto;
+        color: #ffffff;
+        display:block;
+        transition: all .3s ease;
+    }
+    .categries_icon img {
+        width: 60%;
+        height: auto;
+    }
+   
+    .listing-number {
+       
+        font-size: 11px; 
+    }
+    .category-container {
+       
+     border-bottom-left-radius:0;
+         border-bottom-right-radius: 0px; 
+         box-shadow:none;
+         
+    }
+   
+    .description p {
+        font-size: 10px;
+        color: #777;
+        white-space: nowrap;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 0px;
+    }
+    .ourspecility-heading {
+       
+    }
+    .ourspecility-heading h3{
+    font-size: 16px;
+    text-align: center;
+    font-weight: 600;
+    padding-bottom: 10px;
+    }
+   
+    .ourspecility {
+        width: 100%;
+        float: none;
+        margin-top: 29px;
+        margin-bottom: 16px;
+    }
+    .or{
+        color:#00c16f;
+    }
+    .evstation_heading {
+        width: 100%;
+        float: none;
+        margin-top: 20px;
+         margin-bottom: 0px; 
+     
+        text-align: center;
+    }
+    .resturent_heading {
+        width: 100%;
+        float: none;
+        margin-top: 16px;
+        margin-bottom: 2px;
+        color: green;
+        text-align: center;
+    }
+    .mall_heading {
+        width: 100%;
+        float: none;
+        margin-top: 16px;
+        margin-bottom: 10px;
+        color: orange;
+        text-align: center;
+    }
+    .evstation-categries {
+        background: #ffffff;
+    width: 85%;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    margin-right: 0px;
+    display: inline-block;
+    margin-left: 19%;
+    margin-top: 18px;
+    }
+ }
+ @media screen and (min-width:320px) and (max-width:468px) {
+    #search-input {
+        width: 100%;
+    
+    }
+    ui-carousel-mobiledropdown ui-widget ui-state-default ui-corner-left ng-star-inserted{
+       
+    }
+    sliddersubmitButton {
+        width: 47%;
+        margin: 0 auto;
+    }
+    .famap_marker {
+        width: 2%;
+        float: left;
+    }
+    .evplugin_image img {
+        width: 100%;
+        height: 148px;
+    }
+    .link-half ul {
+        width:50%; margin: 0 auto;
+    }
+    .link-half ul li{
+             margin-bottom: 0px; 
+}
+.policy-heading{width: 100%;
+    font-size: 15px;
+    color: #fff;
+    margin-top: -31px;
+    text-align: center;}
+.about-heading{
+
+}
+.link-half ul {
+    list-style: none;
+    margin-top: -24px;
+    padding-left: 10px;
+}
+.link-half ul {
+    list-style: none;
+    width: 60%;
+    text-align: center;
+}
+
+.social-icons ul {
+    list-style: none;
+    width: 95%;
+    margin: 0 auto;
+    padding-left: 22px;
+}
+.quicklinks_heading {
+    
+    text-align: center;
+} 
+
+.evplugin_heading {  padding-top: 10px;
+font-weight: 700}
+.title {
+   
+    margin-top: -20px;
+}
+.client-content {
+    
+    font-size: 12px;
+    
+   
+}
+
+.testimonial_heading {
+    font-size: 15px
+}
+.testimonial_heading h2{
+    font-size: 15px
+}
+.testimonial-content {
+    padding-top: 10px;
+   
+   
+    line-height: 30px;
+    padding-left: 13px;
+    padding-right: 14px;
+}
+
+}
+   
+.tabButton {
+    
+    width: 99%;
+    border: 1px solid #000;
+    border-radius: 5px;
+    color: #000;
+    font-size: 16px;
+    font-weight: 600; cursor: pointer;    margin-left: 8px;
+}
+.underline{ width:100%; float: left; height: 1px; background: #ccc; margin-top: 15px;}
+.tabButtonul{ width: 100%;
+    list-style: none;
+    margin: 0 auto;}
+.tabButtonul li { display: inline-block; width: 16%;margin-right: 6px; }
+.medium_tabButton{
+    width:100%;
+    margin: 35px auto;
+}
+.activeTabButton {
+    
+   
+   color: #00c16f
+}
+.tabButtonheading{
+    text-align: center;
+    margin: 6px 7px;
+}
+.tabButtonheading:active:after{
+    content: "";
+   color: #00c16f;
+    }
+    /*   All Staions Tab Animation Fade Fade Out Css Starts Here*/
+    .step {
+        display: none;
+        opacity: 0;
+      }
+      .show {
+          display: block;
+          transform : scale(1);
+          opacity : 1;
+          animation : anim .7s ease-in-out;
+        }
+       
+      
+      @keyframes anim {
+        0% {
+          display: none;
+          opacity: 0;
+        }
+        1% {
+          display: block;
+          opacity: 0;
+          transition: .7s ease-in-out all;
+        }
+        100% {
+          opacity: 1 !important;
+        }
+      }
+      /*   All Staions Tab Animation Fade Fade Out Css Ends Here*/
+
+
+      #hotel_icon{
+        width:auto;
+       
+        color: #ffffff;
+        display:block;
+        margin-top: 3px;
+        transition: all .3s ease;}
+    #hotel_icon img {
+        width: 80%;
+        margin-top: 4px;;
+        height: 77px;
+    }
+    .producthead {
+        font-size: 22px;
+        font-weight: 700;
+        color: #3a3a3a;
+        letter-spacing: 1px;
+        text-align: center;
+    }
+    .show{
+        margin: -32px !important;
+    }
+
+
+
+
+
+
+    #business_catgriestab{
+        position: relative;
+        top: -32px;
+    }
+    #business_catgriestab .owl-theme .owl-dots, .owl-theme .owl-nav{
+        display: none !important;
+    }
+
+
+
+    
+
+    @media screen and (min-width: 0px) and (max-width: 736px) {
+
+        .fiveboxessection { display: none; } 
+
+
+                                       }
+
+
+ @media screen and (min-width: 736px) and (max-width: 1600px) {
+
+    .pokman8 { display: none; } 
+                                         
+                                
+    }
+    
+ @media screen and (min-width: 0px) and (max-width:736px) {
+
+    .pokman8 { display: block;    float: left; } 
+                                         
+                                
+    }
+    .icon_section{
+        list-style: none;
+        display: flex;
+    }
+    @media screen and (max-width: 768px){
+
+.nearSearchlocation ul li {
+    float: none;
+    width: 31% !important; 
+}
+.selectedpluginarea{
+        float: left; 
+}
+.nearmeButton{
+    position: relative;
+    top: -18px;
+    
+}
+.product-subheading{
+    max-width: 100%;
+    font-size: 15px;
+}
+
+    }
+    

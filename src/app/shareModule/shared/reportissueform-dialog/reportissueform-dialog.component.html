@@ -1,0 +1,69 @@
+<app-loader *ngIf="loading"></app-loader>
+  <div class="reportissueFormWrapper">
+      <p-toast position="top-right"></p-toast>
+  <button mat-button [mat-dialog-close]="true"
+class="orderformclosebutton"><i class=" fa fa-close"></i></button>
+<div class="row">
+  <div class="col-md-12">
+  <div class="form_heading">
+    <h6>Please tell us about your concern</h6>
+  </div>
+</div>
+</div>
+<div class="reportissueformstatrs">
+  <form [formGroup]="reportIssueFormGroup" (ngSubmit)="onSubmitreportIssueForm()">
+<div class="row">
+    <div class="col-md-12">
+     <div class="enterIssue">
+        <mat-form-field class="reportform-control">
+            <textarea matInput placeholder="Leave a comment"
+            formControlName="issue_text"></textarea>
+          </mat-form-field>
+     </div>
+      </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+      <div class="report_checboxes">
+        <ul>
+           
+          <li>
+              <!-- <mat-checkbox
+              (change)="reportselected(report_checboxe.label,$event.checked)">{{report_checboxe.label}}
+            </mat-checkbox> -->
+          </li>
+          <li>
+              <mat-checkbox
+              
+              formControlName="is_insufficient">Insufficient Data
+            </mat-checkbox> 
+          </li>
+          <li>
+              <mat-checkbox
+              
+              formControlName="is_incorrect" >Incorrect Data
+            </mat-checkbox> 
+          </li>
+          <li>
+              <mat-checkbox
+              
+              formControlName="is_others" >Others
+            </mat-checkbox> 
+          </li>
+        </ul>
+      </div>
+      </div>
+      <input type="hidden" formControlName="business_id"/>
+      <input type="hidden" formControlName="user_id"/>
+     
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <div class="submit_button">
+      <button type="submit" class="report_submitButton">Report Issue</button>
+    </div>
+  </div>
+</div>
+</form>
+</div>
+</div>

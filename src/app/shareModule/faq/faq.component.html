@@ -1,0 +1,86 @@
+<app-loader *ngIf="loading"></app-loader>
+<div class="faq" *ngIf="faqDatas && faqDatas.success">
+<div class="container margin_top">
+    <div class="faqheading">
+        <h6 style="text-align: center; margin-bottom: 30px; font-size: 20px;">Faq</h6>
+    </div>
+    <div class="row" *ngFor="let faqData of faqDatas.success">
+        <div class="col-md-12">
+            <div class="faq1">
+                    <p-panel header="{{faqData.title}}" [toggleable]="true">
+                            <p [innerHtml]="faqData.content">
+                               
+                            </p>
+                              </p-panel>
+            </div>
+        </div>
+    </div>
+   
+      
+          
+               
+                   
+       
+                 
+  <!-- <div class="ui-grid ui-grid-responsive ui-fluid">
+    <div class="ui-grid-row">
+      <div class="  ui-md-12 ui-sm-12  ui-lg-12">
+        <div class="faqheading"> Faq</div>
+          <p-panel  (click)="op.show($event, actualTarget)">
+              <p-header >
+                  Header content here
+              </p-header>
+              <p-overlayPanel #op>
+                
+                  <p >
+                      Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+                      The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+                  </p>
+               
+              </p-overlayPanel>
+              
+              <div #actualTarget></div>
+          </p-panel>
+          <p-panel  (click)="op.show($event, actualTarget)">
+              <p-header >
+                  Header content here
+              </p-header>
+              <p-overlayPanel #op class="middle">
+                
+                  <p >
+                      Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+                      The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+                  </p>
+               
+              </p-overlayPanel>
+              
+              <div #actualTarget></div>
+          </p-panel>
+          <p-panel  (click)="op.show($event, actualTarget)">
+              <p-header >
+                  Header content here
+              </p-header>
+              <p-overlayPanel #op class="middle">
+                
+                  <p >
+                      Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+                      The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+                  </p>
+               
+              </p-overlayPanel>
+              
+              <div #actualTarget></div>
+          </p-panel>
+         
+         
+         
+         
+         
+      </div>
+    </div>
+  </div> -->
+</div>
+</div>

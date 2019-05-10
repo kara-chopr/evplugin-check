@@ -1,0 +1,33 @@
+<app-loader *ngIf="loading"></app-loader>
+<div class="reviewDialogwrapper">
+    <p-toast position="top-right"></p-toast>
+    <button mat-button [mat-dialog-close]="true"
+    class="orderformclosebutton"><i class=" fa fa-close"></i></button>
+    <form [formGroup]="writeReviewFormGroup" (ngSubmit)="onSubmitreviewForm()">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="review_heading">
+    <h6>Please provide rating and your remarks</h6>
+  </div>
+  
+  <div class="remarks_star">
+  
+    <ngb-rating [(rate)]="currentRate" max="5"
+    formControlName="rating"></ngb-rating>
+    You Have Selected  &nbsp;<span style="color:red">{{currentRate}}</span>
+  </div>
+  
+  </div>
+  </div>
+  <div class="remarks_textbox">
+    <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="Write A Review"
+      formControlName="review_text"></textarea>
+    </mat-form-field>
+    <input type="hidden" formControlName="business_id"/>
+    <input type="hidden" formControlName="user_id"/>
+    <input type="hidden" formControlName="review_date"/>
+    <button type="submit" class="submit_review">Post Review</button>
+  </div>
+  </form>
+</div>

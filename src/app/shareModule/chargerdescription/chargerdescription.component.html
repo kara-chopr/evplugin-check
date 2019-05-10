@@ -1,0 +1,259 @@
+<app-loader *ngIf="loading"></app-loader>
+
+<div class="container margin_top" *ngIf="product_DetailsResponse && product_DetailsResponse.success">
+<div class="row" style="margin-top: 4em;">
+
+<!--- Gallary Image For Charger Starts Here-->
+<div class=" col-md-3 ">
+<div class="selectedimage">
+<div class="selectedchargerimage1" *ngIf="selectedchargerimage1flag" [class.show]="selectedchargerimage1flag">
+<ng-container *ngIf="product_DetailsResponse.success[0].productImage[0].image">
+<img src="http://api.evplugincharge.com{{product_DetailsResponse.success[0].productImage[0].image}}" *ngIf="product_DetailsResponse.success[0].productImage[0].image" />
+</ng-container>
+
+
+</div>
+<!-- <div class="selectedchargerimage2" *ngIf="selectedchargerimage2flag" [class.show]="selectedchargerimage2flag">
+<ng-container *ngIf="product_DetailsResponse.success[0].productImage[1].image">
+<img src="http://api.evplugincharge.com{{product_DetailsResponse.success[0].productImage[1].image}}" *ngIf="product_DetailsResponse.success[0].productImage[1].image" />
+</ng-container>
+</div> -->
+
+</div>
+<!-- <div class="imagegalary">
+<div class="ui-grid-row" >
+<div class="ui-grid-col-4" *ngFor="let image of product_DetailsResponse.success[0].productImage">
+<div class="charger1" >
+<label>
+
+<input type="radio" name="solarpanel" value="offgrid" />
+
+<img src="{{image.image}}" (click)="showselectedimage()"/>
+
+</label>
+</div>
+
+</div>
+
+
+</div>
+</div> -->
+
+</div> 
+<!--- Gallary Image For Charger Ends Here-->
+<!--- Charger Description Starts Here-->
+<div class=" col-md-6" *ngIf="product_DetailsResponse">
+<div class="row">
+<div class="chargerdescription">
+<div class="chargerdescription-heading">
+
+<p>{{product_DetailsResponse.success[0].pname}}</p>
+
+</div>
+</div>
+
+</div> 
+<div class="row">
+
+
+
+<div class="chargerdescription-specification">
+<ul>
+<li *ngFor="let productfeature of product_DetailsResponse.success[0].productFeature"> {{productfeature.feature}}</li>
+</ul> 
+
+
+</div> 
+
+
+</div>
+</div> 
+<div class="col-md-3">
+<div class="description">
+<p><i class="fa fa-power-off powerofficon"></i>&nbsp;<strong>Power:</strong>
+
+<span class="rightdescription">{{product_DetailsResponse.success[0].power}}</span></p>
+<p><i class="fa fa-renren cablesizeicon"></i>&nbsp;<strong>Cable size:</strong>
+
+<span class="rightdescription">{{product_DetailsResponse.success[0].cable}}</span></p>
+<p><i class="fa fa-sun-o compatibilityicon"></i>&nbsp;<strong>Machine Type:</strong>
+<span class="rightdescription">{{product_DetailsResponse.success[0].type}}</span>
+</p>
+
+<p><i class="fa fa-inr priceicon"></i>&nbsp;<strong>Price:</strong>
+<span class="price-final rightdescription">
+
+{{product_DetailsResponse.success[0].price}}
+</span>
+</p>
+<p><i class="fa fa-inr priceicon"></i>&nbsp;<strong>Installation Charge:</strong>
+<span class="price-final rightdescription">
+
+{{product_DetailsResponse.success[0].installlation_charges}}
+</span>
+</p>
+<p><i class="fa fa-inr priceicon"></i>&nbsp;<strong>Transportaion Charge:</strong>
+<span class="price-final rightdescription">
+
+{{product_DetailsResponse.success[0].transport_charges}}
+</span>
+</p>
+<p><i class="fa fa-inr priceicon"></i>&nbsp;<strong>GST (18%):</strong>
+<span class="price-final rightdescription">
+
+{{gstAmount}}
+</span>
+</p>
+<p><i class="fa fa-inr priceicon"></i>&nbsp;<strong>Total Amount:</strong>
+<span class="price-final rightdescription">
+
+{{totalAmount}}
+</span>
+</p>
+</div> 
+<div class="order-button">
+<button class="btn btn-green order-button" type="button"
+(click)="openDialog(product_DetailsResponse.success[0].productImage[0].image,product_DetailsResponse.success[0].pid)">ORDER</button>
+</div>
+</div>
+
+<!-- <div class=" col-md-3 " ">
+
+</div> -->
+<!-- <div class="specificationlines">
+<ul>
+
+
+</ul>
+<p class="price-tag"> Price <span class="pricespan">: </span></p>
+</div> -->
+<!--<div class="amount">
+<p>Amount :<input type="number" min="1" max="100" [(ngModel)]="val" (change)="multiply(val)" 
+class="amountInputbox"/>
+Final Amount : {{multiplyvalue}}
+
+
+</div>-->
+
+
+
+<!--- Charger Description Ends Here-->
+
+</div>
+
+<!--- Charger Tab Description Installation Starts Here-->
+<span class="underline"></span>
+<div class="container" *ngIf="product_DetailsResponse">
+<div class="ui-grid ui-grid-responsive ui-fluid">
+<div class="ui-grid-row medium_tabButton">
+<ul class="tabButtonul">
+<li *ngFor=" let tabButton of tabButtons">
+
+<div class="tabButton">
+<p class="tabButtonheading" [ngClass]="{'activeTabButton': activeTabButton == tabButton.buttonText}"
+(click)="activeClassTabButton(tabButton.buttonText)">{{tabButton.buttonText}}</p>
+</div>
+
+</li>
+
+</ul>
+
+</div>
+</div>
+<div class="ui-grid ui-grid-responsive ui-fluid">
+<div class="ui-grid-row">
+
+<div class="DescriptionContent" *ngIf="activeTabButton == 'Description' "
+[class.show]="activeTabButton == 'Description' ">
+<div class="ui-grid ui-grid-responsive ui-fluid">
+<div class="ui-grid-row">
+<!--- Chartics Table Starts Here-->
+
+
+<section class="table charger-characteristic">
+
+
+<div class="row"
+*ngFor="let productdescription of product_DetailsResponse.success[0].productdescription">
+<div class="col-md-12">
+<div class="titleheading">
+{{productdescription.title}}
+</div>
+</div>
+<div class="width100"
+*ngFor="let description of productdescription.description">
+<div class="col-md4">
+<div class="description_feature">
+{{description.d_feature}}
+</div>
+</div>
+<div class="col-md8">
+<div class="description_specification">
+{{description.specification}}
+</div>
+</div>
+</div>
+
+
+<!-- <span class="charger_characteristicperheading">{{product_description.d_feature}} &nbsp;:</span>
+<span class="charger_characteristicspecification">{{product_description.specification}}</span> -->
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+</section>
+
+<!--- Chartics Table Ends Here-->
+
+</div>
+</div>
+<!--- Chartics Tab Ends Here-->
+<div class="ui-grid ui-grid-responsive ui-fluid">
+<div class="ui-grid-row">
+<div class="ui-grid-col-12">
+<div class="DescriptionContent" *ngIf="activeTabButton == 'Characteristics' "
+[class.show]="activeTabButton == 'Characteristics' " >
+<p>kaeran Gyuio</p>
+</div>
+</div>
+</div>
+</div>
+<!--- Installation Starts Here-->
+<!--<div class="ui-grid ui-grid-responsive ui-fluid">
+<div class="ui-grid-row">
+<div class="ui-grid-col-12">
+<div class="DescriptionContent" *ngIf="activeTabButton == 'Installation' "
+[class.show]="activeTabButton == 'Installation' ">
+<div class="installationMachimne">
+<h3 class="installationHeading">Advantages of KeContact x-series</h3>
+<p class="installationtext">Charing station KEBA P30 x-series provides intelligently controlled charging and can be integrated to Go To-U platform directly. The OCPP communication standard makes controlled charging, monitoring and billing possible. X-series can connect wirelessly to a central system with GSM interface and provide local load management, controlling the charging processes of up to 15 KeContact P30 c-series. It is equipped with MID meter, 
+which helps to control the electricity usage per hour.</p>
+<p class="installationtext">Charing station KEBA P30 x-series provides intelligently controlled charging and can be integrated to Go To-U platform directly. The OCPP communication standard makes controlled charging, monitoring and billing possible. X-series can connect wirelessly to a central system with GSM interface and provide local load management, controlling the charging processes of up to 15 KeContact P30 c-series. It is equipped with MID meter, 
+which helps to control the electricity usage per hour.</p>
+<h3 class="installationHeading">Advantages of KeContact x-series</h3>
+<p class="installationtext">Charing station KEBA P30 x-series provides intelligently controlled charging and can be integrated to Go To-U platform directly. The OCPP communication standard makes controlled charging, monitoring and billing possible. X-series can connect wirelessly to a central system with GSM interface and provide local load management, controlling the charging processes of up to 15 KeContact P30 c-series. It is equipped with MID meter, 
+which helps to control the electricity usage per hour.</p>
+<p class="installationtext">Charing station KEBA P30 x-series provides intelligently controlled charging and can be integrated to Go To-U platform directly. The OCPP communication standard makes controlled charging, monitoring and billing possible. X-series can connect wirelessly to a central system with GSM interface and provide local load management, controlling the charging processes of up to 15 KeContact P30 c-series. It is equipped with MID meter, 
+which helps to control the electricity usage per hour.</p>
+</div>
+</div>
+</div>
+</div>
+</div>-->
+</div>
+</div>
+</div>
+</div>
+
+
+<!--- Installation Ends Here-->

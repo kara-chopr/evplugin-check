@@ -1,0 +1,22 @@
+
+
+
+<div class="container margin_top" *ngIf="cancelation && cancelation[0]">
+  <div class="row" >
+    <div class="col-md-12">
+      <div class="heading">
+        <p>{{cancelation[0].title}}</p>
+      </div>
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="cancellation_content">
+        <p [innerHtml]="cancelation[0].description"> </p>
+       
+
+      </div>
+    </div>
+  </div>
+</div>

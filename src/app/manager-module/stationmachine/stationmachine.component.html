@@ -1,0 +1,64 @@
+
+<div class="container">
+    <div class="row margin_top">
+        <div class="col-md-8">
+          <div class="station_heading">
+            <h6> Station Machines</h6>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="addmachine">
+            <button class="btn btn-default"
+            (click)="openDialog()">Add Machine</button>
+          </div>
+          </div>
+      </div>
+     
+  <div class="row">    
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">SNO</th>
+        <th scope="col">Stations Name</th>
+        
+        <th scope="col"> Model No</th>
+        <th scope="col"> Serial No:</th>
+        <th scope="col">Power</th>
+        <th scope="col"> Type</th>
+        <th scope="col">Brand Name</th>
+        <th scope="col">Adapter Type</th>
+        <th scope="col">Time</th>
+        <th scope="col">Price</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="allStationResponses && allStationResponses.success">
+        <ng-container >
+     <tr *ngFor="let allStationResponse of allStationResponses.success">
+        <th scope="row">1</th>
+        <td>{{allStationResponse.stations_name}}</td>
+     
+       <td>   {{allStationResponse.machine_model_no}}</td>
+       
+        <td>{{allStationResponse.machine_serial_no}}</td>
+        <td>{{allStationResponse.power}}</td>
+        <td>{{allStationResponse.machine_type}}</td>
+        <td>{{allStationResponse.brand}}</td>
+        <td>{{allStationResponse.adaptor}}</td>
+        <td>{{allStationResponse.time}}</td>
+        <td>{{allStationResponse.price}}</td>
+       
+        <td *ngIf="allStationResponse.machine_status==1" 
+        (click) ="machineStatus(allStationResponse.machine_status,allStationResponse.id)"
+        class="machineOn">ON</td>
+        <td  *ngIf="allStationResponse.machine_status==0"
+        (click) ="machineStatus(allStationResponse.machine_status,allStationResponse.id)"
+        class="machineOff">OFF</td>
+      </tr>
+      <br>
+    </ng-container> 
+     
+    </tbody>
+  </table>
+</div>
+</div>
